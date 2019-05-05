@@ -3,12 +3,45 @@
   <entry>
     <title><![CDATA[Java目录贴]]></title>
     <url>%2F2019%2F05%2F05%2F10_Java%2F00_Java%E7%9B%AE%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[01_Java简介02_Java开发环境搭建03_Java中的数据类型[04_修改时间测试]]]></content>
+    <content type="text"><![CDATA[目录01_Java简介02_Java开发环境搭建03_Java中的数据类型]]></content>
       <categories>
         <category>Java</category>
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的数据类型]]></title>
+    <url>%2F2019%2F05%2F05%2F10_Java%2F03_Java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java开发环境搭建]]></title>
+    <url>%2F2019%2F05%2F05%2F10_Java%2F02_Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[《ElasticSearch笔记》]]></title>
+    <url>%2F2019%2F05%2F05%2F22_ElasticSearch%2F00_ES%E7%9B%AE%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[目录ElasticSearch核心知识01_什么是ElasticSearch02_ElasticSearch的03_Java中的数据类型 ElasticSearch运维优化ELK]]></content>
+      <categories>
+        <category>ElasticSearch</category>
+      </categories>
+      <tags>
+        <tag>ElasticSearch</tag>
       </tags>
   </entry>
   <entry>
@@ -59,7 +92,7 @@
   <entry>
     <title><![CDATA[我的重生计划]]></title>
     <url>%2F2019%2F01%2F01%2FReadMe%2F</url>
-    <content type="text"><![CDATA[创建这个文件的目的是为了更好的给自己所掌握的知识进行归类，也是更好的来确定自己未来的方向，我也希望自己能够在未来三到五年内，在技术上做些沉淀，然后往管理方向发展，这个主要是更改自己的性格缺陷和多看多观察别人的管理方式。 目录命名规范 0X –&gt; 归属于前端学习路径和顺序 00 –&gt; HTML 01 –&gt; CSS 02 –&gt; JavaScript 03 –&gt; Vue 04 –&gt; React 1X –&gt; 归属于后端学习路径和顺序 10 –&gt; Java 11 –&gt; Mysql 12 –&gt; Spring 13 –&gt; SpringMVC 14 –&gt; Mybatis 2X –&gt; 归属于其他进阶学习框架 20 –&gt; SpringBoot 21 –&gt; SpringCloud 22 –&gt; ElasticSearch 23 –&gt; Canal 24 –&gt; Nginx 3X –&gt; 归属于开发过程中的工具和其他记录 30 –&gt; Git 31 –&gt; IDEA 32 –&gt; Eclipse 4X –&gt; 归属于运维 41 –&gt; CentOS 42 –&gt; Jenkins 43 –&gt; Docker 5X –&gt; 归属于其他语言的学习记录 50_Python 51_Shell 6X –&gt; 其他杂记 60_Hexo 61_LeetCode 62_Other]]></content>
+    <content type="text"><![CDATA[创建这个文件的目的是为了更好的给自己所掌握的知识进行归类，也是更好的来确定自己未来的方向，我也希望自己能够在未来三到五年内，在技术上做些沉淀，然后往管理方向发展，这个主要是更改自己的性格缺陷和多看多观察别人的管理方式。 目录命名规范 0X –&gt; 归属于前端学习路径和顺序 00 –&gt; HTML 01 –&gt; CSS 02 –&gt; JavaScript 03 –&gt; Vue 04 –&gt; React 1X –&gt; 归属于后端学习路径和顺序 10 –&gt; Java 11 –&gt; Mysql 12 –&gt; Spring 13 –&gt; SpringMVC 14 –&gt; Mybatis 2X –&gt; 归属于其他进阶学习框架 20 –&gt; SpringBoot 21 –&gt; SpringCloud 22 –&gt; ElasticSearch 23 –&gt; Canal 24 –&gt; Nginx 25 –&gt; Redis 3X –&gt; 归属于开发过程中的工具和其他记录 30 –&gt; Git 31 –&gt; IDEA 32 –&gt; Eclipse 4X –&gt; 归属于运维 41 –&gt; CentOS 42 –&gt; Jenkins 43 –&gt; Docker 5X –&gt; 归属于其他语言的学习记录 50_Python 51_Shell 6X –&gt; 其他杂记 60_Hexo 61_LeetCode 62_Other]]></content>
       <tags>
         <tag>计划</tag>
       </tags>
