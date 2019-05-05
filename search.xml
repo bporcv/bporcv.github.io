@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Git目录贴]]></title>
-    <url>%2F2019%2F05%2F05%2FGit%2F00_Git%E7%9B%AE%E5%BD%95%E8%B4%B4%2F</url>
-    <content type="text"><![CDATA[01_Git简介与安装 02_ 03_ 04]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Git简介与安装]]></title>
-    <url>%2F2019%2F05%2F05%2FGit%2F01_Git%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java目录贴]]></title>
-    <url>%2F2019%2F04%2F23%2FJava%2F00_Java%E7%9B%AE%E5%BD%95%2F</url>
+    <url>%2F2019%2F05%2F05%2F10_Java%2F00_Java%E7%9B%AE%E5%BD%95%2F</url>
     <content type="text"><![CDATA[01_Java简介02_Java开发环境搭建03_Java中的数据类型[04_修改时间测试]]]></content>
       <categories>
         <category>Java</category>
@@ -34,8 +12,30 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Git目录贴]]></title>
+    <url>%2F2019%2F05%2F05%2F30_Git%2F00_Git%E7%9B%AE%E5%BD%95%E8%B4%B4%2F</url>
+    <content type="text"><![CDATA[01_Git简介与安装 02_ 03_]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git简介与安装]]></title>
+    <url>%2F2019%2F05%2F05%2F30_Git%2F01_Git%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java简介]]></title>
-    <url>%2F2019%2F04%2F23%2FJava%2F01_Java%E7%AE%80%E4%BB%8B%2F</url>
+    <url>%2F2019%2F04%2F24%2F10_Java%2F01_Java%E7%AE%80%E4%BB%8B%2F</url>
     <content type="text"></content>
       <categories>
         <category>Java</category>
@@ -46,7 +46,7 @@
   </entry>
   <entry>
     <title><![CDATA[三分钟利用Github配合Hexo搭建博客]]></title>
-    <url>%2F2019%2F03%2F16%2FHexo%2F01_%E4%B8%89%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%2F</url>
+    <url>%2F2019%2F03%2F16%2F60_Hexo%2F01_%E4%B8%89%E5%88%86%E9%92%9F%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[安装Git安装NodeJs申请账号]]></content>
       <categories>
         <category>Hexo</category>
@@ -57,8 +57,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F03%2F14%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[我的重生计划]]></title>
+    <url>%2F2019%2F01%2F01%2FReadMe%2F</url>
+    <content type="text"><![CDATA[创建这个文件的目的是为了更好的给自己所掌握的知识进行归类，也是更好的来确定自己未来的方向，我也希望自己能够在未来三到五年内，在技术上做些沉淀，然后往管理方向发展，这个主要是更改自己的性格缺陷和多看多观察别人的管理方式。 目录命名规范 0X –&gt; 归属于前端学习路径和顺序 00 –&gt; HTML 01 –&gt; CSS 02 –&gt; JavaScript 03 –&gt; Vue 04 –&gt; React 1X –&gt; 归属于后端学习路径和顺序 10 –&gt; Java 11 –&gt; Mysql 12 –&gt; Spring 13 –&gt; SpringMVC 14 –&gt; Mybatis 2X –&gt; 归属于其他进阶学习框架 20 –&gt; SpringBoot 21 –&gt; SpringCloud 22 –&gt; ElasticSearch 23 –&gt; Canal 24 –&gt; Nginx 3X –&gt; 归属于开发过程中的工具和其他记录 30 –&gt; Git 31 –&gt; IDEA 32 –&gt; Eclipse 4X –&gt; 归属于运维 41 –&gt; CentOS 42 –&gt; Jenkins 43 –&gt; Docker 5X –&gt; 归属于其他语言的学习记录 50_Python 51_Shell 6X –&gt; 其他杂记 60_Hexo 61_LeetCode 62_Other]]></content>
+      <tags>
+        <tag>计划</tag>
+      </tags>
   </entry>
 </search>
