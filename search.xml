@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[TODO]]></title>
+    <url>%2FPlan%2F6c9b5b14.html</url>
+    <content type="text"><![CDATA[TODO1 TODO2]]></content>
+      <categories>
+        <category>Plan</category>
+      </categories>
+      <tags>
+        <tag>Plan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2Funcategorized%2F0.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Java目录贴]]></title>
     <url>%2FJava%2Fe7de4013.html</url>
     <content type="text"><![CDATA[目录01_Java简介02_Java开发环境搭建03_Java中的数据类型]]></content>
@@ -58,7 +74,7 @@
   <entry>
     <title><![CDATA[Git简介与安装]]></title>
     <url>%2FGit%2Fa21830fd.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器]]></content>
+    <content type="text"><![CDATA[工欲善其事必先利其器 说道软件的安装，作为程序员，简单点分，就两平台：Windows，Linux平台，如果细分的话，可能就是Windows]]></content>
       <categories>
         <category>Git</category>
       </categories>
