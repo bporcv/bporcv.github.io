@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[《工欲善其事必先利其器系列之——IDEA》]]></title>
+    <url>%2FIDEA%2Fa44a05a2.html</url>
+    <content type="text"><![CDATA[工欲善其事必先利其器 IDEA作为当前最流行的版本控制工具，以其分布式，独特的分支管理方式闻名于众多开发者心中，是目前主流的版本管理工具，我们所熟知的全球闻名的同性交友社区Github就是依赖Git而打造的。依赖Git的设计哲学，也衍生出了很多好用的工具，如Github，Gitlab，码云等代码托管平台，也造就了SourceTree，Git客户端等强大的图形化界面，但是真正的高手都是通过黑窗口和命令来提现出自己的不凡，同样这也是客户端所不能带来的高度自由的用户体验。本系列将以白话文的形式来对Git设计哲学进行解读，对其原来的概念，理论，命令，配合以实战的方式来进行说明，分为以下几章，循序渐进，由浅入深，一一道来。 01_IDEA简介与安装02_Git简介与安装]]></content>
+      <categories>
+        <category>IDEA</category>
+      </categories>
+      <tags>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[TODO]]></title>
     <url>%2FPlan%2F6c9b5b14.html</url>
     <content type="text"><![CDATA[TODO1 TODO2]]></content>
@@ -74,7 +85,7 @@
   <entry>
     <title><![CDATA[Git简介与安装]]></title>
     <url>%2FGit%2Fa21830fd.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 说道软件的安装，作为程序员，简单点分，就两平台：Windows，Linux平台，如果细分的话，可能就是Windows]]></content>
+    <content type="text"><![CDATA[工欲善其事必先利其器 说到软件的安装，作为程序员，简单点分，就三平台：Windows，Linux平台，Mac平台，关于Git的安装，其官方文档写的很清楚了。地址是:https://git-scm.com/book/zh/v2/起步-安装-Git， 笔者这里主要是是用Windows进行开发，而且Windows版本的git提供的Bash也是很强大的,这里就对windows版本下进行的安装进行一个图解说明，至于Linux和Mac平台的，可以参照官方文档进行安装。 开发环境及软件版本 Windows 10 Git 2.21.0(点击可下载) 安装步骤 步骤一点击安装程序，进入安装界面，点击Next，进入下一步安装 步骤二选择软件安装路径，选择完后，点击Next，进入下一步安装 步骤三选择配置信息，这里选用默认的配置信息就行了,然后点击Next，进入下一步安装 步骤四选择git使用的编辑器，这个编辑器应该主要是针对git diff和git merge的，这里就先用系统默认的Vim就好了，后续会使用更方便的可视化图形界面工具。然后点击Next，进入下一步安装 步骤五Git环境变量的设置，这里使用默认的就好，会添加到系统的环境变量中，在windows中就是用过cmd命令行窗口或者GitBash都能够运行Git命令。然后点击Next，进入下一步安装 步骤六选用SSH，这里选用系统默认的就好了。然后点击Next，进入下一步安装 步骤七选用SSL，这里选用系统默认的就好了。然后点击Next，进入下一步安装 步骤八设置换行符约定，这里我们使用Git推荐的规则，针对Windows系统的，Git会在拉取代码的时候进行换行符的转换，转换为Windows系统的换行符，在提交代码的时候也会做一层转换，转换为试用Linux系统的换行符。然后点击Next，进入下一步安装 步骤九设置Git的终端类型，这里同样选择系统默认的，系统默认的终端功能很强大，而且色彩分明哦，这里就不需要试用windows的黑窗口了。然后点击Next，进入下一步安装 步骤十配置Git的其他额外配置项，这里使用系统默认的配置想就可以了。然后点击Next，进入下一步安装 步骤十一点击Next后会进入Git安装界面，这个时候等待安装就行了。 步骤十二安装完毕，点击鼠标右键就可以看到Git相关的东西了，会多出两个：Git GUI Here和Git Bash Here两个菜单项，常用的就是Git Bash Here了 总结 Git在Windows上的安装依旧和其他软件的安装没有任何区别，完全可以傻瓜式无脑点击下一步，之所以能够这么做的原因，就是我们即便安装完成了，也可以有足够的自由来更改之前的选项来满足自己的喜好。 下一章我们来讲解：Git的基础配置]]></content>
       <categories>
         <category>Git</category>
       </categories>
