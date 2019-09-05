@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e55582;
+  background: #c67c44;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3240,4 +3240,7 @@ pre .javascript .function {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.post-toc .nav .nav-child {
+  display: block;
 }

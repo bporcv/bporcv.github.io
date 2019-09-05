@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Git,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="bporcv">
-<meta property="og:url" content="http://www.bporcv.com/archives/page/2/index.html">
+<meta name="description" content="工欲善其事必先利其器  说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！ 这章呢，将">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git配置文件详解">
+<meta property="og:url" content="http://www.bporcv.com/Git/85076309.html">
 <meta property="og:site_name" content="bporcv">
+<meta property="og:description" content="工欲善其事必先利其器  说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！ 这章呢，将">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-31T13:46:06.099Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bporcv">
+<meta name="twitter:title" content="Git配置文件详解">
+<meta name="twitter:description" content="工欲善其事必先利其器  说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！ 这章呢，将">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.bporcv.com/archives/page/2/">
+  <link rel="canonical" href="http://www.bporcv.com/Git/85076309.html">
 
 
 
 
 
-  <title>归档 | bporcv</title>
+  <title>Git配置文件详解 | bporcv</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -156,7 +161,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Best Practice OR Copy Paste</p>
+        <p class="site-subtitle">云无心以出岫，鸟倦飞而知还</p>
       
   </div>
 
@@ -286,111 +291,238 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 12 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.bporcv.com/Git/85076309.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bporcv">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bporcv">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Hexo/1092497b.html" itemprop="url">
-              
-                <span itemprop="name">三分钟利用Github配合Hexo搭建博客</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Git配置文件详解</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-16T23:42:15+08:00" content="2019-03-16">
-          03-16
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T23:46:11+08:00">
+                2019-05-24
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Git/85076309.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Git/85076309.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/uncategorized/89edd5a9.html" itemprop="url">
-              
-                <span itemprop="name">写作计划</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-01T21:20:58+08:00" content="2019-01-01">
-          01-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <blockquote>
+<p>工欲善其事必先利其器</p>
+</blockquote>
+<p>说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！</p>
+<p>这章呢，将讲解下Git中一个基本的配置，主要是为了满足日常第一步的需求的，需求也很简单，就是下面的几项：</p>
+<ol>
+<li>配置在什么地方生效</li>
+<li>能进行哪些配置</li>
+<li>为什么这么配置</li>
+</ol>
+<a id="more"></a>
+<h2 id="配置的作用域"><a href="#配置的作用域" class="headerlink" title="配置的作用域"></a>配置的作用域</h2><p>在Git的配置哲学中，真的是体现了完全的自由，我们能够从系统层面进行配置，从而保持系统中的所有用户使用同一种配置文件，我们也能从系统中的某个用户进行配置，从而保证了登录该系统的用户使用同一种配置文件，我们甚至能够针对系统中某个用户的某个仓库进行配置，完全体现了配置上的自由和灵活性，也因此而衍生除了三种配置文件类型及作用域，分别是</p>
+<h3 id="系统级别"><a href="#系统级别" class="headerlink" title="系统级别"></a>系统级别</h3><ul>
+<li><p>定义</p>
+<p>什么是系统级别的配置呢，系统级别的配置就是上面所说的针对<code>系统下的所有用户的所有仓库</code>使用同一种配置文件。其约束范围是<code>系统中所有用户的所有仓库</code></p>
+</li>
+<li><p>作用域</p>
+<p>系统中的所有用户的所有仓库</p>
+</li>
+<li>配置文件位置<ul>
+<li>windows:</li>
+<li>Linux：/etc/gitconfig</li>
+</ul>
+</li>
+</ul>
+<h3 id="全局级别"><a href="#全局级别" class="headerlink" title="全局级别"></a>全局级别</h3><ul>
+<li>作用域：当前登录用户的所有仓库</li>
+</ul>
+<h3 id="仓库级别"><a href="#仓库级别" class="headerlink" title="仓库级别"></a>仓库级别</h3><ul>
+<li>作用域：具体配置的仓库</li>
+</ul>
+<h2 id="基础配置项"><a href="#基础配置项" class="headerlink" title="基础配置项"></a>基础配置项</h2>
+      
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="bporcv 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="bporcv 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/IDEA/a44a05a2.html" rel="next" title="《工欲善其事必先利其器系列之——IDEA》">
+                <i class="fa fa-chevron-left"></i> 《工欲善其事必先利其器系列之——IDEA》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -398,6 +530,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -418,15 +564,24 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="bporcv">
             
               <p class="site-author-name" itemprop="name">bporcv</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">Best Practice OR Copy Paste</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -436,7 +591,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -491,6 +646,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置的作用域"><span class="nav-number">1.</span> <span class="nav-text">配置的作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统级别"><span class="nav-number">1.1.</span> <span class="nav-text">系统级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局级别"><span class="nav-number">1.2.</span> <span class="nav-text">全局级别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仓库级别"><span class="nav-number">1.3.</span> <span class="nav-text">仓库级别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础配置项"><span class="nav-number">2.</span> <span class="nav-text">基础配置项</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -638,6 +809,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -655,6 +830,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.bporcv.com/Git/85076309.html';
+          this.page.identifier = 'Git/85076309.html';
+          this.page.title = 'Git配置文件详解';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

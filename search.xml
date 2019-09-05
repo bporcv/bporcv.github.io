@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git配置文件详解]]></title>
+    <url>%2FGit%2F85076309.html</url>
+    <content type="text"><![CDATA[工欲善其事必先利其器 说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！ 这章呢，将讲解下Git中一个基本的配置，主要是为了满足日常第一步的需求的，需求也很简单，就是下面的几项： 配置在什么地方生效 能进行哪些配置 为什么这么配置 配置的作用域在Git的配置哲学中，真的是体现了完全的自由，我们能够从系统层面进行配置，从而保持系统中的所有用户使用同一种配置文件，我们也能从系统中的某个用户进行配置，从而保证了登录该系统的用户使用同一种配置文件，我们甚至能够针对系统中某个用户的某个仓库进行配置，完全体现了配置上的自由和灵活性，也因此而衍生除了三种配置文件类型及作用域，分别是 系统级别 定义 什么是系统级别的配置呢，系统级别的配置就是上面所说的针对系统下的所有用户的所有仓库使用同一种配置文件。其约束范围是系统中所有用户的所有仓库 作用域 系统中的所有用户的所有仓库 配置文件位置 windows: Linux：/etc/gitconfig 全局级别 作用域：当前登录用户的所有仓库 仓库级别 作用域：具体配置的仓库 基础配置项]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[《工欲善其事必先利其器系列之——IDEA》]]></title>
     <url>%2FIDEA%2Fa44a05a2.html</url>
     <content type="text"><![CDATA[工欲善其事必先利其器 IDEA作为当前最流行的版本控制工具，以其分布式，独特的分支管理方式闻名于众多开发者心中，是目前主流的版本管理工具，我们所熟知的全球闻名的同性交友社区Github就是依赖Git而打造的。依赖Git的设计哲学，也衍生出了很多好用的工具，如Github，Gitlab，码云等代码托管平台，也造就了SourceTree，Git客户端等强大的图形化界面，但是真正的高手都是通过黑窗口和命令来提现出自己的不凡，同样这也是客户端所不能带来的高度自由的用户体验。本系列将以白话文的形式来对Git设计哲学进行解读，对其原来的概念，理论，命令，配合以实战的方式来进行说明，分为以下几章，循序渐进，由浅入深，一一道来。 01_IDEA简介与安装02_Git简介与安装]]></content>
@@ -23,44 +34,6 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>%2Funcategorized%2F0.html</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[Java目录贴]]></title>
-    <url>%2FJava%2Fe7de4013.html</url>
-    <content type="text"><![CDATA[目录01_Java简介02_Java开发环境搭建03_Java中的数据类型]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的数据类型]]></title>
-    <url>%2FJava%2F9af728b5.html</url>
-    <content type="text"></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java开发环境搭建]]></title>
-    <url>%2FJava%2F77a3ba8f.html</url>
-    <content type="text"></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[《ElasticSearch笔记》]]></title>
     <url>%2FElasticSearch%2Fa8882e14.html</url>
     <content type="text"><![CDATA[目录ElasticSearch核心知识01_什么是ElasticSearch02_ElasticSearch的03_Java中的数据类型 ElasticSearch运维优化ELK]]></content>
@@ -74,7 +47,7 @@
   <entry>
     <title><![CDATA[《白话系列之-Git》]]></title>
     <url>%2FGit%2Fa44a05a2.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 Git作为当前最流行的版本控制工具，以其分布式，独特的分支管理方式闻名于众多开发者心中，是目前主流的版本管理工具，我们所熟知的全球闻名的同性交友社区Github就是依赖Git而打造的。依赖Git的设计哲学，也衍生出了很多好用的工具，如Github，Gitlab，码云等代码托管平台，也造就了SourceTree，Git客户端等强大的图形化界面，但是真正的高手都是通过黑窗口和命令来提现出自己的不凡，同样这也是客户端所不能带来的高度自由的用户体验。本系列将以白话文的形式来对Git设计哲学进行解读，对其原来的概念，理论，命令，配合以实战的方式来进行说明，分为以下几章，循序渐进，由浅入深，一一道来。 01_Git简介与安装01_Git简介与安装]]></content>
+    <content type="text"><![CDATA[工欲善其事必先利其器 Git作为当前最流行的版本控制工具，以其分布式，独特的分支管理方式闻名于众多开发者心中，是目前主流的版本管理工具，我们所熟知的全球闻名的同性交友社区Github就是依赖Git而打造的。依赖Git的设计哲学，也衍生出了很多好用的工具，如Github，Gitlab，码云等代码托管平台，也造就了SourceTree，Git客户端等强大的图形化界面，但是真正的高手都是通过黑窗口和命令来提现出自己的不凡，同样这也是客户端所不能带来的高度自由的用户体验。本系列将以白话文的形式来对Git设计哲学进行解读，对其原来的概念，理论，命令，配合以实战的方式来进行说明，分为以下几章，循序渐进，由浅入深，一一道来。 01_Git简介与安装02_Git配置文件大解析]]></content>
       <categories>
         <category>Git</category>
       </categories>
@@ -85,7 +58,7 @@
   <entry>
     <title><![CDATA[Git简介与安装]]></title>
     <url>%2FGit%2Fa21830fd.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 说到软件的安装，作为程序员，简单点分，就三平台：Windows，Linux平台，Mac平台，关于Git的安装，其官方文档写的很清楚了。地址是:https://git-scm.com/book/zh/v2/起步-安装-Git， 笔者这里主要是是用Windows进行开发，而且Windows版本的git提供的Bash也是很强大的,这里就对windows版本下进行的安装进行一个图解说明，至于Linux和Mac平台的，可以参照官方文档进行安装。 开发环境及软件版本 Windows 10 Git 2.21.0(点击可下载) 安装步骤 步骤一点击安装程序，进入安装界面，点击Next，进入下一步安装 步骤二选择软件安装路径，选择完后，点击Next，进入下一步安装 步骤三选择配置信息，这里选用默认的配置信息就行了,然后点击Next，进入下一步安装 步骤四选择git使用的编辑器，这个编辑器应该主要是针对git diff和git merge的，这里就先用系统默认的Vim就好了，后续会使用更方便的可视化图形界面工具。然后点击Next，进入下一步安装 步骤五Git环境变量的设置，这里使用默认的就好，会添加到系统的环境变量中，在windows中就是用过cmd命令行窗口或者GitBash都能够运行Git命令。然后点击Next，进入下一步安装 步骤六选用SSH，这里选用系统默认的就好了。然后点击Next，进入下一步安装 步骤七选用SSL，这里选用系统默认的就好了。然后点击Next，进入下一步安装 步骤八设置换行符约定，这里我们使用Git推荐的规则，针对Windows系统的，Git会在拉取代码的时候进行换行符的转换，转换为Windows系统的换行符，在提交代码的时候也会做一层转换，转换为试用Linux系统的换行符。然后点击Next，进入下一步安装 步骤九设置Git的终端类型，这里同样选择系统默认的，系统默认的终端功能很强大，而且色彩分明哦，这里就不需要试用windows的黑窗口了。然后点击Next，进入下一步安装 步骤十配置Git的其他额外配置项，这里使用系统默认的配置想就可以了。然后点击Next，进入下一步安装 步骤十一点击Next后会进入Git安装界面，这个时候等待安装就行了。 步骤十二安装完毕，点击鼠标右键就可以看到Git相关的东西了，会多出两个：Git GUI Here和Git Bash Here两个菜单项，常用的就是Git Bash Here了 总结 Git在Windows上的安装依旧和其他软件的安装没有任何区别，完全可以傻瓜式无脑点击下一步，之所以能够这么做的原因，就是我们即便安装完成了，也可以有足够的自由来更改之前的选项来满足自己的喜好。 下一章我们来讲解：Git的基础配置]]></content>
+    <content type="text"><![CDATA[工欲善其事必先利其器 说到软件的安装，作为程序员，简单点分，就三平台：Windows，Linux平台，Mac平台，关于Git的安装，其官方文档写的很清楚了。地址是:https://git-scm.com/book/zh/v2/起步-安装-Git， 笔者这里主要是是用Windows进行开发，而且Windows版本的git提供的Bash也是很强大的,这里就对windows版本下进行的安装进行一个图解说明，至于Linux和Mac平台的，可以参照官方文档进行安装。 开发环境及软件版本 Windows 10 Git 2.21.0(点击可下载) 安装步骤 步骤一点击安装程序，进入安装界面，点击Next，进入下一步安装 步骤二选择软件安装路径，选择完后，点击Next，进入下一步安装 步骤三选择配置信息，这里选用默认的配置信息就行了,然后点击Next，进入下一步安装 步骤四选择git使用的编辑器，这个编辑器应该主要是针对git diff和git merge的，这里就先用系统默认的Vim就好了，后续会使用更方便的可视化图形界面工具。然后点击Next，进入下一步安装 步骤五Git环境变量的设置，这里使用默认的就好，会添加到系统的环境变量中，在windows中就是用过cmd命令行窗口或者GitBash都能够运行Git命令。然后点击Next，进入下一步安装 步骤六选用SSH，这里选用系统默认的就好了。然后点击Next，进入下一步安装 步骤七选用SSL，这里选用系统默认的就好了。然后点击Next，进入下一步安装 步骤八设置换行符约定，这里我们使用Git推荐的规则，针对Windows系统的，Git会在拉取代码的时候进行换行符的转换，转换为Windows系统的换行符，在提交代码的时候也会做一层转换，转换为试用Linux系统的换行符。然后点击Next，进入下一步安装 步骤九设置Git的终端类型，这里同样选择系统默认的，系统默认的终端功能很强大，而且色彩分明哦，这里就不需要试用windows的黑窗口了。然后点击Next，进入下一步安装 步骤十配置Git的其他额外配置项，这里使用系统默认的配置想就可以了。然后点击Next，进入下一步安装 步骤十一点击Next后会进入Git安装界面，这个时候等待安装就行了。 步骤十二安装完毕，点击鼠标右键就可以看到Git相关的东西了，会多出两个：Git GUI Here和Git Bash Here两个菜单项，常用的就是Git Bash Here了 总结 Git在Windows上的安装依旧和其他软件的安装没有任何区别，完全可以傻瓜式无脑点击下一步，之所以能够这么做的原因，就是我们即便安装完成了，也可以有足够的自由来更改之前的选项来满足自己的喜好。 下一章我们来讲解：Git的配置详解]]></content>
       <categories>
         <category>Git</category>
       </categories>
@@ -94,32 +67,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java简介]]></title>
-    <url>%2FJava%2F9c4b5cef.html</url>
-    <content type="text"></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[三分钟利用Github配合Hexo搭建博客]]></title>
-    <url>%2FHexo%2F1092497b.html</url>
-    <content type="text"><![CDATA[安装Git安装NodeJs申请账号]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[写作计划]]></title>
     <url>%2Funcategorized%2F89edd5a9.html</url>
-    <content type="text"><![CDATA[创建这个文件的目的是为了更好的给自己所掌握的知识进行归类，也是更好的来确定自己未来的方向，我也希望自己能够在未来三到五年内，在技术上做些沉淀，然后往管理方向发展，这个主要是更改自己的性格缺陷和多看多观察别人的管理方式。 目录命名规范 0X –&gt; 归属于前端学习路径和顺序 00 –&gt; HTML 01 –&gt; CSS 02 –&gt; JavaScript 03 –&gt; Vue 04 –&gt; React 1X –&gt; 归属于后端学习路径和顺序 10 –&gt; Java 11 –&gt; Mysql 12 –&gt; Spring 13 –&gt; SpringMVC 14 –&gt; Mybatis 2X –&gt; 归属于其他进阶学习框架 20 –&gt; SpringBoot 21 –&gt; SpringCloud 22 –&gt; ElasticSearch 23 –&gt; Canal 24 –&gt; Nginx 25 –&gt; Redis 3X –&gt; 归属于开发过程中的工具和其他记录 30 –&gt; Git 31 –&gt; IDEA 32 –&gt; Eclipse 4X –&gt; 归属于运维 41 –&gt; CentOS 42 –&gt; Jenkins 43 –&gt; Docker 5X –&gt; 归属于其他语言的学习记录 50_Python 51_Shell 6X –&gt; 其他杂记 60_Hexo 61_LeetCode 62_Other]]></content>
+    <content type="text"><![CDATA[我的写作计划咯，输入密码，查看文章 Incorrect Password! No content to display! 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]]></content>
       <tags>
         <tag>计划</tag>
       </tags>
