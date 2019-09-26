@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="RabbitMQ简介与安装简介安装WindowsCentOS 7">
+<meta name="description" content="RabbitMQ简介与安装简介安装WindowsCentOS 7在安装RabbitMQ之前，必须安装和RabbitMQ版本相匹配的Erlang/OTP。Erlang和RabbitMQ的对应关系可以看下面这个网址：https://www.rabbitmq.com/which-erlang.html 安装Erlang参考 Erlang安装 安装RabbitMQ">
 <meta name="keywords" content="RabbitMQ,中间件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ简介与安装">
 <meta property="og:url" content="http://www.bporcv.com/RabbitMQ/a4560bed.html">
 <meta property="og:site_name" content="太度">
-<meta property="og:description" content="RabbitMQ简介与安装简介安装WindowsCentOS 7">
+<meta property="og:description" content="RabbitMQ简介与安装简介安装WindowsCentOS 7在安装RabbitMQ之前，必须安装和RabbitMQ版本相匹配的Erlang/OTP。Erlang和RabbitMQ的对应关系可以看下面这个网址：https://www.rabbitmq.com/which-erlang.html 安装Erlang参考 Erlang安装 安装RabbitMQ">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-25T14:39:06.394Z">
+<meta property="og:image" content="http://www.bporcv.com/RabbitMQ/a4560bed/get-rabbitmq-cmd-path.png">
+<meta property="og:image" content="http://www.bporcv.com/RabbitMQ/a4560bed/rabbitmq-enable-management-plugin.png">
+<meta property="og:image" content="http://www.bporcv.com/RabbitMQ/a4560bed/add_user.png">
+<meta property="og:image" content="http://www.bporcv.com/RabbitMQ/a4560bed/rabbitmq-web-login.png">
+<meta property="og:updated_time" content="2019-09-26T16:15:17.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ简介与安装">
-<meta name="twitter:description" content="RabbitMQ简介与安装简介安装WindowsCentOS 7">
+<meta name="twitter:description" content="RabbitMQ简介与安装简介安装WindowsCentOS 7在安装RabbitMQ之前，必须安装和RabbitMQ版本相匹配的Erlang/OTP。Erlang和RabbitMQ的对应关系可以看下面这个网址：https://www.rabbitmq.com/which-erlang.html 安装Erlang参考 Erlang安装 安装RabbitMQ">
+<meta name="twitter:image" content="http://www.bporcv.com/RabbitMQ/a4560bed/get-rabbitmq-cmd-path.png">
 
 
 
@@ -404,7 +409,33 @@
       
 
       
-        <h1 id="RabbitMQ简介与安装"><a href="#RabbitMQ简介与安装" class="headerlink" title="RabbitMQ简介与安装"></a>RabbitMQ简介与安装</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h3 id="CentOS-7"><a href="#CentOS-7" class="headerlink" title="CentOS 7"></a>CentOS 7</h3>
+        <h1 id="RabbitMQ简介与安装"><a href="#RabbitMQ简介与安装" class="headerlink" title="RabbitMQ简介与安装"></a>RabbitMQ简介与安装</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h3 id="CentOS-7"><a href="#CentOS-7" class="headerlink" title="CentOS 7"></a>CentOS 7</h3><p>在安装RabbitMQ之前，必须安装和RabbitMQ版本相匹配的Erlang/OTP。Erlang和RabbitMQ的对应关系可以<br>看下面这个网址：<a href="https://www.rabbitmq.com/which-erlang.html" target="_blank" rel="noopener">https://www.rabbitmq.com/which-erlang.html</a></p>
+<h4 id="安装Erlang"><a href="#安装Erlang" class="headerlink" title="安装Erlang"></a>安装Erlang</h4><p>参考 <a href="/Linux/e03cc139.html">Erlang安装</a></p>
+<h4 id="安装RabbitMQ"><a href="#安装RabbitMQ" class="headerlink" title="安装RabbitMQ"></a>安装RabbitMQ</h4><a id="more"></a>
+<h5 id="选择目录"><a href="#选择目录" class="headerlink" title="选择目录"></a>选择目录</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br></pre></td></tr></table></figure>
+<h5 id="下载rabbitMQ"><a href="#下载rabbitMQ" class="headerlink" title="下载rabbitMQ"></a>下载rabbitMQ</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.18/rabbitmq-server-3.7.18-1.el7.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h5 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install rabbitmq-server-3.7.18-1.el7.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h5 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig rabbitmq-server on</span><br></pre></td></tr></table></figure>
+<h5 id="启用Web管理插件"><a href="#启用Web管理插件" class="headerlink" title="启用Web管理插件"></a>启用Web管理插件</h5><p>查找rabbitmq-server的安装目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/lib/systemd/system/rabbitmq-server.service</span><br></pre></td></tr></table></figure>
+<img src="/RabbitMQ/a4560bed/get-rabbitmq-cmd-path.png" title="rabbitmq命令安装位置界面">
+<p>其中ExecStart和ExecStop就是命令行工具的目录，就是rabbitmq-sercer的命令目录，找到后进去目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/sbin</span><br><span class="line">./rabbitmq-plugins enable  rabbitmq_management</span><br></pre></td></tr></table></figure>
+<p>启用成功的标识</p>
+<img src="/RabbitMQ/a4560bed/rabbitmq-enable-management-plugin.png" title="rabbitmq开启Web管理插件界面">
+<h5 id="重启rabitmq服务"><a href="#重启rabitmq服务" class="headerlink" title="重启rabitmq服务"></a>重启rabitmq服务</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart rabbitmq-server</span><br></pre></td></tr></table></figure>
+<h5 id="关闭防火墙-开放端口15672"><a href="#关闭防火墙-开放端口15672" class="headerlink" title="关闭防火墙/开放端口15672"></a>关闭防火墙/开放端口15672</h5><p>关闭防火墙</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+<p>开放端口</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firwall-cmd --zone=public --add-port=15672/tcp --permanent</span><br></pre></td></tr></table></figure>
+<h5 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h5><p>进入rabbitmq命令目录，或者直接使用<code>rabbimqctl</code>全局命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/sbin</span><br></pre></td></tr></table></figure>
+<p>执行添加用户命令，并授予administrator权限，可用于登录Web管理界面</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./rabbitmqctl add_user admin 123456</span><br><span class="line">./rabbitmqctl set_user_tags admin adminsitrator</span><br><span class="line">./rabbitmqctl list_users</span><br></pre></td></tr></table></figure>
+<img src="/RabbitMQ/a4560bed/add_user.png" title="rabbitmq添加Web管理用户界面">
+<h5 id="登录Web界面，验证"><a href="#登录Web界面，验证" class="headerlink" title="登录Web界面，验证"></a>登录Web界面，验证</h5><img src="/RabbitMQ/a4560bed/rabbitmq-web-login.png" title="rabbitmqWeb管理登录成功界面">
+<p>##### </p>
+
       
     </div>
     
@@ -566,7 +597,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -577,7 +608,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -588,7 +619,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -631,7 +662,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RabbitMQ简介与安装"><span class="nav-number">1.</span> <span class="nav-text">RabbitMQ简介与安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows"><span class="nav-number">1.2.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CentOS-7"><span class="nav-number">1.2.2.</span> <span class="nav-text">CentOS 7</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RabbitMQ简介与安装"><span class="nav-number">1.</span> <span class="nav-text">RabbitMQ简介与安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows"><span class="nav-number">1.2.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CentOS-7"><span class="nav-number">1.2.2.</span> <span class="nav-text">CentOS 7</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Erlang"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">安装Erlang</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装RabbitMQ"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">安装RabbitMQ</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#选择目录"><span class="nav-number">1.2.2.2.1.</span> <span class="nav-text">选择目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下载rabbitMQ"><span class="nav-number">1.2.2.2.2.</span> <span class="nav-text">下载rabbitMQ</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-1"><span class="nav-number">1.2.2.2.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置开机启动"><span class="nav-number">1.2.2.2.4.</span> <span class="nav-text">设置开机启动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启用Web管理插件"><span class="nav-number">1.2.2.2.5.</span> <span class="nav-text">启用Web管理插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#重启rabitmq服务"><span class="nav-number">1.2.2.2.6.</span> <span class="nav-text">重启rabitmq服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关闭防火墙-开放端口15672"><span class="nav-number">1.2.2.2.7.</span> <span class="nav-text">关闭防火墙/开放端口15672</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加用户"><span class="nav-number">1.2.2.2.8.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#登录Web界面，验证"><span class="nav-number">1.2.2.2.9.</span> <span class="nav-text">登录Web界面，验证</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
