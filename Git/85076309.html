@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="工欲善其事必先利其器  说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！ 这章呢，将">
+<meta name="description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用好Git这个神兵利器。 配置的作用域在Git的配置哲学中，配置的作用域分为三种：系统级别（system），全局级别(global)，仓库级别(local)。 系统级别 定义 什么是系统级别的配置呢，系统级别的配置就是上面所说的针对系统下的所有用户的所有仓库使用同一种配置文件。其约束范围是系统中所有用户的所有仓库">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git配置文件详解">
 <meta property="og:url" content="http://www.bporcv.com/Git/85076309.html">
 <meta property="og:site_name" content="太度">
-<meta property="og:description" content="工欲善其事必先利其器  说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！ 这章呢，将">
+<meta property="og:description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用好Git这个神兵利器。 配置的作用域在Git的配置哲学中，配置的作用域分为三种：系统级别（system），全局级别(global)，仓库级别(local)。 系统级别 定义 什么是系统级别的配置呢，系统级别的配置就是上面所说的针对系统下的所有用户的所有仓库使用同一种配置文件。其约束范围是系统中所有用户的所有仓库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-31T13:46:06.099Z">
+<meta property="og:updated_time" content="2019-10-06T11:16:22.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git配置文件详解">
-<meta name="twitter:description" content="工欲善其事必先利其器  说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！ 这章呢，将">
+<meta name="twitter:description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用好Git这个神兵利器。 配置的作用域在Git的配置哲学中，配置的作用域分为三种：系统级别（system），全局级别(global)，仓库级别(local)。 系统级别 定义 什么是系统级别的配置呢，系统级别的配置就是上面所说的针对系统下的所有用户的所有仓库使用同一种配置文件。其约束范围是系统中所有用户的所有仓库">
 
 
 
@@ -407,15 +407,8 @@
         <blockquote>
 <p>工欲善其事必先利其器</p>
 </blockquote>
-<p>说到配置文件，这个东西真是的被外国人玩出风采，玩出精髓的的一个东西，给你一种万物皆可配置，万物皆能配置的错觉。做了近三年的开发了，在三年的开发中，从原来的Spring的xml式的配置，再到现在的基于注解的配置，再到现在SpringBoot的基本零配置，相信不久的将来，简单的系统还用写吗？配一个吧！打算写一个小玩意，有志于打造一个配置出系统的小伙伴可以联系我哦！</p>
-<p>这章呢，将讲解下Git中一个基本的配置，主要是为了满足日常第一步的需求的，需求也很简单，就是下面的几项：</p>
-<ol>
-<li>配置在什么地方生效</li>
-<li>能进行哪些配置</li>
-<li>为什么这么配置</li>
-</ol>
-<a id="more"></a>
-<h2 id="配置的作用域"><a href="#配置的作用域" class="headerlink" title="配置的作用域"></a>配置的作用域</h2><p>在Git的配置哲学中，真的是体现了完全的自由，我们能够从系统层面进行配置，从而保持系统中的所有用户使用同一种配置文件，我们也能从系统中的某个用户进行配置，从而保证了登录该系统的用户使用同一种配置文件，我们甚至能够针对系统中某个用户的某个仓库进行配置，完全体现了配置上的自由和灵活性，也因此而衍生除了三种配置文件类型及作用域，分别是</p>
+<p>这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用好Git这个神兵利器。</p>
+<h2 id="配置的作用域"><a href="#配置的作用域" class="headerlink" title="配置的作用域"></a>配置的作用域</h2><p>在Git的配置哲学中，配置的作用域分为三种：系统级别（system），全局级别(global)，仓库级别(local)。</p>
 <h3 id="系统级别"><a href="#系统级别" class="headerlink" title="系统级别"></a>系统级别</h3><ul>
 <li><p>定义</p>
 <p>什么是系统级别的配置呢，系统级别的配置就是上面所说的针对<code>系统下的所有用户的所有仓库</code>使用同一种配置文件。其约束范围是<code>系统中所有用户的所有仓库</code></p>
@@ -425,11 +418,10 @@
 </li>
 <li>配置文件位置<ul>
 <li>windows:</li>
-<li>Linux：/etc/gitconfig</li>
+<li>Linux：/etc/gitconfig<a id="more"></a>
+<h3 id="全局级别"><a href="#全局级别" class="headerlink" title="全局级别"></a>全局级别</h3></li>
 </ul>
 </li>
-</ul>
-<h3 id="全局级别"><a href="#全局级别" class="headerlink" title="全局级别"></a>全局级别</h3><ul>
 <li>作用域：当前登录用户的所有仓库</li>
 </ul>
 <h3 id="仓库级别"><a href="#仓库级别" class="headerlink" title="仓库级别"></a>仓库级别</h3><ul>
@@ -504,8 +496,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/SpringCloud/4dd766a2.html" rel="prev" title="《疯狂SpringCloud 微服务架构实战》学习笔记目录">
-                《疯狂SpringCloud 微服务架构实战》学习笔记目录 <i class="fa fa-chevron-right"></i>
+              <a href="/Hexo/1092497b.html" rel="prev" title="三分钟利用Github配合Hexo搭建博客">
+                三分钟利用Github配合Hexo搭建博客 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -595,7 +587,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -617,7 +609,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
