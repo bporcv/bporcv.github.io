@@ -304,6 +304,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.bporcv.com/RabbitMQ/617fec18.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bporcv">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="太度">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/RabbitMQ/617fec18.html" itemprop="url">RabbitMQ_Java实战</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-25T21:19:09+08:00">
+                2019-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RabbitMQ/" itemprop="url" rel="index">
+                    <span itemprop="name">RabbitMQ</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/RabbitMQ/617fec18.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="RabbitMQ/617fec18.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/RabbitMQ/617fec18.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.bporcv.com/RabbitMQ/a4560bed.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1411,7 +1569,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Git/85076309.html" itemprop="url">Git配置文件详解</a></h1>
+                <a class="post-title-link" href="/Git/85076309.html" itemprop="url">Git配置文件作用域及最小可用配置讲解</a></h1>
         
 
         <div class="post-meta">
@@ -1497,18 +1655,14 @@
           <blockquote>
 <p>工欲善其事必先利其器</p>
 </blockquote>
-<p>这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用好Git这个神兵利器。</p>
-<h2 id="配置的作用域"><a href="#配置的作用域" class="headerlink" title="配置的作用域"></a>配置的作用域</h2><p>在Git的配置哲学中，配置的作用域分为三种：系统级别（system），全局级别(global)，仓库级别(local)。</p>
-<h3 id="系统级别"><a href="#系统级别" class="headerlink" title="系统级别"></a>系统级别</h3><ul>
-<li><p>定义</p>
-<p>什么是系统级别的配置呢，系统级别的配置就是上面所说的针对<code>系统下的所有用户的所有仓库</code>使用同一种配置文件。其约束范围是<code>系统中所有用户的所有仓库</code></p>
-</li>
-<li><p>作用域</p>
-<p>系统中的所有用户的所有仓库</p>
-</li>
-<li>配置文件位置<ul>
-<li>windows:</li>
-<li>Linux：/etc/gitconfig
+<p>这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个<code>最小配置</code>，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。</p>
+<h2 id="Git的最小配置"><a href="#Git的最小配置" class="headerlink" title="Git的最小配置"></a>Git的最小配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 'yourname'</span><br><span class="line">git config --global user.email 'youremail'</span><br></pre></td></tr></table></figure>
+<h3 id="配置解释"><a href="#配置解释" class="headerlink" title="配置解释"></a>配置解释</h3><p>第一点：作用域</p>
+<p><code>global</code> ：global意指全局作用域，即在没有配置其他作用域的情况下，当前系统登录用户所建的所有仓库的配置信息</p>
+<p>第二点：配置项</p>
+<p><code>user.name</code>：使用仓库的用户的用户名</p>
+<p><code>user.email</code>：使用仓库的用户的用户邮箱</p>
+<p>之所以会配置这两项之后就能开始对Git的使用了，是因为人性化的考虑，在Git的使用中，无论是单人使用，还是团队使用，<code>user.name</code>以及<code>user.email</code>能够准确的对每一次Git的提交做出标记，能够标记出：<code>是谁在什么时候，做了什么提交，如果出现问题，或者写的太棒了，我想联系他，那么该通过什么方式来联系，没错，就是那个邮箱了</code>。这种设计是一种对提交记录的追踪，对代码贡献度的统计，对代码bug的追踪甩锅等等，都是Git设计哲学中不可或缺的一部分。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/Git/85076309.html#more" rel="contents">
@@ -1518,7 +1672,7 @@
           <!--/noindex-->
         
       
-    </li></ul></li></ul></div>
+    </div>
     
     
     
@@ -1709,168 +1863,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.bporcv.com/Plan/6c9b5b14.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="bporcv">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="太度">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Plan/6c9b5b14.html" itemprop="url">TODO</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T23:27:12+08:00">
-                2019-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Plan/" itemprop="url" rel="index">
-                    <span itemprop="name">Plan</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Plan/6c9b5b14.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Plan/6c9b5b14.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
- TODO1
- TODO2
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Plan/6c9b5b14.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1923,7 +1915,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

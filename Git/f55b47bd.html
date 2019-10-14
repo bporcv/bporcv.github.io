@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,github,">
+  <meta name="keywords" content="Git,">
 
 
 
@@ -79,38 +79,18 @@
 
 
 
-<meta name="description" content="环境准备 操作系统：Windows 10 Git NodeJs Hexo 申请Github账号  第一步：安装Git由于是在Windows环境下进行环境的搭建，所以需要下载window版本的git，具体安装方式可以参看博主的文章：[Git简介与安装(/Git/a21830fd.html)，windows版本的git安装完成后自带git bash，一个非常好用的命令行工具，后续很多操作都会使用到这个">
-<meta name="keywords" content="Hexo,github">
+<meta name="description" content="把已有代码纳入Git管理新建项目使用Git管理">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="三分钟利用Github配合Hexo搭建博客">
-<meta property="og:url" content="http://www.bporcv.com/Hexo/1092497b.html">
+<meta property="og:title" content="创建第一个仓库并配置Local用户信息">
+<meta property="og:url" content="http://www.bporcv.com/Git/f55b47bd.html">
 <meta property="og:site_name" content="太度">
-<meta property="og:description" content="环境准备 操作系统：Windows 10 Git NodeJs Hexo 申请Github账号  第一步：安装Git由于是在Windows环境下进行环境的搭建，所以需要下载window版本的git，具体安装方式可以参看博主的文章：[Git简介与安装(/Git/a21830fd.html)，windows版本的git安装完成后自带git bash，一个非常好用的命令行工具，后续很多操作都会使用到这个">
+<meta property="og:description" content="把已有代码纳入Git管理新建项目使用Git管理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/git-check.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/download-nodejs.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/nodejs-check.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/cd-dir.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/install-hexo.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/hexo-init.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/hexo-server.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/hexo-blog.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/new-repo.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/create-repo.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/test-repo.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/github-add-new-ssh-key.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/github-add-ssh-key.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/github-ssh-key-list.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/git-test-ssh-key.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/hexo-config-deploy.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/hexo-deploy-error.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/hexo-deploy-success.png">
-<meta property="og:image" content="http://www.bporcv.com/Hexo/1092497b/hexo-code-deploy-github-success.png">
-<meta property="og:updated_time" content="2019-10-06T15:06:47.374Z">
+<meta property="og:updated_time" content="2019-10-14T15:34:09.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="三分钟利用Github配合Hexo搭建博客">
-<meta name="twitter:description" content="环境准备 操作系统：Windows 10 Git NodeJs Hexo 申请Github账号  第一步：安装Git由于是在Windows环境下进行环境的搭建，所以需要下载window版本的git，具体安装方式可以参看博主的文章：[Git简介与安装(/Git/a21830fd.html)，windows版本的git安装完成后自带git bash，一个非常好用的命令行工具，后续很多操作都会使用到这个">
-<meta name="twitter:image" content="http://www.bporcv.com/Hexo/1092497b/git-check.png">
+<meta name="twitter:title" content="创建第一个仓库并配置Local用户信息">
+<meta name="twitter:description" content="把已有代码纳入Git管理新建项目使用Git管理">
 
 
 
@@ -140,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.bporcv.com/Hexo/1092497b.html">
+  <link rel="canonical" href="http://www.bporcv.com/Git/f55b47bd.html">
 
 
 
 
 
-  <title>三分钟利用Github配合Hexo搭建博客 | 太度</title>
+  <title>创建第一个仓库并配置Local用户信息 | 太度</title>
   
 
 
@@ -325,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.bporcv.com/Hexo/1092497b.html">
+    <link itemprop="mainEntityOfPage" href="http://www.bporcv.com/Git/f55b47bd.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bporcv">
@@ -342,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">三分钟利用Github配合Hexo搭建博客</h1>
+          <h1 class="post-title" itemprop="name headline">创建第一个仓库并配置Local用户信息</h1>
         
 
         <div class="post-meta">
@@ -354,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T21:54:24+08:00">
-                2019-07-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-14T23:28:17+08:00">
+                2019-10-14
               </time>
             
 
@@ -377,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -395,8 +375,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Hexo/1092497b.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Hexo/1092497b.html" itemprop="commentCount"></span>
+                <a href="/Git/f55b47bd.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Git/f55b47bd.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -424,93 +404,7 @@
       
 
       
-        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
-<li>操作系统：Windows 10</li>
-<li>Git</li>
-<li>NodeJs</li>
-<li>Hexo</li>
-<li>申请Github账号</li>
-</ul>
-<h2 id="第一步：安装Git"><a href="#第一步：安装Git" class="headerlink" title="第一步：安装Git"></a>第一步：安装Git</h2><p>由于是在Windows环境下进行环境的搭建，所以需要下载window版本的git，具体安装方式可以参看博主的文章：[Git简介与安装(/Git/a21830fd.html)，windows版本的git安装完成后自带<code>git bash</code>，一个非常好用的命令行工具，后续很多操作都会使用到这个，调出<code>git bash</code>的方法也很简单，鼠标右键就能看到，有一个命令是<code>git bash here</code>，点击后就能弹出一个小黑框框了，输入<code>git version</code>查看git版本，验证安装是否正确</p>
-<img src="/Hexo/1092497b/git-check.png" title="验证git安装界面">
-<h2 id="第二步：安装NodeJs"><a href="#第二步：安装NodeJs" class="headerlink" title="第二步：安装NodeJs"></a>第二步：安装NodeJs</h2><h3 id="下载NodeJs"><a href="#下载NodeJs" class="headerlink" title="下载NodeJs"></a>下载NodeJs</h3><p>hexo依赖于nodejs，所以nodeJs是必须要下载的。下载地址：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a>，如果这个链接下载太慢了，可以去nodejs中文网下载，下载地址：<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a> 依据自己的操作系统，自己的系统位数，是32位的还是64为的进行下载，LTS为长期支持版，Current为当前最新版，这里肯定下载LTS版本，写这篇博客的时候最新版本：12.11.1<br><a id="more"></a><br><img src="/Hexo/1092497b/download-nodejs.png" title="nodejs下载界面"></p>
-<p>下载完成后是一个msi文件，即为windows安装文件，双击文件进行安装，一路next。安装完毕后，按住<code>win + R</code>快捷键，输入<code>cmd</code>调出命令行窗口，输入<code>node -v</code>，结果如下图所示，即为安装成功</p>
-<img src="/Hexo/1092497b/nodejs-check.png" title="nodejs验证界面">
-<h2 id="第三步：安装hexo"><a href="#第三步：安装hexo" class="headerlink" title="第三步：安装hexo"></a>第三步：安装hexo</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>新建一个空的文件件，用于存放博客的所有东西，然后进入该文件夹，这些都是用window命令敲，建议使用管理员身份运行，不然可能会报错。可以鼠标右键开始菜单，然后点击<code>命令提示符（管理员）A</code>，通过盘符进入具体盘，然后通过<code>cd</code>命令进入具体目录，博主的目录为：<code>T:\blog</code>，所以执行以下命令即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">T:</span><br><span class="line">cd blog</span><br></pre></td></tr></table></figure>
-<img src="/Hexo/1092497b/cd-dir.png" title="切换目录界面">
-<p>进入目录之后执行以下命令，然后等待下载完毕即可，可能有些慢哦</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo</span><br></pre></td></tr></table></figure>
-<img src="/Hexo/1092497b/install-hexo.png" title="安装hexo界面">
-<p>安装完成后，查看版本：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<p>初始化博客信息，通过执行<code>hexo init</code>命令，即可初始化我们的博客</p>
-<img src="/Hexo/1092497b/hexo-init.png" title="初始化hexo博客界面">
-<p>生成目录解析</p>
-<ul>
-<li>node_modules：依赖包目录</li>
-<li>public：存放的是生成的页面</li>
-<li>scaffolds：命令生成文章等的模板</li>
-<li>source：用命令创建的各种文章</li>
-<li>themes：主题</li>
-<li>_config.yml：整个博客的配置</li>
-<li>db.json：source解析所得到的</li>
-<li>package.json：项目所需模块项目的配置信息</li>
-</ul>
-<h3 id="启动hexo博客"><a href="#启动hexo博客" class="headerlink" title="启动hexo博客"></a>启动hexo博客</h3><p>运行以下命令启动hexo博客，默认端口是4000</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<img src="/Hexo/1092497b/hexo-server.png" title="启动hexo界面">
-<h3 id="访问hexo博客"><a href="#访问hexo博客" class="headerlink" title="访问hexo博客"></a>访问hexo博客</h3><p>浏览器中输入：<a href="http://localhost:4000即可访问安装好的博客，默认效果如下图所示" target="_blank" rel="noopener">http://localhost:4000即可访问安装好的博客，默认效果如下图所示</a></p>
-<img src="/Hexo/1092497b/hexo-blog.png" title="hexo博客界面">
-<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate (hexo g) 生成静态文件</span><br><span class="line">$ hexo server (hexo s) 启动本地服务</span><br><span class="line">$ hexo deploy (hexo d) 提交到远程仓库</span><br><span class="line">$ hexo new page <span class="string">"xx"</span>(hexo n page) 创建页面 </span><br><span class="line">$ hexo new <span class="string">"xx"</span> (hexo n <span class="string">""</span>) 创建文章</span><br><span class="line">$ hexo d -g 生成静态并提交到远程仓库</span><br><span class="line">$ hexo s -g 生成静态文件并启动本地预览</span><br><span class="line">$ hexo clean 清除本地 public 文件</span><br></pre></td></tr></table></figure>
-<h2 id="第四步：申请github帐号"><a href="#第四步：申请github帐号" class="headerlink" title="第四步：申请github帐号"></a>第四步：申请github帐号</h2><h3 id="申请帐号"><a href="#申请帐号" class="headerlink" title="申请帐号"></a>申请帐号</h3><p>已经有账号的直接进入下一步，没有的通过访问github官方网址：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com</a>进行帐号注册。</p>
-<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>帐号注册完毕后，创建一个repo，名称为<code>yourname.github.io</code>, 其中<code>yourname</code>是你的github名称，一定要按照这个规则创建仓库，否则无效，相当于普通仓库，如下：</p>
-<img src="/Hexo/1092497b/new-repo.png" title="选择创建仓库界面">
-<img src="/Hexo/1092497b/create-repo.png" title="创建仓库界面">
-<p>此处博主使用新建的<code>test</code>仓库做演示用</p>
-<img src="/Hexo/1092497b/test-repo.png" title="创建test仓库界面">
-<p>这里有两个地址，一个是 Https，一个是 SSH 。Https 每次提交都需要输入用户名和密码，SSH 只要添加了 SSH key 值，以后提交不需要输入用户名和密码。</p>
-<p>再次强调</p>
-<blockquote>
-<p>  这里创建的仓库名称必须为 username.github.io，username 替换成你的 github 用户名，每个账户有且只有一个仓库用来存放网页静态文件，这里名称是固定的。当创建其他仓库的时候，仓库名称可以自定义。</p>
-</blockquote>
-<h3 id="github配置ssh-key"><a href="#github配置ssh-key" class="headerlink" title="github配置ssh key"></a>github配置ssh key</h3><p>如果知道ssh key的配置或者已经配置过了就可以跳过这段，直接看下一段，执行以下命令.</p>
-<h4 id="生成ssh-key"><a href="#生成ssh-key" class="headerlink" title="生成ssh key"></a>生成ssh key</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "你注册用的邮箱"</span><br></pre></td></tr></table></figure>
-<p>把<code>&quot;你注册用的邮箱&quot;</code>替换成你真实的邮箱，然后点击回车。接着会让你输入文件名，点击回车直接忽略，接着会让输入两次密码，点击两次回车，直接设置为空，不用输入密码 。</p>
-
-<p>创建成功之后，通过如下命令拷贝 ssh key 的内容：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<h4 id="github-添加ssh-key"><a href="#github-添加ssh-key" class="headerlink" title="github 添加ssh key"></a>github 添加ssh key</h4><p>进入添加界面</p>
-<img src="/Hexo/1092497b/github-add-new-ssh-key.png" title="github进入添加ssh-key界面">
-<p>点击<code>NEW SSH key</code>添加，把之前拷贝的内容粘贴到key中，然后点击<code>Add SSH key</code></p>
-<img src="/Hexo/1092497b/github-add-ssh-key.png" title="github添加ssh-key界面">
-<p>添加成功后就可以看到自己添加的ssh key了</p>
-<img src="/Hexo/1092497b/github-ssh-key-list.png" title="github添加ssh-key查看界面">
-<p>验证</p>
-<p>如果验证已经添加成功了呢，在<code>git bash</code>中利用以下命令做测试，中间有一部要输入yes的哦</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<img src="/Hexo/1092497b/git-test-ssh-key.png" title="git验证添加ssh-key界面">
-<h3 id="修改配置信息"><a href="#修改配置信息" class="headerlink" title="修改配置信息"></a>修改配置信息</h3><p>修改站点的配置文件<code>_config.yml</code>，该文件位于站点初始化的目录，博主这里是：<code>T:\blog\_config.yml</code></p>
-<h4 id="修改deploy配置"><a href="#修改deploy配置" class="headerlink" title="修改deploy配置"></a>修改deploy配置</h4><img src="/Hexo/1092497b/hexo-config-deploy.png" title="hexo-deploy配置界面">
-<p>注 ：如上图所示，找到 GitHub 上对应的远程仓库地址，点击右侧复制按钮，把 “<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:<a href="http://username.github.io.git/" target="_blank" rel="noopener">username.github.io.git</a>“ 替换成刚刚复制的远程仓库地址。</p>
-<h4 id="修改site等相关信息"><a href="#修改site等相关信息" class="headerlink" title="修改site等相关信息"></a>修改site等相关信息</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">subtitle:</span></span><br><span class="line"><span class="attr">description:</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">xx</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></span><br><span class="line"><span class="attr">timezone:</span></span><br></pre></td></tr></table></figure>
-<p>注 ：网站名称（title），作者 (author)，语言 (language)</p>
-<p>修改完成后可以重新启动<code>hexo server</code>，然后观察到对应的效果，如果满意，即可进行部署</p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<h4 id="提交到远程仓库"><a href="#提交到远程仓库" class="headerlink" title="提交到远程仓库"></a>提交到远程仓库</h4><p>下载插件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>插件安装完成后，就可以部署了，执行以下命令，即可部署到github上，在github上可以看见我们提交的静态文件了，就可以通过<a href="http://yourname.github.io访问我们的博客了，`yourname`改成你自己的用户名" target="_blank" rel="noopener">http://yourname.github.io访问我们的博客了，`yourname`改成你自己的用户名</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>如果你在运行上述命令是发生了如下错误</p>
-<img src="/Hexo/1092497b/hexo-deploy-error.png" title="hexo部署异常界面">
-<p>那么是因为没有配置git 的用户名和邮箱，执行以下命令配置一下就好了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email "你的github邮箱"</span><br><span class="line">git confgi --global user.name "你的github用户名"</span><br></pre></td></tr></table></figure>
-<p>一定要用github的用户名，这样你的提交才会被统计到，配置完成后，重新部署一次</p>
-<img src="/Hexo/1092497b/hexo-deploy-success.png" title="hexo部署成功界面">
-<p>部署成功后我们去github看一下文件是否上去了（此处仓库名为test仅为演示用），如果上去了就访问一下博客地址：<code>https://yourname.github.io</code>(yourname请换成自己注册的github的用户名)</p>
-<p>如果能访问就是搭建成功了，恭喜！</p>
-<img src="/Hexo/1092497b/hexo-code-deploy-github-success.png" title="hexo代传上传到github成功界面">
-
+        <h2 id="把已有代码纳入Git管理"><a href="#把已有代码纳入Git管理" class="headerlink" title="把已有代码纳入Git管理"></a>把已有代码纳入Git管理</h2><h2 id="新建项目使用Git管理"><a href="#新建项目使用Git管理" class="headerlink" title="新建项目使用Git管理"></a>新建项目使用Git管理</h2>
       
     </div>
     
@@ -556,9 +450,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
-            <a href="/tags/github/" rel="tag"># github</a>
+            <a href="/tags/Git/" rel="tag"># Git</a>
           
         </div>
       
@@ -571,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Git/85076309.html" rel="next" title="Git配置文件作用域及最小可用配置讲解">
-                <i class="fa fa-chevron-left"></i> Git配置文件作用域及最小可用配置讲解
+              <a href="/Java/5169e384.html" rel="next" title="JAVA多线程学习笔记 —— 线程的简介与入门">
+                <i class="fa fa-chevron-left"></i> JAVA多线程学习笔记 —— 线程的简介与入门
               </a>
             
           </div>
@@ -580,10 +472,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/SpringCloud/4dd766a2.html" rel="prev" title="《疯狂SpringCloud 微服务架构实战》学习笔记目录">
-                《疯狂SpringCloud 微服务架构实战》学习笔记目录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -737,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：安装Git"><span class="nav-number">2.</span> <span class="nav-text">第一步：安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步：安装NodeJs"><span class="nav-number">3.</span> <span class="nav-text">第二步：安装NodeJs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载NodeJs"><span class="nav-number">3.1.</span> <span class="nav-text">下载NodeJs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步：安装hexo"><span class="nav-number">4.</span> <span class="nav-text">第三步：安装hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">4.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动hexo博客"><span class="nav-number">4.2.</span> <span class="nav-text">启动hexo博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问hexo博客"><span class="nav-number">4.3.</span> <span class="nav-text">访问hexo博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo常用命令"><span class="nav-number">4.4.</span> <span class="nav-text">hexo常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步：申请github帐号"><span class="nav-number">5.</span> <span class="nav-text">第四步：申请github帐号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#申请帐号"><span class="nav-number">5.1.</span> <span class="nav-text">申请帐号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">5.2.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github配置ssh-key"><span class="nav-number">5.3.</span> <span class="nav-text">github配置ssh key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成ssh-key"><span class="nav-number">5.3.1.</span> <span class="nav-text">生成ssh key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#github-添加ssh-key"><span class="nav-number">5.3.2.</span> <span class="nav-text">github 添加ssh key</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置信息"><span class="nav-number">5.4.</span> <span class="nav-text">修改配置信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改deploy配置"><span class="nav-number">5.4.1.</span> <span class="nav-text">修改deploy配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改site等相关信息"><span class="nav-number">5.4.2.</span> <span class="nav-text">修改site等相关信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">5.5.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成静态文件"><span class="nav-number">5.5.1.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交到远程仓库"><span class="nav-number">5.5.2.</span> <span class="nav-text">提交到远程仓库</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#把已有代码纳入Git管理"><span class="nav-number">1.</span> <span class="nav-text">把已有代码纳入Git管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建项目使用Git管理"><span class="nav-number">2.</span> <span class="nav-text">新建项目使用Git管理</span></a></li></ol></div>
             
 
           </div>
@@ -914,9 +802,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.bporcv.com/Hexo/1092497b.html';
-          this.page.identifier = 'Hexo/1092497b.html';
-          this.page.title = '三分钟利用Github配合Hexo搭建博客';
+          this.page.url = 'http://www.bporcv.com/Git/f55b47bd.html';
+          this.page.identifier = 'Git/f55b47bd.html';
+          this.page.title = '创建第一个仓库并配置Local用户信息';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
