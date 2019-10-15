@@ -79,18 +79,26 @@
 
 
 
-<meta name="description" content="把已有代码纳入Git管理新建项目使用Git管理">
+<meta name="description" content="工欲善其事必先利其器  经过Git简介与安装以及Git配置文件作用域及最小可用配置讲解，我们已经为Git的准备做足了功课。下面我们将来介绍如何创建第一个仓库并利用之前的学习到的Git配置文件的作用域来指定本仓库的配置。 实验环境 Windows10 Git 2.9.0  新建第一个Git仓库使用以下步骤可以新建一个Git仓库  进入系统中某个盘，本文进入G盘，读者可相应的改变  新建一个文件夹，">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建第一个仓库并配置Local用户信息">
 <meta property="og:url" content="http://www.bporcv.com/Git/f55b47bd.html">
 <meta property="og:site_name" content="太度">
-<meta property="og:description" content="把已有代码纳入Git管理新建项目使用Git管理">
+<meta property="og:description" content="工欲善其事必先利其器  经过Git简介与安装以及Git配置文件作用域及最小可用配置讲解，我们已经为Git的准备做足了功课。下面我们将来介绍如何创建第一个仓库并利用之前的学习到的Git配置文件的作用域来指定本仓库的配置。 实验环境 Windows10 Git 2.9.0  新建第一个Git仓库使用以下步骤可以新建一个Git仓库  进入系统中某个盘，本文进入G盘，读者可相应的改变  新建一个文件夹，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-14T15:34:09.641Z">
+<meta property="og:image" content="http://www.bporcv.com/Git/f55b47bd/git-init-repository.png">
+<meta property="og:image" content="http://www.bporcv.com/Git/f55b47bd/git-add-config.png">
+<meta property="og:image" content="http://www.bporcv.com/Git/f55b47bd/git-config-through.png">
+<meta property="og:image" content="http://www.bporcv.com/Git/f55b47bd/git-config-file.png">
+<meta property="og:image" content="http://www.bporcv.com/Git/f55b47bd/git-update-config.png">
+<meta property="og:image" content="http://www.bporcv.com/Git/f55b47bd/git-delete-config.png">
+<meta property="og:image" content="http://www.bporcv.com/Git/f55b47bd/git-config-help.png">
+<meta property="og:updated_time" content="2019-10-15T16:06:25.392Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="创建第一个仓库并配置Local用户信息">
-<meta name="twitter:description" content="把已有代码纳入Git管理新建项目使用Git管理">
+<meta name="twitter:description" content="工欲善其事必先利其器  经过Git简介与安装以及Git配置文件作用域及最小可用配置讲解，我们已经为Git的准备做足了功课。下面我们将来介绍如何创建第一个仓库并利用之前的学习到的Git配置文件的作用域来指定本仓库的配置。 实验环境 Windows10 Git 2.9.0  新建第一个Git仓库使用以下步骤可以新建一个Git仓库  进入系统中某个盘，本文进入G盘，读者可相应的改变  新建一个文件夹，">
+<meta name="twitter:image" content="http://www.bporcv.com/Git/f55b47bd/git-init-repository.png">
 
 
 
@@ -404,7 +412,54 @@
       
 
       
-        <h2 id="把已有代码纳入Git管理"><a href="#把已有代码纳入Git管理" class="headerlink" title="把已有代码纳入Git管理"></a>把已有代码纳入Git管理</h2><h2 id="新建项目使用Git管理"><a href="#新建项目使用Git管理" class="headerlink" title="新建项目使用Git管理"></a>新建项目使用Git管理</h2>
+        <blockquote>
+<p>工欲善其事必先利其器</p>
+</blockquote>
+<p>经过<a href="/Git/a21830fd.html">Git简介与安装</a>以及<a href="/Git/85076309.html">Git配置文件作用域及最小可用配置讲解</a>，我们已经为Git的准备做足了功课。下面我们将来介绍如何<code>创建第一个仓库</code>并利用之前的学习到的<code>Git配置文件的作用域</code>来指定本仓库的配置。</p>
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><ul>
+<li>Windows10</li>
+<li>Git 2.9.0</li>
+</ul>
+<h2 id="新建第一个Git仓库"><a href="#新建第一个Git仓库" class="headerlink" title="新建第一个Git仓库"></a>新建第一个Git仓库</h2><p>使用以下步骤可以新建一个Git仓库</p>
+<ul>
+<li><p>进入系统中某个盘，本文进入G盘，读者可相应的改变</p>
+</li>
+<li><p>新建一个文件夹，保证新建的文件夹内无任何文件，包括隐藏文件</p>
+</li>
+<li>执行<code>git init</code>命令即可初始化一个Git仓库</li>
+</ul>
+<a id="more"></a>
+<p>由于本Git系列的文章都是通过使用<code>GitBash</code>来对命令进行操作的。所以上述步骤转换为命令操作即是：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> git命令进入盘符采用这种方式，类似于Linux的目录结构</span><br><span class="line">cd /g </span><br><span class="line"><span class="meta">#</span> 在G:盘下新建一个目录git-learning</span><br><span class="line">mkdir git-learning</span><br><span class="line"><span class="meta">#</span> 切换到git-learning目录下，即进入git-learning目录</span><br><span class="line">cd git-learning</span><br><span class="line"><span class="meta">#</span> 开始使用git命令了，git status 标识查看当前目录下是否存在一个仓库</span><br><span class="line">git status</span><br><span class="line"><span class="meta">#</span> 如果出现[fatal: Not a git repository (or any of the parent directories): .git]提示</span><br><span class="line"><span class="meta">#</span> 说明不存在仓库，使用git init命令初始化仓库，执行完后会有如下提示：</span><br><span class="line"><span class="meta">#</span> [Initialized empty Git repository in G:/git-learning/.git/]</span><br><span class="line">git init </span><br><span class="line"><span class="meta">#</span> 再次查看当前目录是否存在一个git仓库，</span><br><span class="line">git status</span><br></pre></td></tr></table></figure></p>
+<p>如果你已经执行了上述的命令，并且执行结果如下图所示，图中也对每一句代表了什么信息做了详细的解释说明。那么恭喜你，你已经成功的初始化了一个仓库。<br><img src="/Git/f55b47bd/git-init-repository.png" title="git初始化仓库"></p>
+<h2 id="配置仓库级别（Local）的用户信息"><a href="#配置仓库级别（Local）的用户信息" class="headerlink" title="配置仓库级别（Local）的用户信息"></a>配置仓库级别（Local）的用户信息</h2><p>Git中的配置文件作用域已经在上一讲中做出了说明，如果有不明白的可以去看<a href="/Git/85076309.html">Git配置文件作用域及最小可用配置讲解</a>，那么这里将证明一下Git配置的作用域，将配置<code>global</code>级别和<code>local</code>级别的作用域配置，采用最小配置，即：<code>user.name</code>以及<code>user.email</code>，分别使用以下配置（这里只做模拟说明使用，具体请读者按照需求配置）：</p>
+<ul>
+<li>global<ul>
+<li>user.name：<code>globalUser</code></li>
+<li>user.email：<a href="mailto:`globalUser@gmail.com" target="_blank" rel="noopener">`globalUser@gmail.com</a>`</li>
+</ul>
+</li>
+<li>local<ul>
+<li>user.name：<code>localUser</code></li>
+<li>user.email：<a href="mailto:`localUser@gmail.com" target="_blank" rel="noopener">`localUser@gmail.com</a>`</li>
+</ul>
+</li>
+</ul>
+<h3 id="新增配置"><a href="#新增配置" class="headerlink" title="新增配置"></a>新增配置</h3><p>执行以下命令即可完成配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name globalUser</span><br><span class="line">git config --global user.email globalUser@gmail.com</span><br><span class="line">git config --local user.name localUser</span><br><span class="line">git config --local user.email localUser@gmail.com</span><br></pre></td></tr></table></figure>
+<p>如果像下面的截图一样，没有任何输出，那么恭喜你，配置成功了</p>
+<img src="/Git/f55b47bd/git-add-config.png" title="git配置global和local信息">
+<h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><p>配置完成后，我们来查看配置是否采用了<code>就近原则</code></p>
+<img src="/Git/f55b47bd/git-config-through.png" title="查看git配置global和local信息">
+<p>可能通过上图你说，你怎么知道用<code>local</code>就是这个仓库的配置文件呢，那么我先剧透一下，git本仓库的配置文件位于当前仓库根目录下的<code>.git/config</code>文件中，在本例因为仓库位于<code>G:/git-learning/</code>目录下，所以，这个完整的配置文件路径就是<code>G:/git-learning/.git/conf</code>，那么让我们查看一下这个文件，来证明我们这个是对的，当然，知道了文件的位置，那么就可以手动编辑，要知道语法哦，简单分析一下就知道了，这里就不在赘述了。</p>
+<img src="/Git/f55b47bd/git-config-file.png" title="查看config文件来查看git配置信息">
+<h3 id="更新配置"><a href="#更新配置" class="headerlink" title="更新配置"></a>更新配置</h3><p>更新配置很简单，只需要运行前面新增配置中的命令即可，git就会帮你覆盖掉之前的配置，下面做个简单的演示，将local的<code>user.name</code>修改为<code>localUserUpdate</code></p>
+<img src="/Git/f55b47bd/git-update-config.png" title="更新git配置信息">
+<h3 id="删除配置"><a href="#删除配置" class="headerlink" title="删除配置"></a>删除配置</h3><p>这里说一下删除配置项的原因，因为git不会帮你检查你输入的配置项是否正确，那么我们很可能输入错误，比如将<code>user.name</code>输错成<code>user.mame</code>，那么git也是给我们提供了删除配置的命令，这个命令就是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --unset 你的配置信息</span><br></pre></td></tr></table></figure>
+<p>下面演示一下：</p>
+<img src="/Git/f55b47bd/git-delete-config.png" title="刪除git配置信息">
+<h3 id="命令拾遗"><a href="#命令拾遗" class="headerlink" title="命令拾遗"></a>命令拾遗</h3><p>当我们不知道一个命令怎么用的时候，我们可以直接在git中输入这个命令，就会给我们提示，如我们输入<code>git config</code>命令，git的人性化的提示信息就出现了，关于这块，后面会专门出一篇如何使用git的提示信息的博文，敬请期待</p>
+<img src="/Git/f55b47bd/git-config-help.png" title="查看git config配置帮助">
       
     </div>
     
@@ -625,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#把已有代码纳入Git管理"><span class="nav-number">1.</span> <span class="nav-text">把已有代码纳入Git管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建项目使用Git管理"><span class="nav-number">2.</span> <span class="nav-text">新建项目使用Git管理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验环境"><span class="nav-number">1.</span> <span class="nav-text">实验环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建第一个Git仓库"><span class="nav-number">2.</span> <span class="nav-text">新建第一个Git仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置仓库级别（Local）的用户信息"><span class="nav-number">3.</span> <span class="nav-text">配置仓库级别（Local）的用户信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增配置"><span class="nav-number">3.1.</span> <span class="nav-text">新增配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看配置"><span class="nav-number">3.2.</span> <span class="nav-text">查看配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新配置"><span class="nav-number">3.3.</span> <span class="nav-text">更新配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除配置"><span class="nav-number">3.4.</span> <span class="nav-text">删除配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令拾遗"><span class="nav-number">3.5.</span> <span class="nav-text">命令拾遗</span></a></li></ol></li></ol></div>
             
 
           </div>

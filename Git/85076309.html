@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个最小配置，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。 Git的最小配置12git config --global user.name &apos;yourname&apos;git config --globa">
+<meta name="description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个最小配置，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。 实验环境 Windows10 Git 2.9.0  Git的最小配置12git config --global user.name &apos;y">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git配置文件作用域及最小可用配置讲解">
 <meta property="og:url" content="http://www.bporcv.com/Git/85076309.html">
 <meta property="og:site_name" content="太度">
-<meta property="og:description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个最小配置，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。 Git的最小配置12git config --global user.name &apos;yourname&apos;git config --globa">
+<meta property="og:description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个最小配置，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。 实验环境 Windows10 Git 2.9.0  Git的最小配置12git config --global user.name &apos;y">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.bporcv.com/Git/85076309/git-system-config-path.png">
-<meta property="og:updated_time" content="2019-10-14T14:39:18.493Z">
+<meta property="og:updated_time" content="2019-10-15T15:07:21.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git配置文件作用域及最小可用配置讲解">
-<meta name="twitter:description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个最小配置，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。 Git的最小配置12git config --global user.name &apos;yourname&apos;git config --globa">
+<meta name="twitter:description" content="工欲善其事必先利其器  这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个最小配置，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。 实验环境 Windows10 Git 2.9.0  Git的最小配置12git config --global user.name &apos;y">
 <meta name="twitter:image" content="http://www.bporcv.com/Git/85076309/git-system-config-path.png">
 
 
@@ -410,6 +410,10 @@
 <p>工欲善其事必先利其器</p>
 </blockquote>
 <p>这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个<code>最小配置</code>，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。</p>
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><ul>
+<li>Windows10</li>
+<li>Git 2.9.0</li>
+</ul>
 <h2 id="Git的最小配置"><a href="#Git的最小配置" class="headerlink" title="Git的最小配置"></a>Git的最小配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name 'yourname'</span><br><span class="line">git config --global user.email 'youremail'</span><br></pre></td></tr></table></figure>
 <h3 id="配置解释"><a href="#配置解释" class="headerlink" title="配置解释"></a>配置解释</h3><p>第一点：作用域</p>
 <p><code>global</code> ：global意指全局作用域，即在没有配置其他作用域的情况下，当前系统登录用户所建的所有仓库的配置信息</p>
@@ -716,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git的最小配置"><span class="nav-number">1.</span> <span class="nav-text">Git的最小配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置解释"><span class="nav-number">1.1.</span> <span class="nav-text">配置解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置作用域"><span class="nav-number">2.</span> <span class="nav-text">配置作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统级别（system）"><span class="nav-number">2.1.</span> <span class="nav-text">系统级别（system）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局级别（global）"><span class="nav-number">2.2.</span> <span class="nav-text">全局级别（global）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仓库级别（local）"><span class="nav-number">2.3.</span> <span class="nav-text">仓库级别（local）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置优先级"><span class="nav-number">3.</span> <span class="nav-text">配置优先级</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验环境"><span class="nav-number">1.</span> <span class="nav-text">实验环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git的最小配置"><span class="nav-number">2.</span> <span class="nav-text">Git的最小配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置解释"><span class="nav-number">2.1.</span> <span class="nav-text">配置解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置作用域"><span class="nav-number">3.</span> <span class="nav-text">配置作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统级别（system）"><span class="nav-number">3.1.</span> <span class="nav-text">系统级别（system）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局级别（global）"><span class="nav-number">3.2.</span> <span class="nav-text">全局级别（global）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仓库级别（local）"><span class="nav-number">3.3.</span> <span class="nav-text">仓库级别（local）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置优先级"><span class="nav-number">4.</span> <span class="nav-text">配置优先级</span></a></li></ol></div>
             
 
           </div>
