@@ -1,24 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2Funcategorized%2F0.html</url>
-    <content type="text"><![CDATA[Hadoop安装[TOC] 下载https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/stable/ 单机模式 &lt;configuration&gt; &lt;property&gt; &lt;name&gt;fs.defaultFS&lt;/name&gt; &lt;value&gt;hdfs://localhost:9000&lt;/value&gt; &lt;/property&gt; &lt;/configuration&gt; &lt;configuration&gt; &lt;property&gt; &lt;name&gt;dfs.replication&lt;/name&gt; &lt;value&gt;1&lt;/value&gt; &lt;/property&gt; &lt;/configuration&gt; 集群模式]]></content>
+    <title><![CDATA[Java面试题]]></title>
+    <url>%2Funcategorized%2Fa7ef9c4d.html</url>
+    <content type="text"><![CDATA[[ ] 1.进制转换 [ ] 2.溢出处理 [ ] 3.类型转换 低 –&gt; 高 (自动转换) ​ byte -&gt; short -&gt; int -&gt; long ， ​ float -&gt; double ​ 高 –&gt; 低 （强制类型转换） ​ long -&gt; int -&gt; short -&gt; byte ​ double -&gt; float [ ] 变量 变量作用域]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>%2Funcategorized%2F0.html</url>
+    <title><![CDATA[Hadoop安装]]></title>
+    <url>%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%2FHadoop%2Fc4538d30.html</url>
+    <content type="text"><![CDATA[Hadoop安装[TOC] 下载https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/stable/ 单机模式 &lt;configuration&gt; &lt;property&gt; &lt;name&gt;fs.defaultFS&lt;/name&gt; &lt;value&gt;hdfs://localhost:9000&lt;/value&gt; &lt;/property&gt; &lt;/configuration&gt; &lt;configuration&gt; &lt;property&gt; &lt;name&gt;dfs.replication&lt;/name&gt; &lt;value&gt;1&lt;/value&gt; &lt;/property&gt; &lt;/configuration&gt;]]></content>
+      <categories>
+        <category>大数据</category>
+        <category>Hadoop</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+        <tag>Hadoop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jenkins使用pipline构建Maven项目]]></title>
+    <url>%2F%E5%B7%A5%E5%85%B7%2FJenkins%2F4a5e8db3.html</url>
     <content type="text"><![CDATA[Jenkins使用pipline构建Maven项目[TOC] 拉取Git远程仓库以上代码非常简单,通过使用git关键字,配置credentialsId和url后Jenkins就可以拉取远程git仓库代码了.Url很好理解,即为远程仓库的地址.这里比较费解的是credentialsId是什么,如何设置它?其实也非常简单,前面讲自由式任务的时候我们讲过如何在jenkins里添加添加一个git用户名和密码,这里的credentialsId即为我们创建的包含用户名和密码的用户信息的id(这个id是jenkins自动生成的)这里通过这个id,Jenkins便可以找到这个用户名和密码. 创建一个用户名和密码要创建一个用户名和密码也不是非常复杂,我们在Jenkins主面板左侧导航面板里找到Credentials,点击进入,便可以看到以下一个面板 这里左侧Credentials下面有一个System我们点击一下,此时面板中央位置如下图 我们点击这个链接进入,此时左侧会出现一个添加Credentials按钮 点击便会出现一个可以设置用户名和密码的界面 如上图示,Kind使用默认的,添加一个用户名和密码.然后添加用户名和密码,此时id可以手输入,如果留空则Jenkins会自动生成一个.Description为一个简短描述,用户名和密码很多时方便区分. 添加成功后我们想要看到这条记录的id,点击板右侧的搬手螺丝刀图标就可以看到id了.我们把这个id复制到 PipeLine里credentialsId 添加一个ssh key使用用户名和密码容易泄密,实际工作中常常使用ssh方式登陆,这里对如何生成ssh key,如何在远程仓库中添加公钥不再赘述,不熟悉的童鞋可以参考前面章节或者官方帮助文档以及在互联网上搜索相关材料.这里介绍下如何把ssh 私钥添加到Jenkins里,以便Jenkins使用ssh连接远程仓库. 添加私钥类似以上添加用户名密码,只是添加用户名密码时Kind选项使用的是默认的选择,这里Kind下拉一下,选择SSH username with private key,用户名即为你的git账户用户名,private key勾选Enter directly把我们本机的私钥添复制到框里面. 需要注意的是ssh和http地址是不一样的,一定要注意. 把代码拉到指定位置Jenkins默认会的把项目拉到Jenkins安装目录下Workspace+项目名的目录下面,很多时候由于一些原因我们可能希望改变这一行为,把项目拉到自定义的一个目录下面,这时候可以使用dir函数,然后把要执行的代码写在dir函数代码块内.示例代码如下 node{ stage(&quot;check out&quot;){ dir(&quot;projdir&quot;){ git credentialsId: &#39;3c210def-c000-4e2a-9b2d-838986a6b172&#39;, url: &#39;https://github.com/mrtylerzhou/gitShow.git&#39; } } } 以上语句执行后,可以看到jenkins会把代码拉到Workspace+项目名+projdir的目录下,当然也可以指定绝对路径. 拉取指定分支的代码 node { stage(&#39;Source&#39;) { git branch: &#39;master&#39;, credentialsId: &#39;GitHubAccess&#39;, url: &#39;https://github.com/cookcodeblog/my-private-project.git&#39; } }]]></content>
+      <categories>
+        <category>工具</category>
+        <category>Jenkins</category>
+      </categories>
+      <tags>
+        <tag>Jenkins</tag>
+        <tag>pipline</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java安装]]></title>
+    <url>%2F%E8%BF%90%E7%BB%B4%2FLinux%2FCentOS%2Fc032fe54.html</url>
+    <content type="text"><![CDATA[Java安装[TOC] 获取安装包百度网盘： 链接：https://pan.baidu.com/s/1FO_YHabi7vmRLL3dZZMrxw提取码：fka2 上传并解压安装包将下载的安装包上传到服务器，可以用过xftp上传，或者rz命令（需要提前安装lrzsz，yum install lrzsz） 本安装包目录：/home 设置环境变量软件安装目录：/usr/local/java 移动解压后的软件包到软件安装目录 mv jdk1.8.0_131/ /usr/local/java 编辑/etc/profiles文件，添加java环境变量到文件末尾 export JAVA_HOME=/usr/local/java export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 使环境变量生效 source /etc/profiles 验证安装结果，输入以下命令查看结果，如果当前终端没生效，请重新打开个终端窗口 javac]]></content>
+      <categories>
+        <category>运维</category>
+        <category>Linux</category>
+        <category>CentOS</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Cent OS</tag>
+      </tags>
   </entry>
   <entry>
     <title></title>
-    <url>%2Funcategorized%2F0.html</url>
-    <content type="text"><![CDATA[Java安装[TOC] 获取安装包百度网盘： 链接：https://pan.baidu.com/s/1FO_YHabi7vmRLL3dZZMrxw提取码：fka2 上传并解压安装包将下载的安装包上传到服务器，可以用过xftp上传，或者rz命令（需要提前安装lrzsz，yum install lrzsz） 本安装包目录：/home 设置环境变量软件安装目录：/usr/local/java 移动解压后的软件包到软件安装目录 mv jdk1.8.0_131/ /usr/local/java 编辑/etc/profiles文件，添加java环境变量到文件末尾 export JAVA_HOME=/usr/local/java export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 使环境变量生效 source /etc/profiles 验证安装结果，输入以下命令查看结果，如果当前终端没生效，请重新打开个终端窗口 javac]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[Java基础语法]]></title>
     <url>%2F%E5%90%8E%E7%AB%AF%2FJava%2Fea538f2a.html</url>
-    <content type="text"><![CDATA[Java基础语法[TOC] 注释 单行注释 // 单行注释 多行注释 /* 多行注释 第一行注释 第二行注释 */ 文档注释 标识符关键字数据类型数据转换常量变量运算符包机制JavaDoc]]></content>
+    <content type="text"><![CDATA[Java基础语法[TOC] 注释 单行注释 // 单行注释 多行注释 /* 多行注释 第一行注释 第二行注释 */ 多行注释禁止嵌套 文档注释 /** * 这是文档注释， */ 文档注释以/**开头，*/结尾，中间可以使用javadoc的描述。 关键字 abstract assert boolean break byte case catch char class const continue default do double else enum extends final finally float for goto if implements import instanceof int interface long native new package private protected pubic return strictfp short static super switch synchronized this throw throws transient try void volatile while 标识符标识符注意事项 定义标识符时，第一个字符要以字母（aA-zZ），美元符号（$），或者下划线(_）开头 首字母之后可以是字母（aA-zZ），美元符号（$）,下划线（_）或数字的任何字符组合 不能使用关键字作为变量名或者方法名 标识符大小写敏感，定义相同，大小写不同的将被视为不同的标识符 可以使用中文命名，一般不建议这样去使用，也不建议使用拼音命名。 数据类型基本类型(primitive type) 数值类型 java类型 字节长度 取值范围 byte 1 -128~127 short 2 -32768~32767 int 4 long 8 -92233 浮点类型 | java类型 | 字节长度 | 取值范围 || ——– | ——– | ——– || float | 4 | || double | 8 | | 字符类型 char 1字节 boolean类型 取值只为true，false 引用类型(reference type)类 接口 数组 补充： 字节 面试： 进制 值溢出的处理方式 数据转换常量变量运算符包机制JavaDoc]]></content>
       <categories>
         <category>后端</category>
         <category>Java</category>
@@ -39,11 +69,15 @@
   <entry>
     <title><![CDATA[Java开发环境搭建]]></title>
     <url>%2F%E5%90%8E%E7%AB%AF%2FJava%2F77a3ba8f.html</url>
-    <content type="text"><![CDATA[Java开发环境搭建[TOC] 开发环境版本 操作系统: Windows10 Java : 1.8.141 开发IDE: IDEA 2020.1.2 Git: 2.27.0 Java环境搭建下载java要想使用java，需要进行java开发环境的搭建，在Win10的基础上，我们需要下载java安装包，并配置系统环境变量，有以下几种方式进行下载安装。 官网地址： https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html 下载地址： https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-windows-x64.exe 依旧系统版本选择对应的java进行下载，因为现在下载都需要注册账号了，如果不想注册账户或者网速过慢，可以从我的网盘中进行下载 链接：https://pan.baidu.com/s/1tFNCcjAQWBR2AxnG0hZi7A提取码：i3rv 安装Java双击下载的软件安装包即可，会出现下述界面，点击下一步，进入下一步的安装 选择安装位置，记住安装的位置，等下要用，建议不要装到中文路径下，然后点击下一步 进入安装环节，等待安装完成，接下来会弹出jre的安装界面，点击下一步 同样记住jre的安装目录，点击下一步 jre安装进度，等待jre安装完成 安装完成后会出现如下界面，然后直接关闭即可。 关闭上述窗口后，安装过程也就算了完成了。 配置环境变量以管理员身份打开cmd窗口输入javac命令，如果如下图所示，则说明没有配置好环境变量 需要配置如下环境变量，打开win10的控制面板 点击系统，点击之后找到高级系统设置 点击高级系统设置，选择环境变量 在系统变量下面，选择新建如下系统变量 新建JAVA_HOME（之前JDK安装的目录） C:\Program Files\Java\jdk1.8.0_251 新建CLASSPATH（检查jar包的调用） 下面的值为固定值，前面有.符号，结尾有分号，直接拷贝即可 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; 编辑path系统变量 新建如下两条路径 %JAVA_HOME%\bin %JAVA_HOME%\jre\bin 配置完成后一路确定就ok了。 验证环境变量为了防止cmd终端缓存，需要关闭之前的窗口，新打开个窗口，再次输入javac命令，如果出现如下所示的说明，即说明环境变量配置成功了，就可以进行java的开发了。 我们还可以通过java -version，命令来查看安装的版本是否正确。 到此，java环境就搭建完成了，java开发环境还需要在IDEA中进行配置才行。 Java开发搭建在IDEA中配置Java第一种，在初始界面选择Configure，然后选择Structure for New Project，然后设置jdk版本 设置jdk版本为我们刚才安装的版本， 还有语言等级，如果有多个版本，选择自己喜欢的就好。 设置完成后即可 第二种，新建项目的时候设置 选择新建项目 选择java项目，选择JDK版本，选择Next 设置项目信息，如果出现下面的步骤，直接跳过，这里就是创建一个简单的java程序，点击Next 输入项目名称，点击Finish即可，如果出现提示框，可以直接点击OK 编写一个HelloWorld程序，进行测试，测试OK，Java开发环境就搭建OK了]]></content>
+    <content type="text"><![CDATA[Java开发环境搭建[TOC] 开发环境版本 操作系统: Windows10 Java : 1.8.141 开发IDE: IDEA 2020.1.2 Git: 2.27.0 Java环境搭建下载java要想使用java，需要进行java开发环境的搭建，在Win10的基础上，我们需要下载java安装包，并配置系统环境变量，有以下几种方式进行下载安装。 官网地址： https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html 下载地址： https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-windows-x64.exe 依旧系统版本选择对应的java进行下载，因为现在下载都需要注册账号了，如果不想注册账户或者网速过慢，可以从我的网盘中进行下载 链接：https://pan.baidu.com/s/1tFNCcjAQWBR2AxnG0hZi7A提取码：i3rv 安装Java双击下载的软件安装包即可，会出现下述界面，点击下一步，进入下一步的安装 选择安装位置，记住安装的位置，等下要用，建议不要装到中文路径下，然后点击下一步 进入安装环节，等待安装完成，接下来会弹出jre的安装界面，点击下一步 同样记住jre的安装目录，点击下一步 jre安装进度，等待jre安装完成 安装完成后会出现如下界面，然后直接关闭即可。 关闭上述窗口后，安装过程也就算了完成了。 配置环境变量以管理员身份打开cmd窗口输入javac命令，如果如下图所示，则说明没有配置好环境变量 需要配置如下环境变量，打开win10的控制面板 点击系统，点击之后找到高级系统设置 点击高级系统设置，选择环境变量 在系统变量下面，选择新建如下系统变量 新建JAVA_HOME（之前JDK安装的目录） C:\Program Files\Java\jdk1.8.0_251 新建CLASSPATH（检查jar包的调用） 下面的值为固定值，前面有.符号，结尾有分号，直接拷贝即可 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; 编辑path系统变量 新建如下两条路径 %JAVA_HOME%\bin %JAVA_HOME%\jre\bin 配置完成后一路确定就ok了。 验证环境变量为了防止cmd终端缓存，需要关闭之前的窗口，新打开个窗口，再次输入javac命令，如果出现如下所示的说明，即说明环境变量配置成功了，就可以进行java的开发了。 我们还可以通过java -version，命令来查看安装的版本是否正确。 到此，java环境就搭建完成了，java开发环境还需要在IDEA中进行配置才行。 Java开发搭建在IDEA中配置Java方式一：项目结构配置在初始界面选择Configure，然后选择Structure for New Project，然后设置jdk版本 设置jdk版本为我们刚才安装的版本， 还有语言等级，如果有多个版本，选择自己喜欢的就好。 设置完成后即可 方式二：新建项目配置选择新建项目 选择java项目，选择JDK版本，选择Next 设置项目信息，如果出现下面的步骤，直接跳过，这里就是创建一个简单的java程序，点击Next 输入项目名称，点击Finish即可，如果出现提示框，可以直接点击OK 编写一个HelloWorld程序，进行测试，测试OK，Java开发环境就搭建OK了]]></content>
       <categories>
         <category>后端</category>
         <category>Java</category>
       </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java环境变量</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java简介]]></title>
@@ -332,7 +366,7 @@
   <entry>
     <title><![CDATA[《编程利器——IDEA》]]></title>
     <url>%2F%E5%B7%A5%E5%85%B7%2FIDEA%2Fa44a05a2.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 IDEA 01_IDEA简介与安装02_Git简介与安装]]></content>
+    <content type="text"><![CDATA[工欲善其事必先利其器 IDEA 01_IDEA简介与安装]]></content>
       <categories>
         <category>工具</category>
         <category>IDEA</category>
@@ -368,7 +402,7 @@
   <entry>
     <title><![CDATA[《白话系列之-Git》]]></title>
     <url>%2F%E5%B7%A5%E5%85%B7%2FGit%2Fa44a05a2.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 Git作为当前最流行的版本控制工具，以其分布式，独特的分支管理方式闻名于众多开发者心中，是目前主流的版本管理工具，我们所熟知的全球闻名的同性交友社区Github就是依赖Git而打造的。依赖Git的设计哲学，也衍生出了很多好用的工具，如Github，Gitlab，码云等代码托管平台，也造就了SourceTree，Git客户端等强大的图形化界面，但是真正的高手都是通过黑窗口和命令来提现出自己的不凡，同样这也是客户端所不能带来的高度自由的用户体验。本系列将以白话文的形式来对Git设计哲学进行解读，对其原来的概念，理论，命令，配合以实战的方式来进行说明，分为以下几章，循序渐进，由浅入深，一一道来。 01_Git简介与安装01_Git简介与安装]]></content>
+    <content type="text"><![CDATA[工欲善其事必先利其器 Git作为当前最流行的版本控制工具，以其分布式，独特的分支管理方式闻名于众多开发者心中，是目前主流的版本管理工具，我们所熟知的全球闻名的同性交友社区Github就是依赖Git而打造的。依赖Git的设计哲学，也衍生出了很多好用的工具，如Github，Gitlab，码云等代码托管平台，也造就了SourceTree，Git客户端等强大的图形化界面，但是真正的高手都是通过黑窗口和命令来提现出自己的不凡，同样这也是客户端所不能带来的高度自由的用户体验。本系列将以白话文的形式来对Git设计哲学进行解读，对其原来的概念，理论，命令，配合以实战的方式来进行说明，分为以下几章，循序渐进，由浅入深，一一道来。 初级01_Git简介与安装02_Git配置文件03_Git仓库初始化04_Git工作空间概念介绍 进阶git branch git tag git与remote git版本回退 ​ revert , restHead git-log git-flow git-rebase与git-merge git reflog 高级git版本回退原理 git merge 原理]]></content>
       <categories>
         <category>工具</category>
         <category>Git</category>
