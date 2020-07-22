@@ -1,491 +1,1103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Kettle简介]]></title>
-    <url>%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%2FKettle%2Fed3f6737.html</url>
-    <content type="text"><![CDATA[[TOC] KettleKettle是一种ETL（Extract-Transform-Load的缩写，即数据抽取，转换，装载的过程）工具，是一款国外开源的ETL攻击，纯Java语言编写，可以在Windows、Linux、Unix上运行，免安装，数据抽取高效稳定。 Kettle现在已经更名为PDI（Pentao Data Integration）Pentaho数据集成。 Kettle的两个核心组件transformation​ transformation完成针对数据的基础转换 job​ job是用来完成整个工作流程的控制。 Kettle的结构 Spoon​ Spoon是构建ETL Jobs和transformation的工具，以拖拽和图形化展示Kettle组件的设计方式，能过通过spoon调用专用的数据集成引擎或者集群。 Data Integration Server​ Data Integration Server是一个专用的ETL Server，主要包含以下几个功能 功能 描述 执行 通过Pentaho Data Integration引擎执行ETL的作业或者转换 安全性 管理用户、角色或集成的安全性 内容管理 提供一个集中的资源库，用来管理ETL的作业和转换。资源库包含所有内容和特征的历史版本 时序安排 在spoon设计者环境中提供管理Data Integration Server上的活动的时序和监控的服务 Enterprise Console​ Entreprise Console（企业控制台）提供了一个小型的客户端，用于管理Pentaho Data Integration企业版的部署。 ​ 包括企业版的证书管理、监控和控制远程Pentaho Data Integration服务器上的活动、分析已登记的作业和转换的动态绩效。 Kettle的核心组件 名称 描述 Spoon 通过图形接口，用于编辑作业和转换的桌面应用 Pan 一个独立的命令行程序，用于执行由Spoon编辑的转换和作业 Kitchen 一个独立的命令行程序，用于执行由Spoon编辑的作业 Carte Carte是一个轻量级的Web容器，用于建立专用、远程的ETL Server Kettle的概念模型 Kettle的下载官方下载网址：https://community.hitachivantara.com/s/article/data-integration-kettle 下载链接：https://sourceforge.net/projects/pentaho/files/latest/download?aliId=137249511 文件比较大，可能需要科学上网，我已经下载了，可以去百度网盘进行下载 链接：https://pan.baidu.com/s/1MzuZNgp76dIAUx093SySig提取码：sfzg Kettle文件目录结构|-- classes 生命周期监听、注册表扩展、日志的配置文件 |-- Data Integration.app 数据集成应用 |-- Data Service JDBC Driver 驱动数据服务的JDBC程序包 |-- docs kettle说明文档 |-- launcher Kettle的启动配置 |-- lib 支持库的依赖jar包 |-- libswt Kettle图形库的jar包 |-- plugins Kettle的插件目录 |-- pwd Kettle集群配置文件 |-- samples Kettle使用示例文档，包括job和transformation |-- simple-jndi jndi的连接配置 |-- system 系统目录 |-- ui 软件界面目录 |-- Carte.bat 启动Carte集群的windows命令 |-- carte.sh 启动Carte集群的linux命令 |-- Encr.bat kettle提供的加密算法的Windows命令 |-- encr.sh kettle提供的加密算法的Linux命令 |-- Import.bat 导入的Windows命令 |-- import.sh 导入的Linux命令 |-- import-rules.xml |-- Kitchen.bat 用来运行job的Windows命令 |-- kitchen.sh 用来运行job的Linux命令 |-- LICENSE.txt |-- Pan.bat 用来运行转换的Windows命令 |-- pan.sh 用来运行转换的Linux命令 |-- PentahoDataIntegration_OSS_Licenses.html |-- purge-utility.bat |-- purge-utility.sh |-- README.txt |-- README-spark-app-builder.txt |-- runSamples.bat |-- runSamples.sh |-- set-pentaho-env.bat 设置环境变量的Windows命令 |-- set-pentaho-env.sh 设置环境变量的Linux命令 |-- Spark-app-builder.bat |-- spark-app-builder.sh |-- Spoon.bat 启动KettleUI界面的Windows命令 |-- spoon.command |-- spoon.ico |-- spoon.png |-- spoon.sh 启动KettleUI界面的Linux命令 |-- SpoonConsole.bat |-- SpoonDebug.bat 以Debug方式运行Kettle的Windows命令 |-- SpoonDebug.sh 以Debug方式运行Kettle的Linux命令 -- yarn.sh 这里主要对Kettle做一个简单的介绍，下面一章将介绍使用Kettle的环境配置]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Kettle简介</title>
+      <link href="/%E5%A4%A7%E6%95%B0%E6%8D%AE/Kettle/ed3f6737.html"/>
+      <url>/%E5%A4%A7%E6%95%B0%E6%8D%AE/Kettle/ed3f6737.html</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h1 id="Kettle"><a href="#Kettle" class="headerlink" title="Kettle"></a>Kettle</h1><p>Kettle是一种ETL（Extract-Transform-Load的缩写，即<strong>数据抽取</strong>，<strong>转换</strong>，<strong>装载</strong>的过程）工具，是一款国外开源的ETL攻击，纯Java语言编写，可以在Windows、Linux、Unix上运行，免安装，数据抽取高效稳定。</p><p>Kettle现在已经更名为PDI（Pentao Data Integration）Pentaho数据集成。</p><h2 id="Kettle的两个核心组件"><a href="#Kettle的两个核心组件" class="headerlink" title="Kettle的两个核心组件"></a>Kettle的两个核心组件</h2><h3 id="transformation"><a href="#transformation" class="headerlink" title="transformation"></a>transformation</h3><p>​    transformation完成针对数据的基础转换</p><h3 id="job"><a href="#job" class="headerlink" title="job"></a>job</h3><p>​    job是用来完成整个工作流程的控制。</p><h2 id="Kettle的结构"><a href="#Kettle的结构" class="headerlink" title="Kettle的结构"></a>Kettle的结构</h2><img src="/大数据/Kettle/ed3f6737/image-20200722231012274.png" title="image-20200722231012274"><h3 id="Spoon"><a href="#Spoon" class="headerlink" title="Spoon"></a>Spoon</h3><p>​    Spoon是构建ETL Jobs和transformation的工具，以拖拽和图形化展示Kettle组件的设计方式，能过通过spoon调用专用的数据集成引擎或者集群。</p><h3 id="Data-Integration-Server"><a href="#Data-Integration-Server" class="headerlink" title="Data Integration Server"></a>Data Integration Server</h3><p>​    Data Integration Server是一个专用的ETL Server，主要包含以下几个功能</p><table><thead><tr><th>功能</th><th>描述</th></tr></thead><tbody><tr><td>执行</td><td>通过Pentaho Data Integration引擎执行ETL的作业或者转换</td></tr><tr><td>安全性</td><td>管理用户、角色或集成的安全性</td></tr><tr><td>内容管理</td><td>提供一个集中的资源库，用来管理ETL的作业和转换。资源库包含所有内容和特征的历史版本</td></tr><tr><td>时序安排</td><td>在spoon设计者环境中提供管理Data Integration Server上的活动的时序和监控的服务</td></tr></tbody></table><h3 id="Enterprise-Console"><a href="#Enterprise-Console" class="headerlink" title="Enterprise Console"></a>Enterprise Console</h3><p>​    Entreprise Console（企业控制台）提供了一个小型的客户端，用于管理Pentaho Data Integration企业版的部署。</p><p>​    包括企业版的证书管理、监控和控制远程Pentaho Data Integration服务器上的活动、分析已登记的作业和转换的动态绩效。</p><h2 id="Kettle的核心组件"><a href="#Kettle的核心组件" class="headerlink" title="Kettle的核心组件"></a>Kettle的核心组件</h2><table><thead><tr><th>名称</th><th>描述</th></tr></thead><tbody><tr><td>Spoon</td><td>通过图形接口，用于编辑作业和转换的桌面应用</td></tr><tr><td>Pan</td><td>一个独立的命令行程序，用于执行由Spoon编辑的转换和作业</td></tr><tr><td>Kitchen</td><td>一个独立的命令行程序，用于执行由Spoon编辑的作业</td></tr><tr><td>Carte</td><td>Carte是一个轻量级的Web容器，用于建立专用、远程的ETL Server</td></tr></tbody></table><h2 id="Kettle的概念模型"><a href="#Kettle的概念模型" class="headerlink" title="Kettle的概念模型"></a>Kettle的概念模型</h2><img src="/大数据/Kettle/ed3f6737/image-20200722232033562.png" title="image-20200722232033562"><h2 id="Kettle的下载"><a href="#Kettle的下载" class="headerlink" title="Kettle的下载"></a>Kettle的下载</h2><p>官方下载网址：<a href="https://community.hitachivantara.com/s/article/data-integration-kettle" target="_blank" rel="noopener">https://community.hitachivantara.com/s/article/data-integration-kettle</a></p><p>下载链接：<a href="https://sourceforge.net/projects/pentaho/files/latest/download?aliId=137249511" target="_blank" rel="noopener">https://sourceforge.net/projects/pentaho/files/latest/download?aliId=137249511</a></p><p>文件比较大，可能需要科学上网，我已经下载了，可以去百度网盘进行下载</p><blockquote><p>链接：<a href="https://pan.baidu.com/s/1MzuZNgp76dIAUx093SySig" target="_blank" rel="noopener">https://pan.baidu.com/s/1MzuZNgp76dIAUx093SySig</a><br>提取码：sfzg</p></blockquote><img src="/大数据/Kettle/ed3f6737/image-20200722233033628.png" title="image-20200722233033628"><h2 id="Kettle文件目录结构"><a href="#Kettle文件目录结构" class="headerlink" title="Kettle文件目录结构"></a>Kettle文件目录结构</h2><pre><code class="markdown">|-- classes                            生命周期监听、注册表扩展、日志的配置文件|-- Data Integration.app            数据集成应用|-- Data Service JDBC Driver        驱动数据服务的JDBC程序包|-- docs                            kettle说明文档|-- launcher                        Kettle的启动配置|-- lib                                支持库的依赖jar包|-- libswt                            Kettle图形库的jar包|-- plugins                            Kettle的插件目录|-- pwd                                Kettle集群配置文件|-- samples                            Kettle使用示例文档，包括job和transformation|-- simple-jndi                        jndi的连接配置|-- system                            系统目录|-- ui                                软件界面目录|-- Carte.bat                        启动Carte集群的windows命令|-- carte.sh                        启动Carte集群的linux命令|-- Encr.bat                        kettle提供的加密算法的Windows命令|-- encr.sh                            kettle提供的加密算法的Linux命令|-- Import.bat                        导入的Windows命令|-- import.sh                        导入的Linux命令|-- import-rules.xml|-- Kitchen.bat                        用来运行job的Windows命令|-- kitchen.sh                        用来运行job的Linux命令|-- LICENSE.txt|-- Pan.bat                            用来运行转换的Windows命令|-- pan.sh                            用来运行转换的Linux命令|-- PentahoDataIntegration_OSS_Licenses.html|-- purge-utility.bat|-- purge-utility.sh|-- README.txt|-- README-spark-app-builder.txt|-- runSamples.bat|-- runSamples.sh|-- set-pentaho-env.bat                设置环境变量的Windows命令|-- set-pentaho-env.sh                设置环境变量的Linux命令|-- Spark-app-builder.bat|-- spark-app-builder.sh|-- Spoon.bat                        启动KettleUI界面的Windows命令|-- spoon.command|-- spoon.ico|-- spoon.png|-- spoon.sh                        启动KettleUI界面的Linux命令|-- SpoonConsole.bat|-- SpoonDebug.bat                    以Debug方式运行Kettle的Windows命令|-- SpoonDebug.sh                    以Debug方式运行Kettle的Linux命令-- yarn.sh</code></pre><p>这里主要对Kettle做一个简单的介绍，下面一章将介绍<strong>使用Kettle的环境配置</strong></p>]]></content>
+      
+      
       <categories>
-        <category>大数据</category>
-        <category>Kettle</category>
+          
+          <category> 大数据 </category>
+          
+          <category> Kettle </category>
+          
       </categories>
-      <tags>
-        <tag>Kettle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Spirng容器的基本实现]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FSpring%2F7d84037b.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> Kettle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spirng容器的基本实现</title>
+      <link href="/%E5%90%8E%E7%AB%AF/Spring/7d84037b.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/Spring/7d84037b.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>Spring</category>
+          
+          <category> 后端 </category>
+          
+          <category> Spring </category>
+          
       </categories>
-      <tags>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Spirng源码环境搭建]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FSpring%2F36872892.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spirng源码环境搭建</title>
+      <link href="/%E5%90%8E%E7%AB%AF/Spring/36872892.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/Spring/36872892.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>Spring</category>
+          
+          <category> 后端 </category>
+          
+          <category> Spring </category>
+          
       </categories>
-      <tags>
-        <tag>Spring</tag>
-        <tag>源码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hadoop集群环境搭建]]></title>
-    <url>%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%2FHadoop%2F9daef378.html</url>
-    <content type="text"><![CDATA[[TOC] HDFS的Java API操作新建Maven的Java项目依赖信息。 pom.xml &lt;properties&gt; &lt;hadoop.version&gt;3.2.1&lt;/hadoop.version&gt; &lt;/properties&gt; &lt;repositories&gt; &lt;repository&gt; &lt;id&gt;cloudera&lt;/id&gt; &lt;url&gt;https://repository.cloudera.com/artifactory/cloudera-repos/&lt;/url&gt; &lt;/repository&gt; &lt;/repositories&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;jdk.tools&lt;/groupId&gt; &lt;artifactId&gt;jdk.tools&lt;/artifactId&gt; &lt;version&gt;1.8&lt;/version&gt; &lt;scope&gt;system&lt;/scope&gt; &lt;systemPath&gt;${JAVA_HOME}/lib/tools.jar&lt;/systemPath&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt; &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt; &lt;version&gt;${hadoop.version}&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt; &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt; &lt;version&gt;${hadoop.version}&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt; &lt;artifactId&gt;hadoop-hdfs-client&lt;/artifactId&gt; &lt;version&gt;${hadoop.version}&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt; &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt; &lt;version&gt;${hadoop.version}&lt;/version&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;junit&lt;/groupId&gt; &lt;artifactId&gt;junit&lt;/artifactId&gt; &lt;version&gt;4.12&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt; 获取HDFS的FileSystem的几种方式方法一代码清单 @Test public void testGetFileSystemMethodOne() throws Exception { // 获取配置对象 Configuration configuration = new Configuration(); // 设置Configuration对象，设置要操作的文件系统,fs.defaultFs为之前core-site.xml中的配置信息 configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;); // 通过配置信息获取到hadfs的文件系统 FileSystem fileSystem = FileSystem.newInstance(configuration); //打印获取到的文件系统 System.out.println(fileSystem.toString()); } 执行结果 如果出现了上述的报错信息，是因为缺少log4j.properties文件，新建文件并将其位于项目的resources文件夹下 log4j.rootLogger=WARN, Console log4j.appender.Console=org.apache.log4j.ConsoleAppender log4j.appender.Console.layout=org.apache.log4j.PatternLayout log4j.appender.Console.layout.ConversionPattern=(%r ms) [%t] %-5p: %c#%M %x: %m%n log4j.logger.com.genuitec.eclipse.sqlexplorer=DEBUG log4j.logger.org.apache=WARN log4j.logger.net.sf.hibernate=WARN 方法二代码清单 @Test public void testGetFileSystemMethodTwo() throws Exception { Configuration configuration = new Configuration(); configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;); FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration); System.out.println(fileSystem.toString()); } 执行结果 执行结果中已经没有红色的警告信息了 方法三代码清单 @Test public void testGetFileSystemMethodThree() throws Exception{ Configuration configuration = new Configuration(); FileSystem fileSystem = FileSystem.get(new URI(&quot;hdfs://node1:8020&quot;), configuration); System.out.println(fileSystem.toString()); } 执行结果 方法四代码清单 @Test public void testGetFileSystemMethodFour() throws Exception { Configuration configuration = new Configuration(); FileSystem fileSystem = FileSystem.newInstance(new URI(&quot;hdfs://node1:8020&quot;),configuration); System.out.println(fileSystem.toString()); } 执行结果 其他API的使用HDFS文件上传代码清单 @Test public void testHdfsUploadFile() { try { Configuration configuration = new Configuration(); configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;); FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration); //将本地文件系统D盘下的hadoop.txt上传到HDFS文件系统的/目录下 fileSystem.copyFromLocalFile(new Path(&quot;D://hadoop.txt&quot;), new Path(&quot;/&quot;)); fileSystem.close(); System.out.println(&quot;文件上传成功&quot;); } catch (Exception e) { e.printStackTrace(); System.out.println(&quot;文件上传失败&quot;); } } 运行结果 HDFS文件夹上传代码清单 @Test public void testHdfsCreateDir() { try { Configuration configuration = new Configuration(); configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;); FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration); //创建一个两层目录/learn/hadoop fileSystem.create(new Path(&quot;/learn/hadoop&quot;)); fileSystem.close(); System.out.println(&quot;文件夹创建成功&quot;); } catch (Exception e) { e.printStackTrace(); System.out.println(&quot;文件夹创建失败&quot;); } } 运行结果 HDFS文件下载代码清单 @Test public void testHdfsFileDownload() { try { Configuration configuration = new Configuration(); configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;); FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration); // 将HDFS文件系统中的/hadoop.txt下载到本地文件系统中的D盘下，名称为hadoop2.txt fileSystem.copyToLocalFile(new Path(&quot;/hadoop.txt&quot;),new Path(&quot;D://hadoop2.txt&quot;)); fileSystem.close(); System.out.println(&quot;文件下载成功&quot;); } catch (Exception e) { e.printStackTrace(); System.out.println(&quot;文件下载失败&quot;); } } 运行结果 HDFS文件删除代码清单 @Test public void testHdfsFileDelete() { try { Configuration configuration = new Configuration(); configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;); FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration); // 删除/hadoop.txt文件，第二个参数标识是否递归删除， // 只有当第一个参数是文件夹的，第二个参数才会生效 fileSystem.delete(new Path(&quot;/hadoop.txt&quot;),false); fileSystem.close(); System.out.println(&quot;文件删除成功&quot;); } catch (Exception e) { e.printStackTrace(); System.out.println(&quot;文件删除失败&quot;); } } 运行结果 HDFS文件遍历先上传几个文件到hdfs中 代码清单 /** * 遍历hdfs中的文件 */ @Test public void testHdfsFileList() { try { Configuration configuration = new Configuration(); configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;); FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration); RemoteIterator&lt;LocatedFileStatus&gt; iterator = fileSystem.listFiles(new Path(&quot;/&quot;), true); while (iterator.hasNext()){ System.out.println(&quot;=================================================================&quot;); LocatedFileStatus next = iterator.next(); System.out.println(&quot;next.getPermission() = &quot; + next.getPermission()); System.out.println(&quot;next.getOwner() = &quot; + next.getOwner()); System.out.println(&quot;next.getGroup() = &quot; + next.getGroup()); System.out.println(&quot;next.getBlockSize() = &quot; + next.getBlockSize()); System.out.println(&quot;next.getModificationTime() = &quot; + next.getModificationTime()); System.out.println(&quot;next.getReplication() = &quot; + next.getReplication()); System.out.println(&quot;next.getPath( = &quot; + next.getPath()); System.out.println(&quot;next.getPath().getName() = &quot; + next.getPath().getName()); System.out.println(&quot;=================================================================&quot;); } fileSystem.close(); System.out.println(&quot;文件遍历成功&quot;); } catch (Exception e) { e.printStackTrace(); System.out.println(&quot;文件遍历失败&quot;); } } 运行结果 HDFS小文件合并由于 Hadoop 擅长存储大文件，因为大文件的元数据信息比较少，如果 Hadoop 集群当中有大量的小文件，那么每个小文件都需要维护一份元数据信息，会大大的增加集群管理元数据的内存压力，所以在实际工作当中，如果有必要一定要将小文件合并成大文件进行一起处理。 在T盘smallfile文件夹下下新建aa.txt，bb.txt，cc.txt，dd.txt四个文件，内容分别为aa，bb，cc，dd，将其内容合并到 merge.txt中，并写入到hdfs的/目录下 代码清单 @Test public void testHdfsMergeSmallFile(){ try { //获取分布式文件系统 FileSystem fileSystem = FileSystem.get(new URI(&quot;hdfs://node1:8020&quot;), new Configuration()); FSDataOutputStream outputStream = fileSystem.create(new Path(&quot;/merge.txt&quot;)); //获取本地文件系统 LocalFileSystem local = FileSystem.getLocal(new Configuration()); //通过本地文件系统获取文件列表，为一个集合 FileStatus[] fileStatuses = local.listStatus(new Path(&quot;T:\\smallfile\\&quot;)); for (FileStatus fileStatus : fileStatuses) { FSDataInputStream inputStream = local.open(fileStatus.getPath()); IOUtils.copy(inputStream,outputStream); IOUtils.closeQuietly(inputStream); } IOUtils.closeQuietly(outputStream); local.close(); fileSystem.close(); System.out.println(&quot;小文件合并成功&quot;); }catch (Exception e){ e.printStackTrace(); System.out.println(&quot;小文件合并失败&quot;); } } 运行结果 将文件内容下载下来看一下，合并正确 至此，使用JAVA API对文件的增删改查操作就完成了，也算入个门了。]]></content>
+      
+      
+        <tags>
+            
+            <tag> Spring </tag>
+            
+            <tag> 源码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hadoop集群环境搭建</title>
+      <link href="/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/9daef378.html"/>
+      <url>/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/9daef378.html</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h2 id="HDFS的Java-API操作"><a href="#HDFS的Java-API操作" class="headerlink" title="HDFS的Java API操作"></a>HDFS的Java API操作</h2><h3 id="新建Maven的Java项目"><a href="#新建Maven的Java项目" class="headerlink" title="新建Maven的Java项目"></a>新建Maven的Java项目</h3><p>依赖信息。</p><blockquote><p>pom.xml</p></blockquote><pre><code class="xml">&lt;properties&gt;    &lt;hadoop.version&gt;3.2.1&lt;/hadoop.version&gt;&lt;/properties&gt;&lt;repositories&gt;    &lt;repository&gt;        &lt;id&gt;cloudera&lt;/id&gt;        &lt;url&gt;https://repository.cloudera.com/artifactory/cloudera-repos/&lt;/url&gt;    &lt;/repository&gt;&lt;/repositories&gt;&lt;dependencies&gt;    &lt;dependency&gt;        &lt;groupId&gt;jdk.tools&lt;/groupId&gt;        &lt;artifactId&gt;jdk.tools&lt;/artifactId&gt;        &lt;version&gt;1.8&lt;/version&gt;        &lt;scope&gt;system&lt;/scope&gt;        &lt;systemPath&gt;${JAVA_HOME}/lib/tools.jar&lt;/systemPath&gt;    &lt;/dependency&gt;    &lt;dependency&gt;        &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;        &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;        &lt;version&gt;${hadoop.version}&lt;/version&gt;    &lt;/dependency&gt;    &lt;dependency&gt;        &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;        &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;        &lt;version&gt;${hadoop.version}&lt;/version&gt;    &lt;/dependency&gt;    &lt;dependency&gt;        &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;        &lt;artifactId&gt;hadoop-hdfs-client&lt;/artifactId&gt;        &lt;version&gt;${hadoop.version}&lt;/version&gt;    &lt;/dependency&gt;    &lt;dependency&gt;        &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;        &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;        &lt;version&gt;${hadoop.version}&lt;/version&gt;    &lt;/dependency&gt;    &lt;dependency&gt;        &lt;groupId&gt;junit&lt;/groupId&gt;        &lt;artifactId&gt;junit&lt;/artifactId&gt;        &lt;version&gt;4.12&lt;/version&gt;        &lt;scope&gt;test&lt;/scope&gt;    &lt;/dependency&gt;&lt;/dependencies&gt;</code></pre><h3 id="获取HDFS的FileSystem的几种方式"><a href="#获取HDFS的FileSystem的几种方式" class="headerlink" title="获取HDFS的FileSystem的几种方式"></a>获取HDFS的FileSystem的几种方式</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>代码清单</p><pre><code class="java">@Testpublic void testGetFileSystemMethodOne() throws Exception {    // 获取配置对象    Configuration configuration = new Configuration();    // 设置Configuration对象，设置要操作的文件系统,fs.defaultFs为之前core-site.xml中的配置信息    configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;);    // 通过配置信息获取到hadfs的文件系统    FileSystem fileSystem = FileSystem.newInstance(configuration);    //打印获取到的文件系统    System.out.println(fileSystem.toString());}</code></pre><p>执行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715205411000.png" title="image-20200715205411000"><p>如果出现了上述的报错信息，是因为缺少<code>log4j.properties</code>文件，新建文件并将其位于项目的<code>resources</code>文件夹下</p><pre><code class="proper">log4j.rootLogger=WARN, Consolelog4j.appender.Console=org.apache.log4j.ConsoleAppenderlog4j.appender.Console.layout=org.apache.log4j.PatternLayoutlog4j.appender.Console.layout.ConversionPattern=(%r ms) [%t] %-5p: %c#%M %x: %m%nlog4j.logger.com.genuitec.eclipse.sqlexplorer=DEBUGlog4j.logger.org.apache=WARNlog4j.logger.net.sf.hibernate=WARN</code></pre><img src="/大数据/Hadoop/9daef378/image-20200715205458891.png" title="image-20200715205458891"><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>代码清单</p><pre><code class="JAVA">@Testpublic void testGetFileSystemMethodTwo() throws Exception {    Configuration configuration = new Configuration();    configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;);    FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration);    System.out.println(fileSystem.toString());}</code></pre><p>执行结果</p><p>执行结果中已经没有红色的警告信息了</p><img src="/大数据/Hadoop/9daef378/image-20200715205641647.png" title="image-20200715205641647"><h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><p>代码清单</p><pre><code class="java">@Testpublic void testGetFileSystemMethodThree() throws Exception{    Configuration configuration = new Configuration();    FileSystem fileSystem = FileSystem.get(new URI(&quot;hdfs://node1:8020&quot;), configuration);    System.out.println(fileSystem.toString());}</code></pre><p>执行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715205705497.png" title="image-20200715205705497"><h4 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h4><p>代码清单</p><pre><code class="java">@Testpublic void testGetFileSystemMethodFour() throws Exception {    Configuration configuration = new Configuration();    FileSystem fileSystem = FileSystem.newInstance(new URI(&quot;hdfs://node1:8020&quot;),configuration);    System.out.println(fileSystem.toString());}</code></pre><p>执行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715205736861.png" title="image-20200715205736861"><h3 id="其他API的使用"><a href="#其他API的使用" class="headerlink" title="其他API的使用"></a>其他API的使用</h3><h4 id="HDFS文件上传"><a href="#HDFS文件上传" class="headerlink" title="HDFS文件上传"></a>HDFS文件上传</h4><p>代码清单</p><pre><code class="java">@Testpublic void testHdfsUploadFile() {    try {        Configuration configuration = new Configuration();        configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;);        FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration);        //将本地文件系统D盘下的hadoop.txt上传到HDFS文件系统的/目录下        fileSystem.copyFromLocalFile(new Path(&quot;D://hadoop.txt&quot;), new Path(&quot;/&quot;));        fileSystem.close();        System.out.println(&quot;文件上传成功&quot;);    } catch (Exception e) {        e.printStackTrace();        System.out.println(&quot;文件上传失败&quot;);    }}</code></pre><p>运行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715211054897.png" title="image-20200715211054897"><img src="/大数据/Hadoop/9daef378/image-20200715211106893.png" title="image-20200715211106893"><h4 id="HDFS文件夹上传"><a href="#HDFS文件夹上传" class="headerlink" title="HDFS文件夹上传"></a>HDFS文件夹上传</h4><p>代码清单</p><pre><code class="java">@Testpublic void testHdfsCreateDir() {    try {        Configuration configuration = new Configuration();        configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;);        FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration);        //创建一个两层目录/learn/hadoop        fileSystem.create(new Path(&quot;/learn/hadoop&quot;));        fileSystem.close();        System.out.println(&quot;文件夹创建成功&quot;);    } catch (Exception e) {        e.printStackTrace();        System.out.println(&quot;文件夹创建失败&quot;);    }}</code></pre><p>运行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715211324149.png" title="image-20200715211324149"><img src="/大数据/Hadoop/9daef378/image-20200715211350926.png" title="image-20200715211350926"><h4 id="HDFS文件下载"><a href="#HDFS文件下载" class="headerlink" title="HDFS文件下载"></a>HDFS文件下载</h4><p>代码清单</p><pre><code class="java"> @Testpublic void testHdfsFileDownload() {    try {        Configuration configuration = new Configuration();        configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;);        FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration);        // 将HDFS文件系统中的/hadoop.txt下载到本地文件系统中的D盘下，名称为hadoop2.txt        fileSystem.copyToLocalFile(new Path(&quot;/hadoop.txt&quot;),new Path(&quot;D://hadoop2.txt&quot;));        fileSystem.close();        System.out.println(&quot;文件下载成功&quot;);    } catch (Exception e) {        e.printStackTrace();        System.out.println(&quot;文件下载失败&quot;);    }}</code></pre><p>运行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715222011904.png" title="image-20200715222011904"><h4 id="HDFS文件删除"><a href="#HDFS文件删除" class="headerlink" title="HDFS文件删除"></a>HDFS文件删除</h4><p>代码清单</p><pre><code class="java">  @Test    public void testHdfsFileDelete() {        try {            Configuration configuration = new Configuration();            configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;);            FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration);            // 删除/hadoop.txt文件，第二个参数标识是否递归删除，            // 只有当第一个参数是文件夹的，第二个参数才会生效            fileSystem.delete(new Path(&quot;/hadoop.txt&quot;),false);            fileSystem.close();            System.out.println(&quot;文件删除成功&quot;);        } catch (Exception e) {            e.printStackTrace();            System.out.println(&quot;文件删除失败&quot;);        }    }</code></pre><p>运行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715222618679.png" title="image-20200715222618679"><img src="/大数据/Hadoop/9daef378/image-20200715222645082.png" title="image-20200715222645082"><h4 id="HDFS文件遍历"><a href="#HDFS文件遍历" class="headerlink" title="HDFS文件遍历"></a>HDFS文件遍历</h4><p>先上传几个文件到hdfs中</p><p>代码清单</p><pre><code class="java">/**     * 遍历hdfs中的文件     */@Testpublic void testHdfsFileList() {    try {        Configuration configuration = new Configuration();        configuration.set(&quot;fs.defaultFS&quot;, &quot;hdfs://node1:8020&quot;);        FileSystem fileSystem = FileSystem.get(new URI(&quot;/&quot;), configuration);        RemoteIterator&lt;LocatedFileStatus&gt; iterator = fileSystem.listFiles(new Path(&quot;/&quot;), true);        while (iterator.hasNext()){            System.out.println(&quot;=================================================================&quot;);            LocatedFileStatus next = iterator.next();            System.out.println(&quot;next.getPermission() = &quot; + next.getPermission());            System.out.println(&quot;next.getOwner() = &quot; + next.getOwner());            System.out.println(&quot;next.getGroup() = &quot; + next.getGroup());            System.out.println(&quot;next.getBlockSize() = &quot; + next.getBlockSize());            System.out.println(&quot;next.getModificationTime() = &quot; + next.getModificationTime());            System.out.println(&quot;next.getReplication() = &quot; + next.getReplication());            System.out.println(&quot;next.getPath( = &quot; + next.getPath());            System.out.println(&quot;next.getPath().getName() = &quot; + next.getPath().getName());            System.out.println(&quot;=================================================================&quot;);        }        fileSystem.close();        System.out.println(&quot;文件遍历成功&quot;);    } catch (Exception e) {        e.printStackTrace();        System.out.println(&quot;文件遍历失败&quot;);    }}</code></pre><p>运行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715223734385.png" title="image-20200715223734385"><img src="/大数据/Hadoop/9daef378/image-20200715223715372.png" title="image-20200715223715372"><h4 id="HDFS小文件合并"><a href="#HDFS小文件合并" class="headerlink" title="HDFS小文件合并"></a>HDFS小文件合并</h4><p>由于 Hadoop 擅长存储大文件，因为大文件的元数据信息比较少，如果 Hadoop 集群当中有大量的小文件，那么每个小文件都需要维护一份元数据信息，会大大的增加集群管理元数据的内存压力，所以在实际工作当中，如果有必要一定要将小文件合并成大文件进行一起处理。</p><p>在<code>T</code>盘<code>smallfile</code>文件夹下下新建<code>aa.txt</code>，<code>bb.txt</code>，<code>cc.txt</code>，<code>dd.txt</code>四个文件，内容分别为<code>aa</code>，<code>bb</code>，<code>cc</code>，<code>dd</code>，将其内容合并到 <code>merge.txt</code>中，并写入到hdfs的/目录下</p><p>代码清单</p><pre><code class="java">@Testpublic void testHdfsMergeSmallFile(){    try {        //获取分布式文件系统        FileSystem fileSystem = FileSystem.get(new URI(&quot;hdfs://node1:8020&quot;), new Configuration());        FSDataOutputStream outputStream = fileSystem.create(new Path(&quot;/merge.txt&quot;));        //获取本地文件系统        LocalFileSystem local = FileSystem.getLocal(new Configuration());        //通过本地文件系统获取文件列表，为一个集合        FileStatus[] fileStatuses = local.listStatus(new Path(&quot;T:\\smallfile\\&quot;));        for (FileStatus fileStatus : fileStatuses) {            FSDataInputStream inputStream = local.open(fileStatus.getPath());            IOUtils.copy(inputStream,outputStream);            IOUtils.closeQuietly(inputStream);        }        IOUtils.closeQuietly(outputStream);        local.close();        fileSystem.close();        System.out.println(&quot;小文件合并成功&quot;);    }catch (Exception e){        e.printStackTrace();        System.out.println(&quot;小文件合并失败&quot;);    }}</code></pre><p>运行结果</p><img src="/大数据/Hadoop/9daef378/image-20200715224547403.png" title="image-20200715224547403"><img src="/大数据/Hadoop/9daef378/image-20200715224659419.png" title="image-20200715224659419"><p>将文件内容下载下来看一下，合并正确</p><img src="/大数据/Hadoop/9daef378/image-20200715224638712.png" title="image-20200715224638712"><p>至此，使用JAVA API对文件的增删改查操作就完成了，也算入个门了。</p>]]></content>
+      
+      
       <categories>
-        <category>大数据</category>
-        <category>Hadoop</category>
+          
+          <category> 大数据 </category>
+          
+          <category> Hadoop </category>
+          
       </categories>
-      <tags>
-        <tag>Hadoop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java面试题]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FJava%2Fa7ef9c4d.html</url>
-    <content type="text"><![CDATA[[ ] 1.进制转换 [ ] 2.溢出处理 [ ] 3.类型转换 低 –&gt; 高 (自动转换) ​ byte -&gt; short -&gt; int -&gt; long ， ​ float -&gt; double ​ 高 –&gt; 低 （强制类型转换） ​ long -&gt; int -&gt; short -&gt; byte ​ double -&gt; float [ ] 变量 变量作用域]]></content>
+      
+      
+        <tags>
+            
+            <tag> Hadoop </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java面试题</title>
+      <link href="/%E5%90%8E%E7%AB%AF/Java/a7ef9c4d.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/Java/a7ef9c4d.html</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>[ ] 1.进制转换</p></li><li><p>[ ] 2.溢出处理</p></li><li><p>[ ] 3.类型转换</p><p>低 –&gt; 高   (自动转换)</p><p>​        byte -&gt; short -&gt; int -&gt; long ，</p><p>​         float -&gt; double  </p><p>​    高 –&gt; 低   （强制类型转换）</p><p>​        long -&gt; int -&gt; short -&gt; byte</p><p>​        double -&gt; float</p></li><li><p>[ ] 变量</p><img src="/后端/Java/a7ef9c4d/image-20200711235710250.png" title="image-20200711235710250"></li></ul><p>变量作用域</p><img src="/后端/Java/a7ef9c4d/image-20200712000246227.png" title="image-20200712000246227">]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>Java</category>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
       </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Java面试题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hadoop安装]]></title>
-    <url>%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%2FHadoop%2Fc4538d30.html</url>
-    <content type="text"><![CDATA[Hadoop安装[TOC] 下载https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/stable/ 单机模式 &lt;configuration&gt; &lt;property&gt; &lt;name&gt;fs.defaultFS&lt;/name&gt; &lt;value&gt;hdfs://localhost:9000&lt;/value&gt; &lt;/property&gt; &lt;/configuration&gt; &lt;configuration&gt; &lt;property&gt; &lt;name&gt;dfs.replication&lt;/name&gt; &lt;value&gt;1&lt;/value&gt; &lt;/property&gt; &lt;/configuration&gt;]]></content>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Java面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hadoop安装</title>
+      <link href="/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/c4538d30.html"/>
+      <url>/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop/c4538d30.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Hadoop安装"><a href="#Hadoop安装" class="headerlink" title="Hadoop安装"></a>Hadoop安装</h1><p>[TOC]</p><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/stable/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/stable/</a></p><h2 id="单机模式"><a href="#单机模式" class="headerlink" title="单机模式"></a>单机模式</h2><img src="/大数据/Hadoop/c4538d30/image-20200709155507513.png" title="image-20200709155507513"><img src="/大数据/Hadoop/c4538d30/image-20200709155730401.png" title="image-20200709155730401"><pre><code class="xml">&lt;configuration&gt;    &lt;property&gt;        &lt;name&gt;fs.defaultFS&lt;/name&gt;        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;    &lt;/property&gt;&lt;/configuration&gt;</code></pre><img src="/大数据/Hadoop/c4538d30/image-20200709155819649.png" title="image-20200709155819649"><pre><code class="xml">&lt;configuration&gt;    &lt;property&gt;        &lt;name&gt;dfs.replication&lt;/name&gt;        &lt;value&gt;1&lt;/value&gt;    &lt;/property&gt;&lt;/configuration&gt;</code></pre>]]></content>
+      
+      
       <categories>
-        <category>大数据</category>
-        <category>Hadoop</category>
+          
+          <category> 大数据 </category>
+          
+          <category> Hadoop </category>
+          
       </categories>
-      <tags>
-        <tag>Hadoop</tag>
-        <tag>大数据</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Jenkins使用pipline构建Maven项目]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FJenkins%2F4a5e8db3.html</url>
-    <content type="text"><![CDATA[Jenkins使用pipline构建Maven项目[TOC] 拉取Git远程仓库以上代码非常简单,通过使用git关键字,配置credentialsId和url后Jenkins就可以拉取远程git仓库代码了.Url很好理解,即为远程仓库的地址.这里比较费解的是credentialsId是什么,如何设置它?其实也非常简单,前面讲自由式任务的时候我们讲过如何在jenkins里添加添加一个git用户名和密码,这里的credentialsId即为我们创建的包含用户名和密码的用户信息的id(这个id是jenkins自动生成的)这里通过这个id,Jenkins便可以找到这个用户名和密码. 创建一个用户名和密码要创建一个用户名和密码也不是非常复杂,我们在Jenkins主面板左侧导航面板里找到Credentials,点击进入,便可以看到以下一个面板 这里左侧Credentials下面有一个System我们点击一下,此时面板中央位置如下图 我们点击这个链接进入,此时左侧会出现一个添加Credentials按钮 点击便会出现一个可以设置用户名和密码的界面 如上图示,Kind使用默认的,添加一个用户名和密码.然后添加用户名和密码,此时id可以手输入,如果留空则Jenkins会自动生成一个.Description为一个简短描述,用户名和密码很多时方便区分. 添加成功后我们想要看到这条记录的id,点击板右侧的搬手螺丝刀图标就可以看到id了.我们把这个id复制到 PipeLine里credentialsId 添加一个ssh key使用用户名和密码容易泄密,实际工作中常常使用ssh方式登陆,这里对如何生成ssh key,如何在远程仓库中添加公钥不再赘述,不熟悉的童鞋可以参考前面章节或者官方帮助文档以及在互联网上搜索相关材料.这里介绍下如何把ssh 私钥添加到Jenkins里,以便Jenkins使用ssh连接远程仓库. 添加私钥类似以上添加用户名密码,只是添加用户名密码时Kind选项使用的是默认的选择,这里Kind下拉一下,选择SSH username with private key,用户名即为你的git账户用户名,private key勾选Enter directly把我们本机的私钥添复制到框里面. 需要注意的是ssh和http地址是不一样的,一定要注意. 把代码拉到指定位置Jenkins默认会的把项目拉到Jenkins安装目录下Workspace+项目名的目录下面,很多时候由于一些原因我们可能希望改变这一行为,把项目拉到自定义的一个目录下面,这时候可以使用dir函数,然后把要执行的代码写在dir函数代码块内.示例代码如下 node{ stage(&quot;check out&quot;){ dir(&quot;projdir&quot;){ git credentialsId: &#39;3c210def-c000-4e2a-9b2d-838986a6b172&#39;, url: &#39;https://github.com/mrtylerzhou/gitShow.git&#39; } } } 以上语句执行后,可以看到jenkins会把代码拉到Workspace+项目名+projdir的目录下,当然也可以指定绝对路径. 拉取指定分支的代码 node { stage(&#39;Source&#39;) { git branch: &#39;master&#39;, credentialsId: &#39;GitHubAccess&#39;, url: &#39;https://github.com/cookcodeblog/my-private-project.git&#39; } }]]></content>
+      
+      
+        <tags>
+            
+            <tag> 大数据 </tag>
+            
+            <tag> Hadoop </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Jenkins使用pipline构建Maven项目</title>
+      <link href="/%E5%B7%A5%E5%85%B7/Jenkins/4a5e8db3.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/Jenkins/4a5e8db3.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Jenkins使用pipline构建Maven项目"><a href="#Jenkins使用pipline构建Maven项目" class="headerlink" title="Jenkins使用pipline构建Maven项目"></a>Jenkins使用pipline构建Maven项目</h1><p>[TOC]</p><h2 id="拉取Git远程仓库"><a href="#拉取Git远程仓库" class="headerlink" title="拉取Git远程仓库"></a>拉取Git远程仓库</h2><p>以上代码非常简单,通过使用git关键字,配置<code>credentialsId</code>和<code>url</code>后Jenkins就可以拉取远程git仓库代码了.Url很好理解,即为远程仓库的地址.这里比较费解的是<code>credentialsId</code>是什么,如何设置它?其实也非常简单,前面讲自由式任务的时候我们讲过如何在jenkins里添加添加一个git用户名和密码,这里的<code>credentialsId</code>即为我们创建的包含用户名和密码的用户信息的id(这个id是jenkins自动生成的)这里通过这个id,Jenkins便可以找到这个用户名和密码.</p><h2 id="创建一个用户名和密码"><a href="#创建一个用户名和密码" class="headerlink" title="创建一个用户名和密码"></a>创建一个用户名和密码</h2><p>要创建一个用户名和密码也不是非常复杂,我们在Jenkins主面板左侧导航面板里找到<code>Credentials</code>,点击进入,便可以看到以下一个面板</p><img src="/工具/Jenkins/4a5e8db3/811801-20190902082402091-488820647.png" title="img"><p>这里左侧<code>Credentials</code>下面有一个<code>System</code>我们点击一下,此时面板中央位置如下图</p><img src="/工具/Jenkins/4a5e8db3/811801-20190902082349742-1660669013.png" title="img"><p>我们点击这个链接进入,此时左侧会出现一个添加<code>Credentials</code>按钮</p><img src="/工具/Jenkins/4a5e8db3/811801-20190902082341309-9686011.png" title="img"><p>点击便会出现一个可以设置用户名和密码的界面</p><img src="/工具/Jenkins/4a5e8db3/811801-20190902082332132-956807256.png" title="img"><p>如上图示,<code>Kind</code>使用默认的,添加一个用户名和密码.然后添加用户名和密码,此时id可以手输入,如果留空则Jenkins会自动生成一个.Description为一个简短描述,用户名和密码很多时方便区分.</p><p>添加成功后我们想要看到这条记录的id,点击板右侧的搬手螺丝刀图标就可以看到id了.我们把这个id复制到 PipeLine里<code>credentialsId</code></p><h2 id="添加一个ssh-key"><a href="#添加一个ssh-key" class="headerlink" title="添加一个ssh key"></a>添加一个ssh key</h2><p>使用用户名和密码容易泄密,实际工作中常常使用ssh方式登陆,这里对如何生成ssh key,如何在远程仓库中添加公钥不再赘述,不熟悉的童鞋可以参考前面章节或者官方帮助文档以及在互联网上搜索相关材料.这里介绍下如何把ssh 私钥添加到Jenkins里,以便Jenkins使用ssh连接远程仓库.</p><p>添加私钥类似以上添加用户名密码,只是添加用户名密码时<code>Kind</code>选项使用的是默认的选择,这里<code>Kind</code>下拉一下,选择<code>SSH username with private key</code>,用户名即为你的git账户用户名,<code>private key</code>勾选<code>Enter directly</code>把我们本机的私钥添复制到框里面.</p><blockquote><p>需要注意的是ssh和http地址是不一样的,一定要注意.</p></blockquote><h2 id="把代码拉到指定位置"><a href="#把代码拉到指定位置" class="headerlink" title="把代码拉到指定位置"></a>把代码拉到指定位置</h2><p>Jenkins默认会的把项目拉到Jenkins安装目录下<code>Workspace+项目名</code>的目录下面,很多时候由于一些原因我们可能希望改变这一行为,把项目拉到自定义的一个目录下面,这时候可以使用<code>dir</code>函数,然后把要执行的代码写在<code>dir</code>函数代码块内.示例代码如下</p><pre><code>node{    stage(&quot;check out&quot;){        dir(&quot;projdir&quot;){            git  credentialsId: &#39;3c210def-c000-4e2a-9b2d-838986a6b172&#39;, url: &#39;https://github.com/mrtylerzhou/gitShow.git&#39;        }    }}</code></pre><p>以上语句执行后,可以看到jenkins会把代码拉到<code>Workspace+项目名+projdir</code>的目录下,当然也可以指定绝对路径.</p><p> 拉取指定分支的代码 </p><pre><code class="markdown">node {   stage(&#39;Source&#39;) {      git branch: &#39;master&#39;, credentialsId: &#39;GitHubAccess&#39;, url: &#39;https://github.com/cookcodeblog/my-private-project.git&#39;   }}</code></pre>]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>Jenkins</category>
+          
+          <category> 工具 </category>
+          
+          <category> Jenkins </category>
+          
       </categories>
-      <tags>
-        <tag>Jenkins</tag>
-        <tag>pipline</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java安装]]></title>
-    <url>%2F%E8%BF%90%E7%BB%B4%2FLinux%2FCentOS%2Fc032fe54.html</url>
-    <content type="text"><![CDATA[Java安装[TOC] 获取安装包百度网盘： 链接：https://pan.baidu.com/s/1FO_YHabi7vmRLL3dZZMrxw提取码：fka2 上传并解压安装包将下载的安装包上传到服务器，可以用过xftp上传，或者rz命令（需要提前安装lrzsz，yum install lrzsz） 本安装包目录：/home 设置环境变量软件安装目录：/usr/local/java 移动解压后的软件包到软件安装目录 mv jdk1.8.0_131/ /usr/local/java 编辑/etc/profiles文件，添加java环境变量到文件末尾 export JAVA_HOME=/usr/local/java export PATH=$JAVA_HOME/bin:$PATH export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 使环境变量生效 source /etc/profiles 验证安装结果，输入以下命令查看结果，如果当前终端没生效，请重新打开个终端窗口 javac]]></content>
+      
+      
+        <tags>
+            
+            <tag> Jenkins </tag>
+            
+            <tag> pipline </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java安装</title>
+      <link href="/%E8%BF%90%E7%BB%B4/Linux/CentOS/c032fe54.html"/>
+      <url>/%E8%BF%90%E7%BB%B4/Linux/CentOS/c032fe54.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java安装"><a href="#Java安装" class="headerlink" title="Java安装"></a>Java安装</h1><p>[TOC]</p><h2 id="获取安装包"><a href="#获取安装包" class="headerlink" title="获取安装包"></a>获取安装包</h2><p>百度网盘：</p><blockquote><p>链接：<a href="https://pan.baidu.com/s/1FO_YHabi7vmRLL3dZZMrxw" target="_blank" rel="noopener">https://pan.baidu.com/s/1FO_YHabi7vmRLL3dZZMrxw</a><br>提取码：fka2</p></blockquote><h2 id="上传并解压安装包"><a href="#上传并解压安装包" class="headerlink" title="上传并解压安装包"></a>上传并解压安装包</h2><p>将下载的安装包上传到服务器，可以用过xftp上传，或者<code>rz</code>命令（需要提前安装lrzsz，<code>yum install lrzsz</code>）</p><p> 本安装包目录：<code>/home</code></p><img src="/运维/Linux/CentOS/c032fe54/image-20200709152737179.png" title="image-20200709152737179"><h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><p>软件安装目录：<code>/usr/local/java</code></p><p>移动解压后的软件包到软件安装目录</p><pre><code class="shell">mv jdk1.8.0_131/ /usr/local/java</code></pre><p>编辑<code>/etc/profiles</code>文件，添加java环境变量到文件末尾</p><pre><code class="shel">export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</code></pre><p>使环境变量生效</p><pre><code class="shell">source /etc/profiles</code></pre><p>验证安装结果，输入以下命令查看结果，如果当前终端没生效，请重新打开个终端窗口</p><pre><code class="shell">javac</code></pre><img src="/运维/Linux/CentOS/c032fe54/image-20200709153748677.png" title="image-20200709153748677">]]></content>
+      
+      
       <categories>
-        <category>运维</category>
-        <category>Linux</category>
-        <category>CentOS</category>
+          
+          <category> 运维 </category>
+          
+          <category> Linux </category>
+          
+          <category> CentOS </category>
+          
       </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Cent OS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java基础语法]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FJava%2Fea538f2a.html</url>
-    <content type="text"><![CDATA[Java基础语法[TOC] 注释 单行注释 // 单行注释 多行注释 /* 多行注释 第一行注释 第二行注释 */ 多行注释禁止嵌套 文档注释 /** * 这是文档注释， */ 文档注释以/**开头，*/结尾，中间可以使用javadoc的描述。 关键字 abstract assert boolean break byte case catch char class const continue default do double else enum extends final finally float for goto if implements import instanceof int interface long native new package private protected pubic return strictfp short static super switch synchronized this throw throws transient try void volatile while 标识符标识符注意事项 定义标识符时，第一个字符要以字母（aA-zZ），美元符号（$），或者下划线(_）开头 首字母之后可以是字母（aA-zZ），美元符号（$）,下划线（_）或数字的任何字符组合 不能使用关键字作为变量名或者方法名 标识符大小写敏感，定义相同，大小写不同的将被视为不同的标识符 可以使用中文命名，一般不建议这样去使用，也不建议使用拼音命名。 数据类型基本类型(primitive type) 数值类型 java类型 字节长度 取值范围 byte 1 -128~127 short 2 -32768~32767 int 4 long 8 -92233 浮点类型 | java类型 | 字节长度 | 取值范围 || ——– | ——– | ——– || float | 4 | || double | 8 | | 字符类型 char 1字节 boolean类型 取值只为true，false 引用类型(reference type)类 接口 数组 补充： 字节 面试： 进制 值溢出的处理方式 数据转换常量变量运算符包机制JavaDoc]]></content>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Cent OS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java基础语法</title>
+      <link href="/%E5%90%8E%E7%AB%AF/Java/ea538f2a.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/Java/ea538f2a.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java基础语法"><a href="#Java基础语法" class="headerlink" title="Java基础语法"></a>Java基础语法</h1><p>[TOC]</p><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul><li><p>单行注释</p><pre><code class="java">//  单行注释</code></pre></li><li><p>多行注释</p><pre><code class="java">/*  多行注释  第一行注释  第二行注释*/</code></pre><p>多行注释禁止嵌套</p></li><li><p>文档注释</p><pre><code class="java">/** * 这是文档注释， */</code></pre><p>文档注释以<code>/**</code>开头，<code>*/</code>结尾，中间可以使用javadoc的描述。</p></li></ul><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><table><thead><tr><th>abstract</th><th>assert</th><th>boolean</th><th>break</th><th>byte</th></tr></thead><tbody><tr><td>case</td><td>catch</td><td>char</td><td>class</td><td>const</td></tr><tr><td>continue</td><td>default</td><td>do</td><td>double</td><td>else</td></tr><tr><td>enum</td><td>extends</td><td>final</td><td>finally</td><td>float</td></tr><tr><td>for</td><td>goto</td><td>if</td><td>implements</td><td>import</td></tr><tr><td>instanceof</td><td>int</td><td>interface</td><td>long</td><td>native</td></tr><tr><td>new</td><td>package</td><td>private</td><td>protected</td><td>pubic</td></tr><tr><td>return</td><td>strictfp</td><td>short</td><td>static</td><td>super</td></tr><tr><td>switch</td><td>synchronized</td><td>this</td><td>throw</td><td>throws</td></tr><tr><td>transient</td><td>try</td><td>void</td><td>volatile</td><td>while</td></tr></tbody></table><h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>标识符注意事项</p><ul><li>定义标识符时，第一个字符要以字母（aA-zZ），美元符号（$），或者下划线(_）开头</li><li>首字母之后可以是字母（aA-zZ），美元符号（$）,下划线（_）或数字的任何字符组合</li><li>不能使用<strong>关键字</strong>作为变量名或者方法名</li><li>标识符大小写敏感，定义相同，大小写不同的将被视为不同的标识符</li><li>可以使用中文命名，一般不建议这样去使用，也不建议使用拼音命名。</li></ul><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="基本类型-primitive-type"><a href="#基本类型-primitive-type" class="headerlink" title="基本类型(primitive type)"></a>基本类型(primitive type)</h3><ul><li>数值类型</li></ul><table><thead><tr><th>java类型</th><th>字节长度</th><th>取值范围</th></tr></thead><tbody><tr><td>byte</td><td>1</td><td>-128~127</td></tr><tr><td>short</td><td>2</td><td>-32768~32767</td></tr><tr><td>int</td><td>4</td><td></td></tr><tr><td>long</td><td>8</td><td>-92233</td></tr></tbody></table><ul><li><p>浮点类型</p><p>| java类型 | 字节长度 | 取值范围 |<br>| ——– | ——– | ——– |<br>| float    | 4        |          |<br>| double   | 8        |          |</p></li><li><p>字符类型</p><p>char 1字节</p></li><li><p>boolean类型</p><p>取值只为true，false</p></li></ul><h3 id="引用类型-reference-type"><a href="#引用类型-reference-type" class="headerlink" title="引用类型(reference type)"></a>引用类型(reference type)</h3><p>类</p><p>接口</p><p>数组</p><p>补充：</p><p>字节</p><img src="/后端/Java/ea538f2a/image-20200711233130572.png" title="image-20200711233130572"><p>面试：</p><p>进制</p><p>值溢出的处理方式</p><h2 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h2><h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h2 id="包机制"><a href="#包机制" class="headerlink" title="包机制"></a>包机制</h2><h2 id="JavaDoc"><a href="#JavaDoc" class="headerlink" title="JavaDoc"></a>JavaDoc</h2>]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>Java</category>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
       </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java中的数据类型]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FJava%2F9af728b5.html</url>
-    <content type="text"><![CDATA[Java中的数据类型]]></content>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java中的数据类型</title>
+      <link href="/%E5%90%8E%E7%AB%AF/Java/9af728b5.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/Java/9af728b5.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Java中的数据类型"><a href="#Java中的数据类型" class="headerlink" title="Java中的数据类型"></a>Java中的数据类型</h2>]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>Java</category>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Java开发环境搭建]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FJava%2F77a3ba8f.html</url>
-    <content type="text"><![CDATA[Java开发环境搭建[TOC] 开发环境版本 操作系统: Windows10 Java : 1.8.141 开发IDE: IDEA 2020.1.2 Git: 2.27.0 Java环境搭建下载java要想使用java，需要进行java开发环境的搭建，在Win10的基础上，我们需要下载java安装包，并配置系统环境变量，有以下几种方式进行下载安装。 官网地址： https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html 下载地址： https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-windows-x64.exe 依旧系统版本选择对应的java进行下载，因为现在下载都需要注册账号了，如果不想注册账户或者网速过慢，可以从我的网盘中进行下载 链接：https://pan.baidu.com/s/1tFNCcjAQWBR2AxnG0hZi7A提取码：i3rv 安装Java双击下载的软件安装包即可，会出现下述界面，点击下一步，进入下一步的安装 选择安装位置，记住安装的位置，等下要用，建议不要装到中文路径下，然后点击下一步 进入安装环节，等待安装完成，接下来会弹出jre的安装界面，点击下一步 同样记住jre的安装目录，点击下一步 jre安装进度，等待jre安装完成 安装完成后会出现如下界面，然后直接关闭即可。 关闭上述窗口后，安装过程也就算了完成了。 配置环境变量以管理员身份打开cmd窗口输入javac命令，如果如下图所示，则说明没有配置好环境变量 需要配置如下环境变量，打开win10的控制面板 点击系统，点击之后找到高级系统设置 点击高级系统设置，选择环境变量 在系统变量下面，选择新建如下系统变量 新建JAVA_HOME（之前JDK安装的目录） C:\Program Files\Java\jdk1.8.0_251 新建CLASSPATH（检查jar包的调用） 下面的值为固定值，前面有.符号，结尾有分号，直接拷贝即可 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; 编辑path系统变量 新建如下两条路径 %JAVA_HOME%\bin %JAVA_HOME%\jre\bin 配置完成后一路确定就ok了。 验证环境变量为了防止cmd终端缓存，需要关闭之前的窗口，新打开个窗口，再次输入javac命令，如果出现如下所示的说明，即说明环境变量配置成功了，就可以进行java的开发了。 我们还可以通过java -version，命令来查看安装的版本是否正确。 到此，java环境就搭建完成了，java开发环境还需要在IDEA中进行配置才行。 Java开发搭建在IDEA中配置Java方式一：项目结构配置在初始界面选择Configure，然后选择Structure for New Project，然后设置jdk版本 设置jdk版本为我们刚才安装的版本， 还有语言等级，如果有多个版本，选择自己喜欢的就好。 设置完成后即可 方式二：新建项目配置选择新建项目 选择java项目，选择JDK版本，选择Next 设置项目信息，如果出现下面的步骤，直接跳过，这里就是创建一个简单的java程序，点击Next 输入项目名称，点击Finish即可，如果出现提示框，可以直接点击OK 编写一个HelloWorld程序，进行测试，测试OK，Java开发环境就搭建OK了]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java开发环境搭建</title>
+      <link href="/%E5%90%8E%E7%AB%AF/Java/77a3ba8f.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/Java/77a3ba8f.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java开发环境搭建"><a href="#Java开发环境搭建" class="headerlink" title="Java开发环境搭建"></a>Java开发环境搭建</h1><p>[TOC]</p><h2 id="开发环境版本"><a href="#开发环境版本" class="headerlink" title="开发环境版本"></a>开发环境版本</h2><ul><li>操作系统: Windows10</li><li>Java : 1.8.141</li><li>开发IDE: IDEA 2020.1.2</li><li>Git: 2.27.0</li></ul><h2 id="Java环境搭建"><a href="#Java环境搭建" class="headerlink" title="Java环境搭建"></a>Java环境搭建</h2><h3 id="下载java"><a href="#下载java" class="headerlink" title="下载java"></a>下载java</h3><p>要想使用java，需要进行java开发环境的搭建，在Win10的基础上，我们需要下载java安装包，并配置系统环境变量，有以下几种方式进行下载安装。</p><p>官网地址：</p><p><a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank" rel="noopener">https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html</a></p><p>下载地址：</p><p><a href="https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-windows-x64.exe" target="_blank" rel="noopener">https://www.oracle.com/webapps/redirect/signon?nexturl=https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-windows-x64.exe</a></p><p>依旧系统版本选择对应的java进行下载，因为现在下载都需要注册账号了，如果不想注册账户或者网速过慢，可以从我的网盘中进行下载</p><blockquote><p>链接：<a href="https://pan.baidu.com/s/1tFNCcjAQWBR2AxnG0hZi7A" target="_blank" rel="noopener">https://pan.baidu.com/s/1tFNCcjAQWBR2AxnG0hZi7A</a><br>提取码：i3rv</p></blockquote><img src="/后端/Java/77a3ba8f/image-20200709205515072.png" title="image-20200709205515072"><h3 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h3><p>双击下载的软件安装包即可，会出现下述界面，点击下一步，进入下一步的安装</p><img src="/后端/Java/77a3ba8f/image-20200709210341287.png" title="image-20200709210341287"><p>选择安装位置，记住安装的位置，等下要用，建议不要装到<strong>中文路径</strong>下，然后点击下一步</p><img src="/后端/Java/77a3ba8f/image-20200709210439308.png" title="image-20200709210439308"><p>进入安装环节，等待安装完成，接下来会弹出<strong>jre</strong>的安装界面，点击下一步</p><img src="/后端/Java/77a3ba8f/image-20200709210603301.png" title="image-20200709210603301"><p>同样记住<strong>jre</strong>的安装目录，点击下一步</p><img src="/后端/Java/77a3ba8f/image-20200709210757164.png" title="image-20200709210757164"><p><strong>jre</strong>安装进度，等待jre安装完成</p><img src="/后端/Java/77a3ba8f/image-20200709210837482.png" title="image-20200709210837482"><p>安装完成后会出现如下界面，然后直接关闭即可。</p><img src="/后端/Java/77a3ba8f/image-20200709210951543.png"><p>关闭上述窗口后，安装过程也就算了完成了。</p><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p>以管理员身份打开<code>cmd</code>窗口输入<code>javac</code>命令，如果如下图所示，则说明没有配置好环境变量</p><img src="/后端/Java/77a3ba8f/image-20200709211510788.png" title="javac命令查看"><p>需要配置如下环境变量，打开win10的<code>控制面板</code></p><img src="/后端/Java/77a3ba8f/image-20200709211947664.png" title="image-20200709211947664"><p>点击系统，点击之后找到<code>高级系统设置</code></p><img src="/后端/Java/77a3ba8f/image-20200709212027637.png" title="image-20200709212027637"><p>点击<code>高级系统设置</code>，选择<code>环境变量</code></p><img src="/后端/Java/77a3ba8f/image-20200709212054834.png" title="image-20200709212054834"><p>在系统变量下面，选择新建如下系统变量</p><img src="/后端/Java/77a3ba8f/image-20200709212134700.png" title="image-20200709212134700"><ul><li><p>新建JAVA_HOME（之前JDK安装的目录）</p><p><code>C:\Program Files\Java\jdk1.8.0_251</code></p><img src="/后端/Java/77a3ba8f/image-20200709212249450.png" title="image-20200709212249450"></li><li><p>新建CLASSPATH（检查jar包的调用）</p><p>下面的值为固定值，前面有.符号，结尾有分号，直接拷贝即可</p><p><code>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</code></p><img src="/后端/Java/77a3ba8f/image-20200709212505433.png" title="image-20200709212505433"></li><li><p>编辑path系统变量</p><p>新建如下两条路径</p><p><code>%JAVA_HOME%\bin%JAVA_HOME%\jre\bin</code></p><img src="/后端/Java/77a3ba8f/image-20200709212650317.png" title="image-20200709212650317"><p>配置完成后一路确定就ok了。</p></li></ul><h3 id="验证环境变量"><a href="#验证环境变量" class="headerlink" title="验证环境变量"></a>验证环境变量</h3><p>为了防止<code>cmd</code>终端缓存，需要关闭之前的窗口，新打开个窗口，再次输入<code>javac</code>命令，如果出现如下所示的说明，即说明环境变量配置成功了，就可以进行<code>java</code>的开发了。</p><img src="/后端/Java/77a3ba8f/image-20200709213127149.png" title="image-20200709213127149"><p>我们还可以通过<code>java -version</code>，命令来查看安装的版本是否正确。</p><img src="/后端/Java/77a3ba8f/image-20200709213050466.png" title="image-20200709213050466"><p>  到此，java环境就搭建完成了，java开发环境还需要在<code>IDEA</code>中进行配置才行。</p><h2 id="Java开发搭建"><a href="#Java开发搭建" class="headerlink" title="Java开发搭建"></a>Java开发搭建</h2><h3 id="在IDEA中配置Java"><a href="#在IDEA中配置Java" class="headerlink" title="在IDEA中配置Java"></a>在IDEA中配置Java</h3><h4 id="方式一：项目结构配置"><a href="#方式一：项目结构配置" class="headerlink" title="方式一：项目结构配置"></a>方式一：项目结构配置</h4><p>在初始界面选择<code>Configure</code>，然后选择<code>Structure for New Project</code>，然后设置jdk版本</p><img src="/后端/Java/77a3ba8f/image-20200709213745512.png" title="image-20200709213745512"><p>设置jdk版本为我们刚才安装的版本， 还有语言等级，如果有多个版本，选择自己喜欢的就好。<img src="/后端/Java/77a3ba8f/image-20200709214035301.png" title="image-20200709214035301"></p><p>设置完成后即可</p><h4 id="方式二：新建项目配置"><a href="#方式二：新建项目配置" class="headerlink" title="方式二：新建项目配置"></a>方式二：新建项目配置</h4><p>选择新建项目</p><img src="/后端/Java/77a3ba8f/image-20200709214203386.png" title="image-20200709214203386"><p>选择<code>java</code>项目，选择JDK版本，选择<code>Next</code></p><img src="/后端/Java/77a3ba8f/image-20200709214305152.png" title="image-20200709214305152"><p>设置项目信息，如果出现下面的步骤，直接跳过，这里就是创建一个简单的java程序，点击<code>Next</code></p><img src="/后端/Java/77a3ba8f/image-20200709214403410.png" title="image-20200709214403410"><p>输入项目名称，点击Finish即可，如果出现提示框，可以直接点击OK<img src="/后端/Java/77a3ba8f/image-20200709214504746.png" title="image-20200709214504746"></p><p>编写一个HelloWorld程序，进行测试，测试OK，Java开发环境就搭建OK了<img src="/后端/Java/77a3ba8f/image-20200709214844492.png" title="image-20200709214844492"></p>]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>Java</category>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
       </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Java环境变量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Java简介]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FJava%2F9c4b5cef.html</url>
-    <content type="text"><![CDATA[Java简介]]></content>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Java环境变量 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java简介</title>
+      <link href="/%E5%90%8E%E7%AB%AF/Java/9c4b5cef.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/Java/9c4b5cef.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h2>]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>Java</category>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Html入门]]></title>
-    <url>%2F%E5%89%8D%E7%AB%AF%2FHtml%2Fc154aecc.html</url>
-    <content type="text"></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Html入门</title>
+      <link href="/%E5%89%8D%E7%AB%AF/Html/c154aecc.html"/>
+      <url>/%E5%89%8D%E7%AB%AF/Html/c154aecc.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>前端</category>
-        <category>Html</category>
+          
+          <category> 前端 </category>
+          
+          <category> Html </category>
+          
       </categories>
-      <tags>
-        <tag>Html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Flume安装]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FFlume%2F10339de6.html</url>
-    <content type="text"><![CDATA[Flume定义Flume是Clodera提供的一个高可用的，高可靠的，分布式的海量日志采集、聚合、传输的系统.Flume基于流式架构，灵活简单。 Flume最主要的作用就是：实时读取服务器本地磁盘的数据，将数据写入到第三方中间件中，比如HDFS，Kafka等。 基础架构 AgentAgent是一个JVM进程，它以事件的形式将数据从源头运至目的地。 Agent主要有3个部分组成，Source，Channel，Sink。 SourceSource是负责接收数据到Flume Agent的组件。Source组件可以处理各种类型、各种格式的日志，包括avro，thrift，exec，jms，spooling directory，netcat，sequence generator，syslog，http，legacy。 SinkSink不断地轮询Channel中的事件且批量地移除它们，并将这些事件批量写入到存储或索引系统，或者被发送到另一个Flume Agent. Sink组件目的地包括hdfs，logger，avro，thrift，ipc，file，HBase，solr，自定义。 ChannelChannel是位于Source和Sink之间的缓存区。因此，Channel允许Source和Sink运作在不同的速率上。Channel是线程安全的，可以同时处理几个Source的的写入操作和几个Sink的读取操作。 Flume自带三种Channel：Memory Channel和File Channel，以及Kafka Channel。 Memroy Channel是内存中的队列。Memory Channel在不需要关心数据丢失的情境下适用。如果需要关心数据丢失。那么Memory Channel就不应该使用，因为程序死亡、机器宕机或者重启都会导致数据丢失。 File Channel将所有事件写入磁盘。因此在程序关闭或机器宕机的情况下不会丢失数据。 Event传输单元，Flume数据传输的基本单元，以Event的形式将数据从源头送至目的地。Event由Header和Body两部分组成。Header用来存放该event的一些属性，为K-V结构，Body用来存放该条数据，形式为字节数组。 安裝部署安装地址 Flume官网地址 http://flume.apache.org 文档地址 http://flume.apache.org/releases/content/1.7.0/FlumeUserGuide.html 下载地址 http://archive.apache.org/dist/flume/ 安装部署入门案例]]></content>
+      
+      
+        <tags>
+            
+            <tag> Html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flume安装</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/Flume/10339de6.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/Flume/10339de6.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Flume"><a href="#Flume" class="headerlink" title="Flume"></a>Flume</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>Flume是Clodera提供的一个高可用的，高可靠的，分布式的<code>海量日志采集、聚合、传输的系统</code>.Flume基于流式架构，灵活简单。</p><p>Flume最主要的作用就是：实时读取服务器本地磁盘的数据，将数据写入到第三方中间件中，比如HDFS，Kafka等。</p><h2 id="基础架构"><a href="#基础架构" class="headerlink" title="基础架构"></a>基础架构</h2><p><img src=".\DevGuide_image00.png" alt="Agent component diagram"></p><h3 id="Agent"><a href="#Agent" class="headerlink" title="Agent"></a>Agent</h3><p>Agent是一个JVM进程，它以事件的形式将数据从源头运至目的地。</p><p>Agent主要有3个部分组成，Source，Channel，Sink。</p><h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><p>Source是负责接收数据到Flume Agent的组件。Source组件可以处理各种类型、各种格式的日志，包括<code>avro</code>，thrift，<code>exec</code>，jms，<code>spooling directory</code>，<code>netcat</code>，sequence generator，syslog，http，legacy。</p><h3 id="Sink"><a href="#Sink" class="headerlink" title="Sink"></a>Sink</h3><p>Sink不断地轮询Channel中的事件且批量地移除它们，并将这些事件批量写入到存储或索引系统，或者被发送到另一个Flume Agent.</p><p>Sink组件目的地包括<code>hdfs</code>，<code>logger</code>，<code>avro</code>，thrift，ipc，<code>file</code>，<code>HBase</code>，solr，自定义。</p><h3 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h3><p>Channel是位于Source和Sink之间的缓存区。因此，Channel允许Source和Sink运作在不同的速率上。Channel是线程安全的，可以同时处理几个Source的的写入操作和几个Sink的读取操作。</p><p>Flume自带三种Channel：<code>Memory Channel</code>和<code>File Channel</code>，以及<code>Kafka Channel</code>。</p><ul><li>Memroy Channel是内存中的队列。Memory Channel在不需要关心数据丢失的情境下适用。如果需要关心数据丢失。那么Memory Channel就不应该使用，因为程序死亡、机器宕机或者重启都会导致数据丢失。</li><li>File Channel将所有事件写入磁盘。因此在程序关闭或机器宕机的情况下不会丢失数据。</li></ul><h3 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h3><p>传输单元，Flume数据传输的基本单元，以Event的形式将数据从源头送至目的地。Event由<code>Header</code>和<code>Body</code>两部分组成。Header用来存放该event的一些属性，为K-V结构，Body用来存放该条数据，形式为字节数组。</p><p><img src=".\event-structer.png" alt="event struct"></p><h2 id="安裝部署"><a href="#安裝部署" class="headerlink" title="安裝部署"></a>安裝部署</h2><h3 id="安装地址"><a href="#安装地址" class="headerlink" title="安装地址"></a>安装地址</h3><ul><li><p>Flume官网地址</p><p><a href="http://flume.apache.org/" target="_blank" rel="noopener">http://flume.apache.org</a></p></li><li><p>文档地址</p><p><a href="http://flume.apache.org/releases/content/1.7.0/FlumeUserGuide.html" target="_blank" rel="noopener">http://flume.apache.org/releases/content/1.7.0/FlumeUserGuide.html</a></p></li><li><p>下载地址</p><p><a href="http://archive.apache.org/dist/flume/" target="_blank" rel="noopener">http://archive.apache.org/dist/flume/</a></p></li></ul><h3 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h3><h2 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h2>]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>Flume</category>
+          
+          <category> 中间件 </category>
+          
+          <category> Flume </category>
+          
       </categories>
-      <tags>
-        <tag>flume</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Git工作区，暂存区，本地版本库，远程版本库]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FGit%2Fc31fe0f0.html</url>
-    <content type="text"><![CDATA[基本概念区域转换图工作区暂存区本地版本库远程版本库区域工作流程文件的四种状态文件的状态转换图实战演练]]></content>
+      
+      
+        <tags>
+            
+            <tag> flume </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git工作区，暂存区，本地版本库，远程版本库</title>
+      <link href="/%E5%B7%A5%E5%85%B7/Git/c31fe0f0.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/Git/c31fe0f0.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="区域转换图"><a href="#区域转换图" class="headerlink" title="区域转换图"></a>区域转换图</h3><h3 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h3><h3 id="暂存区"><a href="#暂存区" class="headerlink" title="暂存区"></a>暂存区</h3><h3 id="本地版本库"><a href="#本地版本库" class="headerlink" title="本地版本库"></a>本地版本库</h3><h3 id="远程版本库"><a href="#远程版本库" class="headerlink" title="远程版本库"></a>远程版本库</h3><h3 id="区域工作流程"><a href="#区域工作流程" class="headerlink" title="区域工作流程"></a>区域工作流程</h3><h3 id="文件的四种状态"><a href="#文件的四种状态" class="headerlink" title="文件的四种状态"></a>文件的四种状态</h3><h3 id="文件的状态转换图"><a href="#文件的状态转换图" class="headerlink" title="文件的状态转换图"></a>文件的状态转换图</h3><h2 id="实战演练"><a href="#实战演练" class="headerlink" title="实战演练"></a>实战演练</h2>]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>Git</category>
+          
+          <category> 工具 </category>
+          
+          <category> Git </category>
+          
       </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[创建第一个仓库并配置Local用户信息]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FGit%2Ff55b47bd.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 经过Git简介与安装以及Git配置文件作用域及最小可用配置讲解，我们已经为Git的准备做足了功课。下面我们将来介绍如何创建第一个仓库并利用之前的学习到的Git配置文件的作用域来指定本仓库的配置。 实验环境 Windows10 Git 2.9.0 新建第一个Git仓库使用以下步骤可以新建一个Git仓库 进入系统中某个盘，本文进入G盘，读者可相应的改变 新建一个文件夹，保证新建的文件夹内无任何文件，包括隐藏文件 执行git init命令即可初始化一个Git仓库 由于本Git系列的文章都是通过使用GitBash来对命令进行操作的。所以上述步骤转换为命令操作即是： # git命令进入盘符采用这种方式，类似于Linux的目录结构 cd /g # 在G:盘下新建一个目录git-learning mkdir git-learning # 切换到git-learning目录下，即进入git-learning目录 cd git-learning # 开始使用git命令了，git status 标识查看当前目录下是否存在一个仓库 git status # 如果出现[fatal: Not a git repository (or any of the parent directories): .git]提示 # 说明不存在仓库，使用git init命令初始化仓库，执行完后会有如下提示： # [Initialized empty Git repository in G:/git-learning/.git/] git init # 再次查看当前目录是否存在一个git仓库， git status 如果你已经执行了上述的命令，并且执行结果如下图所示，图中也对每一句代表了什么信息做了详细的解释说明。那么恭喜你，你已经成功的初始化了一个仓库。 配置仓库级别（Local）的用户信息Git中的配置文件作用域已经在上一讲中做出了说明，如果有不明白的可以去看Git配置文件作用域及最小可用配置讲解，那么这里将证明一下Git配置的作用域，将配置global级别和local级别的作用域配置，采用最小配置，即：user.name以及user.email，分别使用以下配置（这里只做模拟说明使用，具体请读者按照需求配置）： global user.name：globalUser user.email：`globalUser@gmail.com` local user.name：localUser user.email：`localUser@gmail.com` 新增配置执行以下命令即可完成配置 git config --global user.name globalUser git config --global user.email globalUser@gmail.com git config --local user.name localUser git config --local user.email localUser@gmail.com 如果像下面的截图一样，没有任何输出，那么恭喜你，配置成功了 查看配置配置完成后，我们来查看配置是否采用了就近原则 可能通过上图你说，你怎么知道用local就是这个仓库的配置文件呢，那么我先剧透一下，git本仓库的配置文件位于当前仓库根目录下的.git/config文件中，在本例因为仓库位于G:/git-learning/目录下，所以，这个完整的配置文件路径就是G:/git-learning/.git/conf，那么让我们查看一下这个文件，来证明我们这个是对的，当然，知道了文件的位置，那么就可以手动编辑，要知道语法哦，简单分析一下就知道了，这里就不在赘述了。 更新配置更新配置很简单，只需要运行前面新增配置中的命令即可，git就会帮你覆盖掉之前的配置，下面做个简单的演示，将local的user.name修改为localUserUpdate 删除配置这里说一下删除配置项的原因，因为git不会帮你检查你输入的配置项是否正确，那么我们很可能输入错误，比如将user.name输错成user.mame，那么git也是给我们提供了删除配置的命令，这个命令就是： git config --unset 你的配置信息 下面演示一下： 命令拾遗当我们不知道一个命令怎么用的时候，我们可以直接在git中输入这个命令，就会给我们提示，如我们输入git config命令，git的人性化的提示信息就出现了，关于这块，后面会专门出一篇如何使用git的提示信息的博文，敬请期待]]></content>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>创建第一个仓库并配置Local用户信息</title>
+      <link href="/%E5%B7%A5%E5%85%B7/Git/f55b47bd.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/Git/f55b47bd.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>工欲善其事必先利其器</p></blockquote><p>经过<a href="/Git/a21830fd.html">Git简介与安装</a>以及<a href="/Git/85076309.html">Git配置文件作用域及最小可用配置讲解</a>，我们已经为Git的准备做足了功课。下面我们将来介绍如何<code>创建第一个仓库</code>并利用之前的学习到的<code>Git配置文件的作用域</code>来指定本仓库的配置。</p><h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><ul><li>Windows10</li><li>Git 2.9.0</li></ul><h2 id="新建第一个Git仓库"><a href="#新建第一个Git仓库" class="headerlink" title="新建第一个Git仓库"></a>新建第一个Git仓库</h2><p>使用以下步骤可以新建一个Git仓库</p><ul><li><p>进入系统中某个盘，本文进入G盘，读者可相应的改变</p></li><li><p>新建一个文件夹，保证新建的文件夹内无任何文件，包括隐藏文件</p></li><li>执行<code>git init</code>命令即可初始化一个Git仓库</li></ul><a id="more"></a><p>由于本Git系列的文章都是通过使用<code>GitBash</code>来对命令进行操作的。所以上述步骤转换为命令操作即是：</p><pre><code class="shell"># git命令进入盘符采用这种方式，类似于Linux的目录结构cd /g # 在G:盘下新建一个目录git-learningmkdir git-learning# 切换到git-learning目录下，即进入git-learning目录cd git-learning# 开始使用git命令了，git status 标识查看当前目录下是否存在一个仓库git status# 如果出现[fatal: Not a git repository (or any of the parent directories): .git]提示# 说明不存在仓库，使用git init命令初始化仓库，执行完后会有如下提示：# [Initialized empty Git repository in G:/git-learning/.git/]git init # 再次查看当前目录是否存在一个git仓库，git status</code></pre><p>如果你已经执行了上述的命令，并且执行结果如下图所示，图中也对每一句代表了什么信息做了详细的解释说明。那么恭喜你，你已经成功的初始化了一个仓库。<br><img src="/工具/Git/f55b47bd/git-init-repository.png" title="git初始化仓库"></p><h2 id="配置仓库级别（Local）的用户信息"><a href="#配置仓库级别（Local）的用户信息" class="headerlink" title="配置仓库级别（Local）的用户信息"></a>配置仓库级别（Local）的用户信息</h2><p>Git中的配置文件作用域已经在上一讲中做出了说明，如果有不明白的可以去看<a href="/Git/85076309.html">Git配置文件作用域及最小可用配置讲解</a>，那么这里将证明一下Git配置的作用域，将配置<code>global</code>级别和<code>local</code>级别的作用域配置，采用最小配置，即：<code>user.name</code>以及<code>user.email</code>，分别使用以下配置（这里只做模拟说明使用，具体请读者按照需求配置）：</p><ul><li>global<ul><li>user.name：<code>globalUser</code></li><li>user.email：<a href="mailto:`globalUser@gmail.com" target="_blank" rel="noopener">`globalUser@gmail.com</a>`</li></ul></li><li>local<ul><li>user.name：<code>localUser</code></li><li>user.email：<a href="mailto:`localUser@gmail.com" target="_blank" rel="noopener">`localUser@gmail.com</a>`</li></ul></li></ul><h3 id="新增配置"><a href="#新增配置" class="headerlink" title="新增配置"></a>新增配置</h3><p>执行以下命令即可完成配置</p><pre><code class="shell">git config --global user.name globalUsergit config --global user.email globalUser@gmail.comgit config --local user.name localUsergit config --local user.email localUser@gmail.com</code></pre><p>如果像下面的截图一样，没有任何输出，那么恭喜你，配置成功了</p><img src="/工具/Git/f55b47bd/git-add-config.png" title="git配置global和local信息"> <h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><p>配置完成后，我们来查看配置是否采用了<code>就近原则</code></p><img src="/工具/Git/f55b47bd/git-config-through.png" title="查看git配置global和local信息"><p>可能通过上图你说，你怎么知道用<code>local</code>就是这个仓库的配置文件呢，那么我先剧透一下，git本仓库的配置文件位于当前仓库根目录下的<code>.git/config</code>文件中，在本例因为仓库位于<code>G:/git-learning/</code>目录下，所以，这个完整的配置文件路径就是<code>G:/git-learning/.git/conf</code>，那么让我们查看一下这个文件，来证明我们这个是对的，当然，知道了文件的位置，那么就可以手动编辑，要知道语法哦，简单分析一下就知道了，这里就不在赘述了。</p><img src="/工具/Git/f55b47bd/git-config-file.png" title="查看config文件来查看git配置信息"><h3 id="更新配置"><a href="#更新配置" class="headerlink" title="更新配置"></a>更新配置</h3><p>更新配置很简单，只需要运行前面新增配置中的命令即可，git就会帮你覆盖掉之前的配置，下面做个简单的演示，将local的<code>user.name</code>修改为<code>localUserUpdate</code></p><img src="/工具/Git/f55b47bd/git-update-config.png" title="更新git配置信息"><h3 id="删除配置"><a href="#删除配置" class="headerlink" title="删除配置"></a>删除配置</h3><p>这里说一下删除配置项的原因，因为git不会帮你检查你输入的配置项是否正确，那么我们很可能输入错误，比如将<code>user.name</code>输错成<code>user.mame</code>，那么git也是给我们提供了删除配置的命令，这个命令就是：</p><pre><code class="shell">git config --unset 你的配置信息</code></pre><p>下面演示一下：</p><img src="/工具/Git/f55b47bd/git-delete-config.png" title="刪除git配置信息"><h3 id="命令拾遗"><a href="#命令拾遗" class="headerlink" title="命令拾遗"></a>命令拾遗</h3><p>当我们不知道一个命令怎么用的时候，我们可以直接在git中输入这个命令，就会给我们提示，如我们输入<code>git config</code>命令，git的人性化的提示信息就出现了，关于这块，后面会专门出一篇如何使用git的提示信息的博文，敬请期待</p><img src="/工具/Git/f55b47bd/git-config-help.png" title="查看git config配置帮助">]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>Git</category>
+          
+          <category> 工具 </category>
+          
+          <category> Git </category>
+          
       </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[JAVA多线程学习笔记 —— 线程的简介与入门]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FJava%2F5169e384.html</url>
-    <content type="text"><![CDATA[[TOC] 理论知识为什么会出现多线程多线程出现的主要原因 科学技术的发展。计算机从早期的巨型机到微型机，从早期的单核CPU到现在的多核CPU，从单核CPU的伪多线程到现在多核CPU的真正意义上的多线程，以及取决于决定性因素的CPU处理能力与程序运行的高度不匹配都是促使多线程出现的原因之一， 贪婪之心。人是串行化的动物（神童，天才，超能力者除外），一次只能做一件事，当然，只要给与足够的时间，同时交给你的任务总是能够采用串行化的方式执行完，不知道这是不是996的由来。人虽然不能，但是计算机可以，计算机并行执行的能力相较于人类同时处理多种事情导致的上下文切换，更能保证正确性。 充分利用资源。我们都知道CPU的运行速度是很快的，计算机在执行非CPU型任务，比如：读取文件，写数据到数据库，此时CPU是空闲的，但是却会因为程序是串行化（非多线程程序）的执行，而导致CPU得不到很好的利用，其实，此时CPU本可以做其他事情的，如继续读取其他的指令进行执行。这样也能充分的利用CPU资源，高效的完成任务。 串行与并行在上面我们提到了串行，并行的概，那么什么是串行，什么是并行。在程序的世界里，串行和并行主要是指程序任务的执行方式。 串行 多个任务时，各个任务按顺序执行，完成一个之后才能执行下一个。 并行 多个任务时，多个任务可以同时执行 举个简单的例子用来理解上面的概念： 每个人或多或少都有过去窗口打饭的经历，那么当只有一个窗口的时候，如果你想吃饭怎么办呢，只好排队对吧，因为窗口只有一个，那么当你前面的的人在没有打饭完成之前，你都只好等着，等你前面的人依次排队把饭打完才能轮到你打饭对吧，这就是串行，排队式，一个接一个的执行，只有前一个执行完成才能轮到你的执行。打饭打了很多天了，结果每天都会因为有很多人因为等的时间比出去找个新地方吃饭的时间要长而选择离开，而你是最能忍的，你觉得还可以接受，主要是饭菜可口，但是食堂老板不接受啊，这跑的可都是钱呀，他进行调研之后仔细一算，决定再开一个窗口，来提高食堂供应饭菜的速度，这样同一时间内就能提供两份饭菜了，从前丢失的顾客又再次投入了老板的怀抱，老板开心的笑了。其实这里的增设窗口就是并行的处理了顾客等待时间的问题，提供了一种能力，一种能够同时供应两个用户的就餐能力。 针对上面的问题，我们会在下面通过实战模拟来体会一下串行和并行。 Java中的多线程很多人在使用java中的多线程的时候总是搞不清楚某些概念，而导致使用不好多线程。首先要能够区分的概念我认为是线程对象和线程的概念，相信来学线程的，一定是对java基础还是有一定了解的，我们常常一说线程就会说Thread，很多人就会认为Thread就是一个线程，真的是这样吗?显然不是这样，这是一个认知的误区，那么我们来分析下到底什么是线程，什么是线程对象 线程对象 线程对象，顾名思义——持有线程的对象。那么在JAVA中，是谁呢，没错，就是我们的Thread对象，无论你是直接new出来的Thread对象，还是其子类的实例化，只要在没有执行它的start()方法，那么这个对象就可以称之为线程对象，它只是持有这个线程的引用，并没有通过你的new方法创建了一个线程。 线程 如果仔细理解了上面线程对象的概念，那么就不难理解这里的线程的概念，只有当我们显示的调用了这个线程对象的start()方法时，才能称之为真正的创建了一个线程，那么这个线程是怎么创建的呢，这就和操作系统有关了，JAVA会通过调用本地方法 start0()来再操作系统中开辟线程的生存空间，从而创建一个我们理解意义上的线程。 如果上述概念已经澄清了，那么我们就可以学习JAVA中线程的实现方式了。 实现方式 声明一个类继承自Thread，并重写其run()方法 声明一个类实现Runnable接口，实现其run()方法，将其作为Thread的参数来创建线程 实战将会上面描述的窗口打饭进行描述，用于达成以下目的 理解串行和并行 理解线程对象和线程 使用线程 体会线程下面我们创建一个线程对象，然后启动这个线程，查看执行结果 创建线程方式一： 声明一个类继承自Thread，并重写其run()方法 public class TaskThread extends Thread { // run()方法是线程的主要业务执行单元 @Override public void run() { System.out.println(&quot;我是TaskThread，我的任务就是执行一系列的任务&quot;); } public static void main(String[] args) { /*======================================继承方式创建一个线程=========================*/ /** * 这里仅是声明了一个线程对象，并没有实际的创建出一个线程 */ TaskThread taskThread = new TaskThread(); /** * 这里是将线程对象变成一个线程的方法，如果注释这行，启动程序的时候讲不会打印`我是一个线程， * 新创建的哦`这句话。由于线程的执行需要CPU的调度，而不是调用的start方法后就立即执行 */ taskThread.start(); /*======================================内部类方式创建========================*/ // 采用内部类方式创建，如果不重写run方法，则什么也不会输出 Thread thread = new Thread() { @Override public void run() { System.out.println(&quot;我是一个线程，新创建的哦。&quot;); } }; thread.start(); System.out.println(&quot;main方法执行结束&quot;); } } 创建线程方式二： 声明一个类实现Runnable接口，实现其run()方法，将其作为Thread的参数来创建线程 public class TaskRunnable implements Runnable { @Override public void run() { System.out.println(&quot;我是通过Runnable方式创建的线程哦&quot;); } public static void main(String[] args) { // 创建一个线程对象，使用实现了Runnable接口的对象作为参数 Thread thread = new Thread(new TaskRunnable()); // 线程对象启动，成为一个线程 thread.start(); System.out.println(&quot;main方法结束了哦&quot;); } } 一个窗口点餐（串行）code清单1 /** * @ClassName SingleWindowOrderFood * @Description 单个窗口点餐 * @Author Administrator * @Date 2019/10/11 22:56 * @Version 1.0 */ public class SingleWindowOrderFood { public static void main(String[] args) { System.out.println(&quot;到饭点了，大家可以开始排队点餐了&quot;); long start = System.currentTimeMillis(); // 窗口一： 处理50人的用餐 for (int i = 0; i &lt; 50; i++) { try { // 这里模拟一个人点餐需要1秒，那么50个人点餐就需要50s Thread.sleep(1_000); } catch (InterruptedException e) { e.printStackTrace(); } } System.out.println(&quot;一个窗口，每人耗时1秒，50人点餐，执行总共耗时：&quot; + ((System.currentTimeMillis() - start) / 1000) +&quot;s&quot;); } } 通过运行上述的代码，我们可以发现，程序一共跑了50s 可能有人会写出下面的代码，心想：不就是两个窗口吗，我写两个循环不就完了，分别处理25个客户请求： public class DoubleWindowsOrderFood { public static void main(String[] args) { System.out.println(&quot;到饭点了，大家可以开始排队点餐了,今天两个窗口哦&quot;); long start = System.currentTimeMillis(); // 窗口一： 处理25人的用餐 System.out.println(&quot;窗口一点餐开始&quot;); for (int i = 0; i &lt; 25; i++) { try { // 这里模拟一个人点餐需要1秒，那么25个人点餐就需要25s Thread.sleep(1_000); } catch (InterruptedException e) { e.printStackTrace(); } } System.out.println(&quot;窗口一点餐结束&quot;); System.out.println(&quot;窗口二点餐开始&quot;); // 窗口二： 处理25人的用餐 for (int i = 0; i &lt; 25; i++) { try { // 这里模拟一个人点餐需要1秒，那么25个人点餐就需要25s Thread.sleep(1_000); } catch (InterruptedException e) { e.printStackTrace(); } } System.out.println(&quot;窗口二点餐结束&quot;); System.out.println(&quot;两个窗口，每人耗时1秒，50人点餐，执行总共耗时：&quot; + ((System.currentTimeMillis() - start) / 1000) + &quot;s&quot;); } } 执行结果： 其实这个的执行结果和上面单个窗口的执行结果是一样的，那么我们来分析一下为什么？很简单，程序是串行化的，也就是一行一行执行的，并没有做到并行化执行，他不会从窗口一就直接跳到窗口二的代码去，只能一行一行的执行，一行一行的出结果，所以这里执行的结果都是一样的，都会耗费50s 并行化改造站在生活的角度，两个窗口肯定是同时提供服务的，而不是必须等一个执行完了，才开始第二个，我们需要真正意义上的贴近生活的设计，那么线程就是用来干这个事的，下面我们对代码进行改造一下。 public class OrderFoodConcurrency { public static void main(String[] args) { System.out.println(&quot;到饭点了，大家可以开始排队点餐了,今天两个窗口哦，这里并行点餐哦&quot;); Thread windowOne = new Thread(){ @Override public void run() { long start = System.currentTimeMillis(); System.out.println(&quot;窗口一开始点餐了&quot;); // 窗口一： 处理25人的用餐 for (int i = 0; i &lt; 25; i++) { try { // 这里模拟一个人点餐需要1秒，那么25个人点餐就需要25s Thread.sleep(1_000); } catch (InterruptedException e) { e.printStackTrace(); } } System.out.println(&quot;窗口一点餐耗时：&quot; + ((System.currentTimeMillis() - start) / 1000) + &quot;s&quot;); } }; windowOne.start(); Thread windowTwo = new Thread(){ @Override public void run() { long start = System.currentTimeMillis(); System.out.println(&quot;窗口二开始点餐了&quot;); // 窗口二： 处理25人的用餐 for (int i = 0; i &lt; 25; i++) { try { // 这里模拟一个人点餐需要1秒，那么25个人点餐就需要25s Thread.sleep(1_000); } catch (InterruptedException e) { e.printStackTrace(); } } System.out.println(&quot;窗口二点餐耗时：&quot; + ((System.currentTimeMillis() - start) / 1000) + &quot;s&quot;); } }; windowTwo.start(); try { // 这里让main方法睡眠30s，主要是为了验证整个程序的执行时间，当然在后面会有来统计线程 // 执行时间的方法,这里就不做讲解了，其实main方法也是执行在一个线程中的，名字就叫main线程，这点 // 我们会在后面解析,因为窗口一和窗口二同时执行，那么最少需要25秒的时间才能完成两个线程的执行， // 这里我们睡眠30s，足矣，不然main线程启动完两个线程后直接挂掉了，无法监视时间 Thread.sleep(30_000); } catch (InterruptedException e) { e.printStackTrace(); } System.out.println(&quot;所有窗口按照预期都执行完了点餐&quot;); } } 执行结果： 分析 由于窗口一和窗口二是并行执行的，所以理论上两个线程完美状态是共耗时25s]]></content>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JAVA多线程学习笔记 —— 线程的简介与入门</title>
+      <link href="/%E5%90%8E%E7%AB%AF/Java/5169e384.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/Java/5169e384.html</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><h2 id="理论知识"><a href="#理论知识" class="headerlink" title="理论知识"></a>理论知识</h2><h3 id="为什么会出现多线程"><a href="#为什么会出现多线程" class="headerlink" title="为什么会出现多线程"></a>为什么会出现多线程</h3><h4 id="多线程出现的主要原因"><a href="#多线程出现的主要原因" class="headerlink" title="多线程出现的主要原因"></a>多线程出现的主要原因</h4><ol><li>科学技术的发展。计算机从早期的巨型机到微型机，从早期的单核CPU到现在的多核CPU，从单核CPU的伪多线程到现在多核CPU的真正意义上的多线程，以及取决于决定性因素的CPU处理能力与程序运行的高度不匹配都是促使多线程出现的原因之一，</li><li>贪婪之心。人是串行化的动物（神童，天才，超能力者除外），一次只能做一件事，当然，只要给与足够的时间，同时交给你的任务总是能够采用<code>串行</code>化的方式执行完，不知道这是不是996的由来。人虽然不能，但是计算机可以，计算机<code>并行</code>执行的能力相较于人类同时处理多种事情导致的<code>上下文切换</code>，更能保证正确性。</li><li>充分利用资源。我们都知道CPU的运行速度是很快的，计算机在执行非CPU型任务，比如：读取文件，写数据到数据库，此时CPU是空闲的，但是却会因为程序是串行化（非多线程程序）的执行，而导致CPU得不到很好的利用，其实，此时CPU本可以做其他事情的，如继续读取其他的指令进行执行。这样也能充分的利用CPU资源，高效的完成任务。</li></ol><h3 id="串行与并行"><a href="#串行与并行" class="headerlink" title="串行与并行"></a>串行与并行</h3><p>在上面我们提到了<code>串行</code>，<code>并行</code>的概，那么什么是<code>串行</code>，什么是<code>并行</code>。在程序的世界里，串行和并行主要是指程序任务的执行方式。</p><h4 id="串行"><a href="#串行" class="headerlink" title="串行"></a>串行</h4><blockquote><p>多个任务时，各个任务按顺序执行，完成一个之后才能执行下一个。<br><a id="more"></a></p></blockquote><h4 id="并行"><a href="#并行" class="headerlink" title="并行"></a>并行</h4><blockquote><p>多个任务时，多个任务可以同时执行</p></blockquote><p>举个简单的例子用来理解上面的概念：</p><p>每个人或多或少都有过去窗口打饭的经历，那么当只有一个窗口的时候，如果你想吃饭怎么办呢，只好排队对吧，因为窗口只有一个，那么当你前面的的人在没有打饭完成之前，你都只好等着，等你前面的人依次排队把饭打完才能轮到你打饭对吧，这就是串行，排队式，一个接一个的执行，只有前一个执行完成才能轮到你的执行。打饭打了很多天了，结果每天都会因为有很多人因为等的时间比出去找个新地方吃饭的时间要长而选择离开，而你是最能忍的，你觉得还可以接受，主要是饭菜可口，但是食堂老板不接受啊，这跑的可都是钱呀，他进行调研之后仔细一算，决定再开一个窗口，来提高食堂供应饭菜的速度，这样同一时间内就能提供两份饭菜了，从前丢失的顾客又再次投入了老板的怀抱，老板开心的笑了。其实这里的增设窗口就是并行的处理了顾客等待时间的问题，提供了一种能力，一种能够同时供应两个用户的就餐能力。</p><p>针对上面的问题，我们会在下面通过实战模拟来体会一下串行和并行。</p><h3 id="Java中的多线程"><a href="#Java中的多线程" class="headerlink" title="Java中的多线程"></a>Java中的多线程</h3><p>很多人在使用java中的多线程的时候总是搞不清楚某些概念，而导致使用不好多线程。首先要能够区分的概念我认为是<code>线程对象</code>和<code>线程</code>的概念，相信来学线程的，一定是对java基础还是有一定了解的，我们常常一说线程就会说<code>Thread</code>，很多人就会认为<code>Thread</code>就是一个线程，真的是这样吗?显然不是这样，这是一个认知的误区，那么我们来分析下到底什么是<code>线程</code>，什么是<code>线程对象</code></p><h4 id="线程对象"><a href="#线程对象" class="headerlink" title="线程对象"></a>线程对象</h4><blockquote><p>线程对象，顾名思义——持有线程的对象。那么在JAVA中，是谁呢，没错，就是我们的Thread对象，无论你是直接new出来的Thread对象，还是其子类的实例化，只要在没有执行它的<code>start()</code>方法，那么这个对象就可以称之为线程对象，它只是持有这个线程的引用，并没有通过你的new方法创建了一个线程。</p></blockquote><h4 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h4><blockquote><p>如果仔细理解了上面线程对象的概念，那么就不难理解这里的线程的概念，只有当我们显示的调用了这个<code>线程对象</code>的<code>start()</code>方法时，才能称之为真正的创建了一个线程，那么这个线程是怎么创建的呢，这就和操作系统有关了，JAVA会通过调用<code>本地方法</code> <code>start0()</code>来再操作系统中开辟线程的生存空间，从而创建一个我们理解意义上的线程。</p></blockquote><p>如果上述概念已经澄清了，那么我们就可以学习JAVA中线程的实现方式了。</p><h4 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h4><ul><li>声明一个类继承自<code>Thread</code>，并重写其<code>run()</code>方法</li><li>声明一个类实现<code>Runnable</code>接口，实现其<code>run()</code>方法，将其作为<code>Thread</code>的参数来创建线程</li></ul><h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p>将会上面描述的窗口打饭进行描述，用于达成以下目的</p><ul><li>理解串行和并行</li><li>理解线程对象和线程</li><li>使用线程</li></ul><h3 id="体会线程"><a href="#体会线程" class="headerlink" title="体会线程"></a>体会线程</h3><p>下面我们创建一个线程对象，然后启动这个线程，查看执行结果</p><p>创建线程方式一：</p><p>声明一个类继承自<code>Thread</code>，并重写其<code>run()</code>方法</p><pre><code class="java">public class TaskThread extends Thread {    // run()方法是线程的主要业务执行单元    @Override    public void run() {        System.out.println(&quot;我是TaskThread，我的任务就是执行一系列的任务&quot;);    }    public static void main(String[] args) {        /*======================================继承方式创建一个线程=========================*/        /**         * 这里仅是声明了一个线程对象，并没有实际的创建出一个线程         */        TaskThread taskThread = new TaskThread();        /**         *  这里是将线程对象变成一个线程的方法，如果注释这行，启动程序的时候讲不会打印`我是一个线程，         *  新创建的哦`这句话。由于线程的执行需要CPU的调度，而不是调用的start方法后就立即执行         */        taskThread.start();        /*======================================内部类方式创建========================*/        // 采用内部类方式创建，如果不重写run方法，则什么也不会输出        Thread thread = new Thread() {            @Override            public void run() {                System.out.println(&quot;我是一个线程，新创建的哦。&quot;);            }        };        thread.start();        System.out.println(&quot;main方法执行结束&quot;);    }}</code></pre><p>创建线程方式二：</p><p>声明一个类实现<code>Runnable</code>接口，实现其<code>run()</code>方法，将其作为<code>Thread</code>的参数来创建线程</p><pre><code class="java">public class TaskRunnable implements Runnable {    @Override    public void run() {        System.out.println(&quot;我是通过Runnable方式创建的线程哦&quot;);    }    public static void main(String[] args) {        // 创建一个线程对象，使用实现了Runnable接口的对象作为参数        Thread thread = new Thread(new TaskRunnable());        // 线程对象启动，成为一个线程        thread.start();        System.out.println(&quot;main方法结束了哦&quot;);    }}</code></pre><h3 id="一个窗口点餐（串行）"><a href="#一个窗口点餐（串行）" class="headerlink" title="一个窗口点餐（串行）"></a>一个窗口点餐（串行）</h3><p><code>code清单1</code></p><pre><code class="java">/** * @ClassName SingleWindowOrderFood * @Description 单个窗口点餐 * @Author Administrator * @Date 2019/10/11 22:56 * @Version 1.0 */public class SingleWindowOrderFood {    public static void main(String[] args) {        System.out.println(&quot;到饭点了，大家可以开始排队点餐了&quot;);        long start = System.currentTimeMillis();        // 窗口一： 处理50人的用餐        for (int i = 0; i &lt; 50; i++) {            try {                // 这里模拟一个人点餐需要1秒，那么50个人点餐就需要50s                Thread.sleep(1_000);            } catch (InterruptedException e) {                e.printStackTrace();            }        }        System.out.println(&quot;一个窗口，每人耗时1秒，50人点餐，执行总共耗时：&quot; + ((System.currentTimeMillis() - start) / 1000) +&quot;s&quot;);    }}</code></pre><p>通过运行上述的代码，我们可以发现，程序一共跑了50s</p><p><img src=".\5169e384\1570845865089.png" alt="单个窗口代码"></p><p>可能有人会写出下面的代码，心想：不就是两个窗口吗，我写两个循环不就完了，分别处理25个客户请求：</p><pre><code class="java">public class DoubleWindowsOrderFood {    public static void main(String[] args) {        System.out.println(&quot;到饭点了，大家可以开始排队点餐了,今天两个窗口哦&quot;);        long start = System.currentTimeMillis();        // 窗口一： 处理25人的用餐        System.out.println(&quot;窗口一点餐开始&quot;);        for (int i = 0; i &lt; 25; i++) {            try {                // 这里模拟一个人点餐需要1秒，那么25个人点餐就需要25s                Thread.sleep(1_000);            } catch (InterruptedException e) {                e.printStackTrace();            }        }        System.out.println(&quot;窗口一点餐结束&quot;);        System.out.println(&quot;窗口二点餐开始&quot;);        // 窗口二： 处理25人的用餐        for (int i = 0; i &lt; 25; i++) {            try {                // 这里模拟一个人点餐需要1秒，那么25个人点餐就需要25s                Thread.sleep(1_000);            } catch (InterruptedException e) {                e.printStackTrace();            }        }        System.out.println(&quot;窗口二点餐结束&quot;);        System.out.println(&quot;两个窗口，每人耗时1秒，50人点餐，执行总共耗时：&quot; + ((System.currentTimeMillis() - start) / 1000) + &quot;s&quot;);    }}</code></pre><p>执行结果：</p><p><img src=".\5169e384\1570847830397.png" alt="两个窗口点餐执行结果"></p><p>其实这个的执行结果和上面单个窗口的执行结果是一样的，那么我们来分析一下为什么？很简单，程序是串行化的，也就是一行一行执行的，并没有做到并行化执行，他不会从窗口一就直接跳到窗口二的代码去，只能一行一行的执行，一行一行的出结果，所以这里执行的结果都是一样的，都会耗费50s</p><p><img src=".\5169e384\1570847791664.png" alt="执行过程分析"></p><h3 id="并行化改造"><a href="#并行化改造" class="headerlink" title="并行化改造"></a>并行化改造</h3><p>站在生活的角度，两个窗口肯定是同时提供服务的，而不是必须等一个执行完了，才开始第二个，我们需要真正意义上的贴近生活的设计，那么线程就是用来干这个事的，下面我们对代码进行改造一下。</p><pre><code class="java">public class OrderFoodConcurrency {    public static void main(String[] args) {        System.out.println(&quot;到饭点了，大家可以开始排队点餐了,今天两个窗口哦，这里并行点餐哦&quot;);        Thread windowOne = new Thread(){            @Override            public void run() {                long start = System.currentTimeMillis();                System.out.println(&quot;窗口一开始点餐了&quot;);                // 窗口一： 处理25人的用餐                for (int i = 0; i &lt; 25; i++) {                    try {                        // 这里模拟一个人点餐需要1秒，那么25个人点餐就需要25s                        Thread.sleep(1_000);                    } catch (InterruptedException e) {                        e.printStackTrace();                    }                }                System.out.println(&quot;窗口一点餐耗时：&quot; + ((System.currentTimeMillis() - start) / 1000) + &quot;s&quot;);            }        };        windowOne.start();        Thread windowTwo = new Thread(){            @Override            public void run() {                long start = System.currentTimeMillis();                System.out.println(&quot;窗口二开始点餐了&quot;);                // 窗口二： 处理25人的用餐                for (int i = 0; i &lt; 25; i++) {                    try {                        // 这里模拟一个人点餐需要1秒，那么25个人点餐就需要25s                        Thread.sleep(1_000);                    } catch (InterruptedException e) {                        e.printStackTrace();                    }                }                System.out.println(&quot;窗口二点餐耗时：&quot; + ((System.currentTimeMillis() - start) / 1000) + &quot;s&quot;);            }        };        windowTwo.start();        try {            // 这里让main方法睡眠30s，主要是为了验证整个程序的执行时间，当然在后面会有来统计线程            // 执行时间的方法,这里就不做讲解了，其实main方法也是执行在一个线程中的，名字就叫main线程，这点                        // 我们会在后面解析,因为窗口一和窗口二同时执行，那么最少需要25秒的时间才能完成两个线程的执行，                     // 这里我们睡眠30s，足矣，不然main线程启动完两个线程后直接挂掉了，无法监视时间            Thread.sleep(30_000);        } catch (InterruptedException e) {            e.printStackTrace();        }        System.out.println(&quot;所有窗口按照预期都执行完了点餐&quot;);    }}</code></pre><p>执行结果：</p><p><img src=".\5169e384\1570848633006.png" alt="并行化执行结果"></p><p>分析</p><p>由于窗口一和窗口二是并行执行的，所以理论上两个线程完美状态是共耗时25s</p><p><img src=".\5169e384\1570848619749.png" alt="并行化执行结果分析"></p>]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>Java</category>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
       </categories>
-      <tags>
-        <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Kafka安装]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FKafka%2F89340871.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> 多线程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kafka安装</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/Kafka/89340871.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/Kafka/89340871.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>Kafka</category>
+          
+          <category> 中间件 </category>
+          
+          <category> Kafka </category>
+          
       </categories>
-      <tags>
-        <tag>Kafka</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Kafka学习笔记]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FKafka%2Fb1bf01c2.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> Kafka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kafka学习笔记</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/Kafka/b1bf01c2.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/Kafka/b1bf01c2.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>Kafka</category>
+          
+          <category> 中间件 </category>
+          
+          <category> Kafka </category>
+          
       </categories>
-      <tags>
-        <tag>Kafka</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[yum更换镜像源]]></title>
-    <url>%2F%E8%BF%90%E7%BB%B4%2FLinux%2FCentOS%2F3c238fc5.html</url>
-    <content type="text"><![CDATA[CentOS 7更换国内镜像源阿里源备份mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup 更新下载新的CentOS-Base.repo 到/etc/yum.repos.d/ CentOS 6wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo 或者 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo CentOS 7wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo 或者 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo 生成缓存yum makecache]]></content>
+      
+      
+        <tags>
+            
+            <tag> Kafka </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>yum更换镜像源</title>
+      <link href="/%E8%BF%90%E7%BB%B4/Linux/CentOS/3c238fc5.html"/>
+      <url>/%E8%BF%90%E7%BB%B4/Linux/CentOS/3c238fc5.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="CentOS-7更换国内镜像源"><a href="#CentOS-7更换国内镜像源" class="headerlink" title="CentOS 7更换国内镜像源"></a>CentOS 7更换国内镜像源</h1><h2 id="阿里源"><a href="#阿里源" class="headerlink" title="阿里源"></a>阿里源</h2><h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><pre><code class="shell">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</code></pre><a id="more"></a><h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>下载新的CentOS-Base.repo 到/etc/yum.repos.d/</p><h4 id="CentOS-6"><a href="#CentOS-6" class="headerlink" title="CentOS 6"></a>CentOS 6</h4><pre><code class="shell">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo</code></pre><p>或者</p><pre><code class="shell">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo</code></pre><h4 id="CentOS-7"><a href="#CentOS-7" class="headerlink" title="CentOS 7"></a>CentOS 7</h4><pre><code class="shell">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</code></pre><p>或者</p><pre><code class="shell">curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</code></pre><h3 id="生成缓存"><a href="#生成缓存" class="headerlink" title="生成缓存"></a>生成缓存</h3><pre><code class="shell">yum makecache</code></pre>]]></content>
+      
+      
       <categories>
-        <category>运维</category>
-        <category>Linux</category>
-        <category>CentOS</category>
+          
+          <category> 运维 </category>
+          
+          <category> Linux </category>
+          
+          <category> CentOS </category>
+          
       </categories>
-      <tags>
-        <tag>Cent OS</tag>
-        <tag>yum</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[《软件安装入门到卸载系列》]]></title>
-    <url>%2F%E8%BF%90%E7%BB%B4%2FLinux%2FCentOS%2F6b1b7458.html</url>
-    <content type="text"><![CDATA[Cent OS 7.xErlang安装yum更换镜像源]]></content>
+      
+      
+        <tags>
+            
+            <tag> Cent OS </tag>
+            
+            <tag> yum </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《软件安装入门到卸载系列》</title>
+      <link href="/%E8%BF%90%E7%BB%B4/Linux/CentOS/6b1b7458.html"/>
+      <url>/%E8%BF%90%E7%BB%B4/Linux/CentOS/6b1b7458.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Cent-OS-7-x"><a href="#Cent-OS-7-x" class="headerlink" title="Cent OS 7.x"></a>Cent OS 7.x</h1><h3 id="Erlang安装"><a href="#Erlang安装" class="headerlink" title="Erlang安装"></a><a href="/Linux/e03cc139.html">Erlang安装</a></h3><h3 id="yum更换镜像源"><a href="#yum更换镜像源" class="headerlink" title="yum更换镜像源"></a><a href="/Linux/3c238fc5.html">yum更换镜像源</a></h3><a id="more"></a>]]></content>
+      
+      
       <categories>
-        <category>运维</category>
-        <category>Linux</category>
-        <category>CentOS</category>
+          
+          <category> 运维 </category>
+          
+          <category> Linux </category>
+          
+          <category> CentOS </category>
+          
       </categories>
-      <tags>
-        <tag>Cent OS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Erlang的安装与卸载]]></title>
-    <url>%2F%E8%BF%90%E7%BB%B4%2FLinux%2FCentOS%2Fe03cc139.html</url>
-    <content type="text"><![CDATA[CenOS 7.x准备工作erlang官网下载地址：https://www.erlang.org/downloads erlang solutions 地址：https://www.erlang-solutions.com/resources/download.html 安装wget工具 yum install wget yum方式安装官方文档地址：https://www.erlang-solutions.com/resources/download.html 添加存储库条目wget https://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm rpm -Uvh erlang-solutions-1.0-1.noarch.rpm 如果在执行rpm -Uvh erlang-solutions-1.0-1.noarch.rpm的时候报错 执行以下命令,然后重新执行rpm -Uvh erlang-solutions-1.0-1.noarch.rpm yum install epel-release 安装Erlangyum install erlang 验证安装结果erl -version 安装成功界面如下图所示]]></content>
+      
+      
+        <tags>
+            
+            <tag> Cent OS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Erlang的安装与卸载</title>
+      <link href="/%E8%BF%90%E7%BB%B4/Linux/CentOS/e03cc139.html"/>
+      <url>/%E8%BF%90%E7%BB%B4/Linux/CentOS/e03cc139.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="CenOS-7-x"><a href="#CenOS-7-x" class="headerlink" title="CenOS 7.x"></a>CenOS 7.x</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>erlang官网下载地址：<a href="https://www.erlang.org/downloads" target="_blank" rel="noopener">https://www.erlang.org/downloads</a></p><p>erlang solutions 地址：<a href="https://www.erlang-solutions.com/resources/download.html" target="_blank" rel="noopener">https://www.erlang-solutions.com/resources/download.html</a></p><p>安装wget工具</p><pre><code class="shell">yum install wget</code></pre><a id="more"></a><h2 id="yum方式安装"><a href="#yum方式安装" class="headerlink" title="yum方式安装"></a>yum方式安装</h2><p>官方文档地址：<a href="https://www.erlang-solutions.com/resources/download.html" target="_blank" rel="noopener">https://www.erlang-solutions.com/resources/download.html</a></p><h4 id="添加存储库条目"><a href="#添加存储库条目" class="headerlink" title="添加存储库条目"></a>添加存储库条目</h4><pre><code class="shell">wget https://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpmrpm -Uvh erlang-solutions-1.0-1.noarch.rpm</code></pre><p>如果在执行<code>rpm -Uvh erlang-solutions-1.0-1.noarch.rpm</code>的时候报错</p><img src="/运维/Linux/CentOS/e03cc139/rpm-error.png" title="rpm报错界面"><p>执行以下命令,然后重新执行<code>rpm -Uvh erlang-solutions-1.0-1.noarch.rpm</code></p><pre><code class="shell">yum install epel-release</code></pre><h4 id="安装Erlang"><a href="#安装Erlang" class="headerlink" title="安装Erlang"></a>安装Erlang</h4><pre><code class="shell">yum install erlang</code></pre><h4 id="验证安装结果"><a href="#验证安装结果" class="headerlink" title="验证安装结果"></a>验证安装结果</h4><pre><code class="shell">erl -version</code></pre><p>安装成功界面如下图所示</p><img src="/运维/Linux/CentOS/e03cc139/erl-install-success.png" title="erlang安装成功提示界面">]]></content>
+      
+      
       <categories>
-        <category>运维</category>
-        <category>Linux</category>
-        <category>CentOS</category>
+          
+          <category> 运维 </category>
+          
+          <category> Linux </category>
+          
+          <category> CentOS </category>
+          
       </categories>
-      <tags>
-        <tag>Cent OS</tag>
-        <tag>Erlang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[VMWare安装CentOS7虚拟机]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FVMWare%2F4a5e8db3.html</url>
-    <content type="text"><![CDATA[VMware14安装CentOS7安装环境说明 Windows10 64位 VMware® Workstation 14 Pro CentOS-7-x86_64-Minimal-1611.iso 安装步骤 选择创建新的虚拟机 选择自定义创建虚拟机 选择Workstation14.x，点击下一步 选择安装程序光盘映像文件，然后点击下一步 选择虚拟机安装名称和位置 设置虚拟机处理器和内核数，机器性能好的可以往上选，这里用默认的就行，然后点击下一步 设置虚拟机内存，依旧视自己的电脑配置而定，这里使用默认推荐的内存1G，够用了，点击下一步 设置网络，这里使用默认的NAT网络制式就可以了，然后下一步 设置I/O控制器类型，这里使用默认的，点击下一步 设置磁盘类型，选择默认的，点击下一步 选择磁盘，使用默认的，选择下一步 指定磁盘容量，看需求和机器配置，这里使用20G就可以了，设置完后点击下一步 设置创建的虚拟机磁盘文件名，也就是虚拟机的打开文件，以后迁移，克隆用到的。 创建完成，点击完成，之后自动安装开启。 进入CentOS安装界面，选择安装CentOS,Install CentOS Linux 7这个选项，然后就开始安装了，鼠标出入Vmware使用Ctrl + Alt 进入语言选择界面，选择语言，依据需求选择，点击Continue 配置系统安装项，因为这里使用的是最小化安装，所以SOFRWARE SELECTION里面什么都没有，可以设置DATE &amp; TIME和KEYBOARD制式等，还有NETWORK &amp; HOSTNAME等。配置结束后点击Begin Installation 设置root用户密码和用户认证 这里建议设置root密码，然后可以使用root帐号登录，免去授权的麻烦，另外，如果密码较弱，按照提示点击两次Done即可。然后等待安装结束。 等待安装结束，重启，完成安装 输入帐号密码，如果能进入系统，恭喜你，安装成功了。]]></content>
+      
+      
+        <tags>
+            
+            <tag> Cent OS </tag>
+            
+            <tag> Erlang </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VMWare安装CentOS7虚拟机</title>
+      <link href="/%E5%B7%A5%E5%85%B7/VMWare/4a5e8db3.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/VMWare/4a5e8db3.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="VMware14安装CentOS7"><a href="#VMware14安装CentOS7" class="headerlink" title="VMware14安装CentOS7"></a>VMware14安装CentOS7</h1><h2 id="安装环境说明"><a href="#安装环境说明" class="headerlink" title="安装环境说明"></a>安装环境说明</h2><ul><li>Windows10 64位</li><li>VMware® Workstation 14 Pro</li><li>CentOS-7-x86_64-Minimal-1611.iso</li></ul><a id="more"></a><h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol><li><p>选择创建新的虚拟机</p><img src="/工具/VMWare/4a5e8db3/step01_choose_create_new_virtual_machine.png" title="选择创建新的虚拟机界面"></li><li><p>选择自定义创建虚拟机</p><img src="/工具/VMWare/4a5e8db3/step02_choose_create_new_custom_virtual_machine.png" title="选择自定义创建虚拟机界面"></li><li><p>选择Workstation14.x，点击下一步</p><img src="/工具/VMWare/4a5e8db3/step03_click_next.png" title="选择Workstation14.x，点击下一步界面"> </li><li><p>选择安装程序光盘映像文件，然后点击下一步</p><img src="/工具/VMWare/4a5e8db3/step04_click_next.png" title="选择安装程序光盘映像文件，然后点击下一步界面"></li><li><p>选择虚拟机安装名称和位置</p><img src="/工具/VMWare/4a5e8db3/step05_click_next.png" title="选择虚拟机安装名称和位置，然后点击下一步界面"></li><li><p>设置虚拟机处理器和内核数，机器性能好的可以往上选，这里用默认的就行，然后点击下一步</p><img src="/工具/VMWare/4a5e8db3/step06_click_next.png" title="设置虚拟机处理器和内核数，然后点击下一步界面"></li><li><p>设置虚拟机内存，依旧视自己的电脑配置而定，这里使用默认推荐的内存1G，够用了，点击下一步</p><img src="/工具/VMWare/4a5e8db3/step07_click_next.png" title="设置虚拟机内存，然后点击下一步界面"></li><li><p>设置网络，这里使用默认的NAT网络制式就可以了，然后下一步</p><img src="/工具/VMWare/4a5e8db3/step08_click_next.png" title="设置网络，然后点击下一步界面"></li><li><p>设置I/O控制器类型，这里使用默认的，点击下一步</p><img src="/工具/VMWare/4a5e8db3/step09_click_next.png" title="设置I/O控制器类型，然后点击下一步界"></li><li><p>设置磁盘类型，选择默认的，点击下一步</p><img src="/工具/VMWare/4a5e8db3/step10_click_next.png" title="设置磁盘类型，然后点击下一步界面"></li><li><p>选择磁盘，使用默认的，选择下一步</p><img src="/工具/VMWare/4a5e8db3/step11_click_next.png" title="选择磁盘，然后点击下一步界面"></li><li><p>指定磁盘容量，看需求和机器配置，这里使用20G就可以了，设置完后点击下一步</p><img src="/工具/VMWare/4a5e8db3/step12_click_next.png" title="指定磁盘容量，然后点击下一步界面"></li><li><p>设置创建的虚拟机磁盘文件名，也就是虚拟机的打开文件，以后迁移，克隆用到的。</p><img src="/工具/VMWare/4a5e8db3/step13_click_next.png" title="设置创建的虚拟机磁盘文件名，然后点击下一步界面"></li><li><p>创建完成，点击完成，之后<strong>自动</strong>安装开启。</p><img src="/工具/VMWare/4a5e8db3/step14_click_next.png" title="创建完成界面"></li><li><p>进入CentOS安装界面，选择安装CentOS,Install CentOS Linux 7这个选项，然后就开始安装了，鼠标出入Vmware使用Ctrl + Alt</p><img src="/工具/VMWare/4a5e8db3/step15_click_next.png" title="进入CentOS安装界面"></li><li><p>进入语言选择界面，选择语言，依据需求选择，点击Continue</p><img src="/工具/VMWare/4a5e8db3/step16_click_next.png" title="进入语言选择界面"></li><li><p>配置系统安装项，因为这里使用的是最小化安装，所以SOFRWARE SELECTION里面什么都没有，可以设置DATE &amp; TIME和KEYBOARD制式等，还有NETWORK &amp; HOSTNAME等。配置结束后点击Begin Installation</p><img src="/工具/VMWare/4a5e8db3/step17_click_next.png" title="配置系统安装项界面"></li><li><p>设置root用户密码和用户认证</p><img src="/工具/VMWare/4a5e8db3/step18_click_next.png" title="设置root用户密码和用户认证界面"><p>这里建议设置root密码，然后可以使用root帐号登录，免去授权的麻烦，另外，如果密码较弱，按照提示点击两次Done即可。然后等待安装结束。</p><img src="/工具/VMWare/4a5e8db3/step18.01_click_next.png" title="设置root密码界面"></li><li><p>等待安装结束，重启，完成安装</p><img src="/工具/VMWare/4a5e8db3/step19_click_next.png" title="等待安装结束重启界面"></li><li><p>输入帐号密码，如果能进入系统，恭喜你，安装成功了。</p><img src="/工具/VMWare/4a5e8db3/step20_click_next.png" title="登录系统界面"></li></ol>]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>VMWare</category>
+          
+          <category> 工具 </category>
+          
+          <category> VMWare </category>
+          
       </categories>
-      <tags>
-        <tag>VMWare</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[RabbitMQ SpringCloud实战]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FRabbitMQ%2F1a80a0df.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> VMWare </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RabbitMQ SpringCloud实战</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/1a80a0df.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/1a80a0df.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>RabbitMQ</category>
+          
+          <category> 中间件 </category>
+          
+          <category> RabbitMQ </category>
+          
       </categories>
-      <tags>
-        <tag>RabbitMQ</tag>
-        <tag>中间件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[RabbitMQ SpringBoot实战]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FRabbitMQ%2F93e9b7c4.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> RabbitMQ </tag>
+            
+            <tag> 中间件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RabbitMQ SpringBoot实战</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/93e9b7c4.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/93e9b7c4.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>RabbitMQ</category>
+          
+          <category> 中间件 </category>
+          
+          <category> RabbitMQ </category>
+          
       </categories>
-      <tags>
-        <tag>RabbitMQ</tag>
-        <tag>中间件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[RabbitMQ_Java实战]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FRabbitMQ%2F617fec18.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> RabbitMQ </tag>
+            
+            <tag> 中间件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RabbitMQ_Java实战</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/617fec18.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/617fec18.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>RabbitMQ</category>
+          
+          <category> 中间件 </category>
+          
+          <category> RabbitMQ </category>
+          
       </categories>
-      <tags>
-        <tag>RabbitMQ</tag>
-        <tag>中间件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[RabbitMQ简介与安装]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FRabbitMQ%2Fa4560bed.html</url>
-    <content type="text"><![CDATA[RabbitMQ简介与安装简介安装WindowsCentOS 7在安装RabbitMQ之前，必须安装和RabbitMQ版本相匹配的Erlang/OTP。Erlang和RabbitMQ的对应关系可以看下面这个网址：https://www.rabbitmq.com/which-erlang.html 安装Erlang参考 Erlang安装 安装RabbitMQ 选择目录cd /home 下载rabbitMQwget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.18/rabbitmq-server-3.7.18-1.el7.noarch.rpm 安装yum install rabbitmq-server-3.7.18-1.el7.noarch.rpm 设置开机启动chkconfig rabbitmq-server on 启用Web管理插件查找rabbitmq-server的安装目录 vi /usr/lib/systemd/system/rabbitmq-server.service 其中ExecStart和ExecStop就是命令行工具的目录，就是rabbitmq-sercer的命令目录，找到后进去目录 cd /usr/sbin ./rabbitmq-plugins enable rabbitmq_management 启用成功的标识 重启rabitmq服务systemctl restart rabbitmq-server 关闭防火墙/开放端口15672关闭防火墙 systemctl stop firewalld 开放端口 firwall-cmd --zone=public --add-port=15672/tcp --permanent 添加用户进入rabbitmq命令目录，或者直接使用rabbimqctl全局命令 cd /usr/sbin 执行添加用户命令，并授予administrator权限，可用于登录Web管理界面 ./rabbitmqctl add_user admin 123456 ./rabbitmqctl set_user_tags admin adminsitrator ./rabbitmqctl list_users 登录Web界面，验证 #####]]></content>
+      
+      
+        <tags>
+            
+            <tag> RabbitMQ </tag>
+            
+            <tag> 中间件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RabbitMQ简介与安装</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/a4560bed.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/a4560bed.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="RabbitMQ简介与安装"><a href="#RabbitMQ简介与安装" class="headerlink" title="RabbitMQ简介与安装"></a>RabbitMQ简介与安装</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h3 id="CentOS-7"><a href="#CentOS-7" class="headerlink" title="CentOS 7"></a>CentOS 7</h3><p>在安装RabbitMQ之前，必须安装和RabbitMQ版本相匹配的Erlang/OTP。Erlang和RabbitMQ的对应关系可以<br>看下面这个网址：<a href="https://www.rabbitmq.com/which-erlang.html" target="_blank" rel="noopener">https://www.rabbitmq.com/which-erlang.html</a></p><h4 id="安装Erlang"><a href="#安装Erlang" class="headerlink" title="安装Erlang"></a>安装Erlang</h4><p>参考 <a href="/Linux/e03cc139.html">Erlang安装</a></p><h4 id="安装RabbitMQ"><a href="#安装RabbitMQ" class="headerlink" title="安装RabbitMQ"></a>安装RabbitMQ</h4><a id="more"></a><h5 id="选择目录"><a href="#选择目录" class="headerlink" title="选择目录"></a>选择目录</h5><pre><code class="shell">cd /home</code></pre><h5 id="下载rabbitMQ"><a href="#下载rabbitMQ" class="headerlink" title="下载rabbitMQ"></a>下载rabbitMQ</h5><pre><code class="shell">wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.7.18/rabbitmq-server-3.7.18-1.el7.noarch.rpm</code></pre><h5 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h5><pre><code class="shell">yum install rabbitmq-server-3.7.18-1.el7.noarch.rpm</code></pre><h5 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h5><pre><code class="shell">chkconfig rabbitmq-server on</code></pre><h5 id="启用Web管理插件"><a href="#启用Web管理插件" class="headerlink" title="启用Web管理插件"></a>启用Web管理插件</h5><p>查找rabbitmq-server的安装目录</p><pre><code class="shell">vi /usr/lib/systemd/system/rabbitmq-server.service</code></pre><img src="/中间件/RabbitMQ/a4560bed/get-rabbitmq-cmd-path.png" title="rabbitmq命令安装位置界面"><p>其中ExecStart和ExecStop就是命令行工具的目录，就是rabbitmq-sercer的命令目录，找到后进去目录</p><pre><code class="shell">cd /usr/sbin./rabbitmq-plugins enable  rabbitmq_management</code></pre><p>启用成功的标识</p><img src="/中间件/RabbitMQ/a4560bed/rabbitmq-enable-management-plugin.png" title="rabbitmq开启Web管理插件界面"><h5 id="重启rabitmq服务"><a href="#重启rabitmq服务" class="headerlink" title="重启rabitmq服务"></a>重启rabitmq服务</h5><pre><code class="shell">systemctl restart rabbitmq-server</code></pre><h5 id="关闭防火墙-开放端口15672"><a href="#关闭防火墙-开放端口15672" class="headerlink" title="关闭防火墙/开放端口15672"></a>关闭防火墙/开放端口15672</h5><p>关闭防火墙</p><pre><code class="shell">systemctl stop firewalld</code></pre><p>开放端口</p><pre><code class="shell">firwall-cmd --zone=public --add-port=15672/tcp --permanent</code></pre><h5 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h5><p>进入rabbitmq命令目录，或者直接使用<code>rabbimqctl</code>全局命令</p><pre><code class="shell">cd /usr/sbin</code></pre><p>执行添加用户命令，并授予administrator权限，可用于登录Web管理界面</p><pre><code class="shell">./rabbitmqctl add_user admin 123456./rabbitmqctl set_user_tags admin adminsitrator./rabbitmqctl list_users</code></pre><img src="/中间件/RabbitMQ/a4560bed/add_user.png" title="rabbitmq添加Web管理用户界面"><h5 id="登录Web界面，验证"><a href="#登录Web界面，验证" class="headerlink" title="登录Web界面，验证"></a>登录Web界面，验证</h5><img src="/中间件/RabbitMQ/a4560bed/rabbitmq-web-login.png" title="rabbitmqWeb管理登录成功界面"><p>##### </p>]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>RabbitMQ</category>
+          
+          <category> 中间件 </category>
+          
+          <category> RabbitMQ </category>
+          
       </categories>
-      <tags>
-        <tag>RabbitMQ</tag>
-        <tag>中间件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[《RabbitMQ学习笔记》]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FRabbitMQ%2Fe6c0ec84.html</url>
-    <content type="text"><![CDATA[RabbitMQ学习笔记目录01_RabbitMQ简介与安装02_RabbitMQ_Java实战03_RabbitMQ_SpringBoot实战04_RabbitMQ_SpringCloud实战]]></content>
+      
+      
+        <tags>
+            
+            <tag> RabbitMQ </tag>
+            
+            <tag> 中间件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《RabbitMQ学习笔记》</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/e6c0ec84.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/RabbitMQ/e6c0ec84.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="RabbitMQ学习笔记目录"><a href="#RabbitMQ学习笔记目录" class="headerlink" title="RabbitMQ学习笔记目录"></a>RabbitMQ学习笔记目录</h1><h2 id="01-RabbitMQ简介与安装"><a href="#01-RabbitMQ简介与安装" class="headerlink" title="01_RabbitMQ简介与安装"></a><a href="/RabbitMQ/a4560bed.html">01_RabbitMQ简介与安装</a></h2><h2 id="02-RabbitMQ-Java实战"><a href="#02-RabbitMQ-Java实战" class="headerlink" title="02_RabbitMQ_Java实战"></a><a href="/RabbitMQ/617fec18.html">02_RabbitMQ_Java实战</a></h2><h2 id="03-RabbitMQ-SpringBoot实战"><a href="#03-RabbitMQ-SpringBoot实战" class="headerlink" title="03_RabbitMQ_SpringBoot实战"></a><a href="/RabbitMQ/93e9b7c4.html">03_RabbitMQ_SpringBoot实战</a></h2><h2 id="04-RabbitMQ-SpringCloud实战"><a href="#04-RabbitMQ-SpringCloud实战" class="headerlink" title="04_RabbitMQ_SpringCloud实战"></a><a href="/RabbitMQ/1a80a0df.html">04_RabbitMQ_SpringCloud实战</a></h2><a id="more"></a>]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>RabbitMQ</category>
+          
+          <category> 中间件 </category>
+          
+          <category> RabbitMQ </category>
+          
       </categories>
-      <tags>
-        <tag>RabbitMQ</tag>
-        <tag>中间件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MySql安装]]></title>
-    <url>%2F%E6%95%B0%E6%8D%AE%E5%BA%93%2FMysql%2Fbdf2ca90.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> RabbitMQ </tag>
+            
+            <tag> 中间件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySql安装</title>
+      <link href="/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/bdf2ca90.html"/>
+      <url>/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/bdf2ca90.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>数据库</category>
-        <category>Mysql</category>
+          
+          <category> 数据库 </category>
+          
+          <category> Mysql </category>
+          
       </categories>
-      <tags>
-        <tag>Mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[准备开发环境]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FSpringCloud%2F6d3e0eb2.html</url>
-    <content type="text"><![CDATA[本教程的所有示例都统一使用以下环境配置 Windows 10IDEA 2018.2 UltmiateMaven 3.5.0Git 2.9.0SpringBoot 2.0.1SpringCloud Dalston.SR1 关于Maven的安装使用说明请参考博主的《Maven实战》系列的 下载与安装Maven 关于Git的安装使用说明请参考博主的《白话Git》 关于IDEA的使用说明请参考博主的《编程利器——IDEA》]]></content>
+      
+      
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>准备开发环境</title>
+      <link href="/%E5%90%8E%E7%AB%AF/SpringCloud/6d3e0eb2.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/SpringCloud/6d3e0eb2.html</url>
+      
+        <content type="html"><![CDATA[<p>本教程的所有示例都统一使用以下环境配置</p><blockquote><p>Windows 10<br>IDEA 2018.2 Ultmiate<br>Maven 3.5.0<br>Git 2.9.0<br>SpringBoot 2.0.1<br>SpringCloud Dalston.SR1</p></blockquote><a id="more"></a><p>关于Maven的安装使用说明请参考博主的《Maven实战》系列的 <code>下载与安装Maven</code></p><p>关于Git的安装使用说明请参考博主的《白话Git》</p><p>关于IDEA的使用说明请参考博主的《编程利器——IDEA》</p>]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>SpringCloud</category>
+          
+          <category> 后端 </category>
+          
+          <category> SpringCloud </category>
+          
       </categories>
-      <tags>
-        <tag>SpringCloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[SpringCloud简介]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FSpringCloud%2F4dd766a2.html</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringCloud简介</title>
+      <link href="/%E5%90%8E%E7%AB%AF/SpringCloud/4dd766a2.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/SpringCloud/4dd766a2.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>SpringCloud</category>
+          
+          <category> 后端 </category>
+          
+          <category> SpringCloud </category>
+          
       </categories>
-      <tags>
-        <tag>SpringCloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[《疯狂SpringCloud 微服务架构实战》学习笔记目录]]></title>
-    <url>%2F%E5%90%8E%E7%AB%AF%2FSpringCloud%2F4dd766a2.html</url>
-    <content type="text"><![CDATA[01_SpringCloud简介02_准备开发环境03_SpringCloud组件——Eureka04_SpringCloud组件——]]></content>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《疯狂SpringCloud 微服务架构实战》学习笔记目录</title>
+      <link href="/%E5%90%8E%E7%AB%AF/SpringCloud/4dd766a2.html"/>
+      <url>/%E5%90%8E%E7%AB%AF/SpringCloud/4dd766a2.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="01-SpringCloud简介"><a href="#01-SpringCloud简介" class="headerlink" title="01_SpringCloud简介"></a><a href>01_SpringCloud简介</a></h3><h3 id="02-准备开发环境"><a href="#02-准备开发环境" class="headerlink" title="02_准备开发环境"></a><a href>02_准备开发环境</a></h3><h3 id="03-SpringCloud组件——Eureka"><a href="#03-SpringCloud组件——Eureka" class="headerlink" title="03_SpringCloud组件——Eureka"></a><a href>03_SpringCloud组件——Eureka</a></h3><h3 id="04-SpringCloud组件——"><a href="#04-SpringCloud组件——" class="headerlink" title="04_SpringCloud组件——"></a><a href>04_SpringCloud组件——</a></h3><a id="more"></a>]]></content>
+      
+      
       <categories>
-        <category>后端</category>
-        <category>SpringCloud</category>
+          
+          <category> 后端 </category>
+          
+          <category> SpringCloud </category>
+          
       </categories>
-      <tags>
-        <tag>SpringCloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[三分钟利用Github配合Hexo搭建博客]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FHexo%2F1092497b.html</url>
-    <content type="text"><![CDATA[安装Git安装NodeJs申请账号]]></content>
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>三分钟利用Github配合Hexo搭建博客</title>
+      <link href="/%E5%B7%A5%E5%85%B7/Hexo/1092497b.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/Hexo/1092497b.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><h1 id="安装NodeJs"><a href="#安装NodeJs" class="headerlink" title="安装NodeJs"></a>安装NodeJs</h1><h1 id="申请账号"><a href="#申请账号" class="headerlink" title="申请账号"></a>申请账号</h1><a id="more"></a>]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>Hexo</category>
+          
+          <category> 工具 </category>
+          
+          <category> Hexo </category>
+          
       </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Git配置文件作用域及最小可用配置讲解]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FGit%2F85076309.html</url>
-    <content type="text"><![CDATA[[TOC] 工欲善其事必先利其器 这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个最小配置，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。 实验环境 Windows10 Git 2.9.0 Git的最小配置git config --global user.name &#39;yourname&#39; git config --global user.email &#39;youremail&#39; 配置解释第一点：作用域 global ：global意指全局作用域，即在没有配置其他作用域的情况下，当前系统登录用户所建的所有仓库的配置信息 第二点：配置项 user.name：使用仓库的用户的用户名 user.email：使用仓库的用户的用户邮箱 之所以会配置这两项之后就能开始对Git的使用了，是因为人性化的考虑，在Git的使用中，无论是单人使用，还是团队使用，user.name以及user.email能够准确的对每一次Git的提交做出标记，能够标记出：是谁在什么时候，做了什么提交，如果出现问题，或者写的太棒了，我想联系他，那么该通过什么方式来联系，没错，就是那个邮箱了。这种设计是一种对提交记录的追踪，对代码贡献度的统计，对代码bug的追踪甩锅等等，都是Git设计哲学中不可或缺的一部分。 下面来看一下到底global代表了什么，即Git的配置作用域。 配置作用域在Git的配置哲学中，配置的作用域分为三种：系统级别（system），全局级别(global)，仓库级别(local)。 系统级别（system） 定义 什么是系统级别的配置呢，系统级别的配置就是上面所说的针对系统下的所有用户的所有仓库使用同一种配置文件。其约束范围是系统中所有用户的所有仓库 作用域 系统中的所有用户的所有仓库 配置文件位置 windows 如果你找不到，没关系，教你一招，输入以下命令，就出来了 git config --system -e Linux 一般是/etc/gitconfig 全局级别（global） 定义 全局级别的配置是系统下的当前登录用户的所有仓库使用同一种配置文件。其约束范围是当前登录用户的所有仓库 作用域 当前登录用户的所有仓库 配置文件位置： Windows C:/User/[你的用户目录]/.gitconfig Linux ~/.gitconfig 仓库级别（local） 定义 仓库级别的配置是当前仓库使用的配置文件。其约束范围是当前配置文件所在仓库 作用域： 具体配置的仓库 配置文件位置： Windwos 仓库目录/.git/config Linux 仓库目录/.git/config 注意事项 无论是在Windows中还是Linux中.git目录是个隐藏文件夹，在Windows中需要打开隐藏文件才能看到，Linux中可以使用命令查看，可以尝试ls -al，视操作系统而定，如若不行，则需要自行百度。 配置优先级在Git的三种配置文件的优先级，按照就近原则，即 仓库级别 &gt; 全局级别 &gt; 系统级别，即便系统级别的配置了相关配置项，那么我只要在全局级别中进行了配置，就以全局配置的配置项为准，同样的，即便你在全局级别的配置中配置了相关配置项，那么只要我在仓库级别进行了配置，就以仓库级别的为准。 进行了上述的最小配置后，我们就可以正式的开始使用Git了。]]></content>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git配置文件作用域及最小可用配置讲解</title>
+      <link href="/%E5%B7%A5%E5%85%B7/Git/85076309.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/Git/85076309.html</url>
+      
+        <content type="html"><![CDATA[<p>[TOC]</p><blockquote><p>工欲善其事必先利其器</p></blockquote><p>这章呢，讲解下Git的配置，通过这些配置，我们能更好的使用Git这个神兵利器。想开始使用Git，也不是没有条件的，Git存在一个最小化的配置，只有配置了这个<code>最小配置</code>，我们就能开始使用Git了，至于其他的相关配置项会在后面的文章进行介绍。</p><h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><ul><li>Windows10</li><li>Git 2.9.0</li></ul><h2 id="Git的最小配置"><a href="#Git的最小配置" class="headerlink" title="Git的最小配置"></a>Git的最小配置</h2><pre><code class="shell">git config --global user.name &#39;yourname&#39;git config --global user.email &#39;youremail&#39;</code></pre><h3 id="配置解释"><a href="#配置解释" class="headerlink" title="配置解释"></a>配置解释</h3><p>第一点：作用域</p><p><code>global</code> ：global意指全局作用域，即在没有配置其他作用域的情况下，当前系统登录用户所建的所有仓库的配置信息</p><p>第二点：配置项</p><p><code>user.name</code>：使用仓库的用户的用户名</p><p><code>user.email</code>：使用仓库的用户的用户邮箱</p><p>之所以会配置这两项之后就能开始对Git的使用了，是因为人性化的考虑，在Git的使用中，无论是单人使用，还是团队使用，<code>user.name</code>以及<code>user.email</code>能够准确的对每一次Git的提交做出标记，能够标记出：<code>是谁在什么时候，做了什么提交，如果出现问题，或者写的太棒了，我想联系他，那么该通过什么方式来联系，没错，就是那个邮箱了</code>。这种设计是一种对提交记录的追踪，对代码贡献度的统计，对代码bug的追踪甩锅等等，都是Git设计哲学中不可或缺的一部分。</p><a id="more"></a><p>下面来看一下到底global代表了什么，即Git的配置作用域。</p><h2 id="配置作用域"><a href="#配置作用域" class="headerlink" title="配置作用域"></a>配置作用域</h2><p>在Git的配置哲学中，配置的作用域分为三种：系统级别（system），全局级别(global)，仓库级别(local)。</p><h3 id="系统级别（system）"><a href="#系统级别（system）" class="headerlink" title="系统级别（system）"></a>系统级别（system）</h3><ul><li><p>定义</p><p>什么是系统级别的配置呢，系统级别的配置就是上面所说的针对<code>系统下的所有用户的所有仓库</code>使用同一种配置文件。其约束范围是<code>系统中所有用户的所有仓库</code></p></li><li><p>作用域</p><p>系统中的所有用户的所有仓库</p></li><li><p>配置文件位置</p><ul><li><p>windows</p><ul><li><p>如果你找不到，没关系，教你一招，输入以下命令，就出来了</p><pre><code class="shell"> git config --system -e</code></pre>   <img src="/工具/Git/85076309/git-system-config-path.png" title="git系统级配置文件路径"></li></ul></li><li><p>Linux</p><ul><li>一般是/etc/gitconfig</li></ul></li></ul></li></ul><h3 id="全局级别（global）"><a href="#全局级别（global）" class="headerlink" title="全局级别（global）"></a>全局级别（global）</h3><ul><li><p>定义</p><p>全局级别的配置是系统下的<code>当前登录用户的所有仓库</code>使用同一种配置文件。其约束范围是<code>当前登录用户的所有仓库</code></p></li><li><p>作用域</p><p>当前登录用户的所有仓库</p></li><li><p>配置文件位置：</p><ul><li>Windows<ul><li>C:/User/[你的用户目录]/.gitconfig</li></ul></li><li>Linux<ul><li>~/.gitconfig</li></ul></li></ul></li></ul><h3 id="仓库级别（local）"><a href="#仓库级别（local）" class="headerlink" title="仓库级别（local）"></a>仓库级别（local）</h3><ul><li><p>定义</p><p>仓库级别的配置是<code>当前仓库</code>使用的配置文件。其约束范围是<code>当前配置文件所在仓库</code></p></li><li><p>作用域：</p><p>具体配置的仓库</p></li><li><p>配置文件位置：</p><ul><li>Windwos<ul><li>仓库目录/.git/config</li></ul></li><li>Linux<ul><li>仓库目录/.git/config</li></ul></li></ul></li><li>注意事项<ul><li>无论是在Windows中还是Linux中<code>.git</code>目录是个隐藏文件夹，在Windows中需要打开隐藏文件才能看到，Linux中可以使用命令查看，可以尝试<code>ls -al</code>，视操作系统而定，如若不行，则需要自行百度。</li></ul></li></ul><h2 id="配置优先级"><a href="#配置优先级" class="headerlink" title="配置优先级"></a>配置优先级</h2><p>在Git的三种配置文件的优先级，按照<code>就近原则</code>，即 <code>仓库级别</code> &gt; <code>全局级别</code> &gt; <code>系统级别</code>，即便系统级别的配置了相关配置项，那么我只要在全局级别中进行了配置，就以全局配置的配置项为准，同样的，即便你在全局级别的配置中配置了相关配置项，那么只要我在仓库级别进行了配置，就以仓库级别的为准。</p><p>进行了上述的最小配置后，我们就可以正式的开始使用Git了。</p>]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>Git</category>
+          
+          <category> 工具 </category>
+          
+          <category> Git </category>
+          
       </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[《编程利器——IDEA》]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FIDEA%2Fa44a05a2.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 IDEA 01_IDEA简介与安装]]></content>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《编程利器——IDEA》</title>
+      <link href="/%E5%B7%A5%E5%85%B7/IDEA/a44a05a2.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/IDEA/a44a05a2.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>工欲善其事必先利其器</p></blockquote><p>IDEA</p><h3 id="01-IDEA简介与安装"><a href="#01-IDEA简介与安装" class="headerlink" title="01_IDEA简介与安装"></a><a href="a21830fd.html">01_IDEA简介与安装</a></h3><h3 id><a href="#" class="headerlink" title=" "></a> </h3><a id="more"></a>]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>IDEA</category>
+          
+          <category> 工具 </category>
+          
+          <category> IDEA </category>
+          
       </categories>
-      <tags>
-        <tag>IDEA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[TODO]]></title>
-    <url>%2F%E8%AE%A1%E5%88%92%2FPlan%2F6c9b5b14.html</url>
-    <content type="text"><![CDATA[TODO1 TODO2]]></content>
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TODO</title>
+      <link href="/%E8%AE%A1%E5%88%92/Plan/6c9b5b14.html"/>
+      <url>/%E8%AE%A1%E5%88%92/Plan/6c9b5b14.html</url>
+      
+        <content type="html"><![CDATA[<ul><li style="list-style: none"><input type="checkbox"> TODO1</li><li style="list-style: none"><input type="checkbox" checked> <del>TODO2</del></li></ul>]]></content>
+      
+      
       <categories>
-        <category>计划</category>
-        <category>Plan</category>
+          
+          <category> 计划 </category>
+          
+          <category> Plan </category>
+          
       </categories>
-      <tags>
-        <tag>Plan</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[《ElasticSearch笔记》]]></title>
-    <url>%2F%E4%B8%AD%E9%97%B4%E4%BB%B6%2FElasticSearch%2Fa8882e14.html</url>
-    <content type="text"><![CDATA[目录ElasticSearch核心知识01_什么是ElasticSearch02_ElasticSearch的03_Java中的数据类型 ElasticSearch运维优化ELK]]></content>
+      
+      
+        <tags>
+            
+            <tag> Plan </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《ElasticSearch笔记》</title>
+      <link href="/%E4%B8%AD%E9%97%B4%E4%BB%B6/ElasticSearch/a8882e14.html"/>
+      <url>/%E4%B8%AD%E9%97%B4%E4%BB%B6/ElasticSearch/a8882e14.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="ElasticSearch核心知识"><a href="#ElasticSearch核心知识" class="headerlink" title="ElasticSearch核心知识"></a>ElasticSearch核心知识</h2><p><a href="/2019/04/24/10_Java/01_Java简介/">01_什么是ElasticSearch</a><br><a href="../10_Java开发环境搭建">02_ElasticSearch的</a><br><a href="../10_Java中的数据类型">03_Java中的数据类型</a></p><a id="more"></a><h2 id="ElasticSearch运维优化"><a href="#ElasticSearch运维优化" class="headerlink" title="ElasticSearch运维优化"></a>ElasticSearch运维优化</h2><h2 id="ELK"><a href="#ELK" class="headerlink" title="ELK"></a>ELK</h2>]]></content>
+      
+      
       <categories>
-        <category>中间件</category>
-        <category>ElasticSearch</category>
+          
+          <category> 中间件 </category>
+          
+          <category> ElasticSearch </category>
+          
       </categories>
-      <tags>
-        <tag>ElasticSearch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[《白话系列之-Git》]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FGit%2Fa44a05a2.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 Git作为当前最流行的版本控制工具，以其分布式，独特的分支管理方式闻名于众多开发者心中，是目前主流的版本管理工具，我们所熟知的全球闻名的同性交友社区Github就是依赖Git而打造的。依赖Git的设计哲学，也衍生出了很多好用的工具，如Github，Gitlab，码云等代码托管平台，也造就了SourceTree，Git客户端等强大的图形化界面，但是真正的高手都是通过黑窗口和命令来提现出自己的不凡，同样这也是客户端所不能带来的高度自由的用户体验。本系列将以白话文的形式来对Git设计哲学进行解读，对其原来的概念，理论，命令，配合以实战的方式来进行说明，分为以下几章，循序渐进，由浅入深，一一道来。 初级01_Git简介与安装02_Git配置文件03_Git仓库初始化04_Git工作空间概念介绍 进阶git branch git tag git与remote git版本回退 ​ revert , restHead git-log git-flow git-rebase与git-merge git reflog 高级git版本回退原理 git merge 原理]]></content>
+      
+      
+        <tags>
+            
+            <tag> ElasticSearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《白话系列之-Git》</title>
+      <link href="/%E5%B7%A5%E5%85%B7/Git/a44a05a2.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/Git/a44a05a2.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>工欲善其事必先利其器</p></blockquote><p>Git作为当前最流行的版本控制工具，以其分布式，独特的分支管理方式闻名于众多开发者心中，是目前主流的版本管理工具，我们所熟知的全球闻名的同性交友社区Github就是依赖Git而打造的。依赖Git的设计哲学，也衍生出了很多好用的工具，如Github，Gitlab，码云等代码托管平台，也造就了SourceTree，Git客户端等强大的图形化界面，但是真正的高手都是通过黑窗口和命令来提现出自己的不凡，同样这也是客户端所不能带来的高度自由的用户体验。<br>本系列将以白话文的形式来对Git设计哲学进行解读，对其原来的概念，理论，命令，配合以实战的方式来进行说明，分为以下几章，循序渐进，由浅入深，一一道来。</p><h1 id="初级"><a href="#初级" class="headerlink" title="初级"></a>初级</h1><h3 id="01-Git简介与安装"><a href="#01-Git简介与安装" class="headerlink" title="01_Git简介与安装"></a><a href="a21830fd.html">01_Git简介与安装</a></h3><h3 id="02-Git配置文件"><a href="#02-Git配置文件" class="headerlink" title="02_Git配置文件"></a><a href="../01_git_install">02_Git配置文件</a></h3><h3 id="03-Git仓库初始化"><a href="#03-Git仓库初始化" class="headerlink" title="03_Git仓库初始化"></a><a href>03_Git仓库初始化</a></h3><h3 id="04-Git工作空间概念介绍"><a href="#04-Git工作空间概念介绍" class="headerlink" title="04_Git工作空间概念介绍"></a><a href>04_Git工作空间概念介绍</a></h3><a id="more"></a><h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h1><p>git branch</p><p>git tag</p><p>git与remote</p><p>git版本回退</p><p>​    revert , restHead</p><p>git-log</p><p>git-flow</p><p>git-rebase与git-merge</p><p>git reflog</p><h1 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h1><p>git版本回退原理</p><p>git merge 原理</p>]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>Git</category>
+          
+          <category> 工具 </category>
+          
+          <category> Git </category>
+          
       </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Git简介与安装]]></title>
-    <url>%2F%E5%B7%A5%E5%85%B7%2FGit%2Fa21830fd.html</url>
-    <content type="text"><![CDATA[工欲善其事必先利其器 说道软件的安装，作为程序员，简单点分，就两平台：Windows，Linux平台，如果细分的话，可能就是Windows]]></content>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git简介与安装</title>
+      <link href="/%E5%B7%A5%E5%85%B7/Git/a21830fd.html"/>
+      <url>/%E5%B7%A5%E5%85%B7/Git/a21830fd.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>工欲善其事必先利其器</p></blockquote><p>说道软件的安装，作为程序员，简单点分，就两平台：Windows，Linux平台，如果细分的话，可能就是Windows</p>]]></content>
+      
+      
       <categories>
-        <category>工具</category>
-        <category>Git</category>
+          
+          <category> 工具 </category>
+          
+          <category> Git </category>
+          
       </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[写作计划]]></title>
-    <url>%2Funcategorized%2F89edd5a9.html</url>
-    <content type="text"><![CDATA[创建这个文件的目的是为了更好的给自己所掌握的知识进行归类，也是更好的来确定自己未来的方向，我也希望自己能够在未来三到五年内，在技术上做些沉淀，然后往管理方向发展，这个主要是更改自己的性格缺陷和多看多观察别人的管理方式。 目录命名规范 0X –&gt; 归属于前端学习路径和顺序 00 –&gt; HTML 01 –&gt; CSS 02 –&gt; JavaScript 03 –&gt; Vue 04 –&gt; React 1X –&gt; 归属于后端学习路径和顺序 10 –&gt; Java 11 –&gt; Mysql 12 –&gt; Spring 13 –&gt; SpringMVC 14 –&gt; Mybatis 2X –&gt; 归属于其他进阶学习框架 20 –&gt; SpringBoot 21 –&gt; SpringCloud 22 –&gt; ElasticSearch 23 –&gt; Canal 24 –&gt; Nginx 25 –&gt; Redis 3X –&gt; 归属于开发过程中的工具和其他记录 30 –&gt; Git 31 –&gt; IDEA 32 –&gt; Eclipse 4X –&gt; 归属于运维 41 –&gt; CentOS 42 –&gt; Jenkins 43 –&gt; Docker 5X –&gt; 归属于其他语言的学习记录 50_Python 51_Shell 6X –&gt; 其他杂记 60_Hexo 61_LeetCode 62_Other]]></content>
-      <tags>
-        <tag>计划</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>写作计划</title>
+      <link href="/uncategorized/89edd5a9.html"/>
+      <url>/uncategorized/89edd5a9.html</url>
+      
+        <content type="html"><![CDATA[<p>创建这个文件的目的是为了更好的给自己所掌握的知识进行归类，也是更好的来确定自己未来的方向，我也希望自己能够在未来三到五年内，在技术上做些沉淀，然后往管理方向发展，这个主要是更改自己的性格缺陷和多看多观察别人的管理方式。<br><a id="more"></a></p><h1 id="目录命名规范"><a href="#目录命名规范" class="headerlink" title="目录命名规范"></a>目录命名规范</h1><ul><li>0X –&gt; 归属于前端学习路径和顺序<ul><li>00 –&gt; HTML</li><li>01 –&gt; CSS</li><li>02 –&gt; JavaScript</li><li>03 –&gt; Vue</li><li>04 –&gt; React</li></ul></li><li>1X –&gt; 归属于后端学习路径和顺序<ul><li>10 –&gt; Java</li><li>11 –&gt; Mysql</li><li>12 –&gt; Spring</li><li>13 –&gt; SpringMVC</li><li>14 –&gt; Mybatis</li></ul></li><li>2X –&gt; 归属于其他进阶学习框架<ul><li>20 –&gt; SpringBoot</li><li>21 –&gt; SpringCloud</li><li>22 –&gt; ElasticSearch</li><li>23 –&gt; Canal</li><li>24 –&gt; Nginx</li><li>25 –&gt; Redis</li></ul></li><li>3X –&gt; 归属于开发过程中的工具和其他记录<ul><li>30 –&gt; Git</li><li>31 –&gt; IDEA</li><li>32 –&gt; Eclipse</li></ul></li><li>4X –&gt; 归属于运维<ul><li>41 –&gt; CentOS</li><li>42 –&gt; Jenkins</li><li>43 –&gt; Docker</li></ul></li><li>5X –&gt; 归属于其他语言的学习记录<ul><li>50_Python</li><li>51_Shell</li></ul></li><li>6X –&gt; 其他杂记<ul><li>60_Hexo</li><li>61_LeetCode</li><li>62_Other</li></ul></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
